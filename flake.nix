@@ -22,7 +22,7 @@
     ...
   } @ inputs: {
     darwinConfigurations = {
-      "m3" = nix-darwin.lib.darwinSystem {
+      "Inspire-Others" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
           ./hosts/m3/default.nix
@@ -36,7 +36,7 @@
         ];
       };
     };
-    darwinPackages = self.darwinConfigurations."m3".pkgs;
+    darwinPackages = self.darwinConfigurations."Inspire-Others".pkgs;
 
     nixosConfigurations = {
       xps9360 = nixpkgs.lib.nixosSystem {

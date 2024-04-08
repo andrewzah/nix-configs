@@ -1,15 +1,18 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   home.username = "andrew";
-  home.homeDirectory = "/home/andrew";
+  home.homeDirectory =
+    if pkgs.system == "aarch64-darwin"
+    then "/Users/andrew"
+    else "/home/andrew";
 
   home.packages = with pkgs; [
-    hyprland
+    #hyprland
 
     awscli
     entr
-    firefox
+    #firefox
     kubectl
     slack
     zoom-us
@@ -35,15 +38,15 @@
     which
 
     btop
-    strace
-    ltrace
+    #strace
+    #ltrace
     lsof
 
-    ethtool
-    lm_sensors
+    #ethtool
+    #lm_sensors
     pciutils
-    sysstat
-    usbutils
+    #sysstat
+    #usbutils
   ];
 
   programs.git = {
@@ -61,29 +64,29 @@
     };
   };
 
-  wayland.windowManager.hyprland.enable = true;
-  wayland.windowManager.hyprland.settings = {
-    enable = true;
-    "$mod" = "SUPER";
-    bind =
-      [
-        "$mod, F, exec, firefox"
-      ]
-      ++ (
-        builtins.concatLists (builtins.genList (
-	  x: let
-	    ws = let
-	      c = (x + 1) / 10;
-            in
-	      builtins.toString (x + 1 - (c * 10));
-          in [
-	    "$mod, ${ws}, workspace, ${toString (x + 1)}"
-	    "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-	  ]
-	)
-	10)
-      );
-  };
+  #wayland.windowManager.hyprland.enable = true;
+  #wayland.windowManager.hyprland.settings = {
+  #  enable = true;
+  #  "$mod" = "SUPER";
+  #  bind =
+  #    [
+  #      "$mod, F, exec, firefox"
+  #    ]
+  #    ++ (
+  #      builtins.concatLists (builtins.genList (
+  #        x: let
+  #          ws = let
+  #            c = (x + 1) / 10;
+  #          in
+  #            builtins.toString (x + 1 - (c * 10));
+  #        in [
+  #          "$mod, ${ws}, workspace, ${toString (x + 1)}"
+  #          "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+  #        ]
+  #      )
+  #      10)
+  #    );
+  #};
 
   home.sessionVariables.EDITOR = "nvim";
   home.sessionVariables.NIXOS_OZONE_WL = "1";

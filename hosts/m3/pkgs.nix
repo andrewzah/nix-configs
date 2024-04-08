@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  nix.settings.auto-optimize-store = true;
+  #nix.settings.auto-optimize-store = true;
 
   homebrew = {
     enable = true;
@@ -26,5 +26,5 @@
       "slack"
       "zoom"
     ];
-  }
+  };
 }

@@ -3,7 +3,7 @@
 {
   imports = [
     ./pkgs.nix
-  ]
+  ];
 
   environment.systemPackages = with pkgs; [
     git
@@ -20,9 +20,24 @@
   };
 
   services.nix-daemon.enable = true;
-  nix.package = pks.nix;
+  nix.package = pkgs.nix;
   programs.zsh.enable = true;
-  system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
+  #system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
+  system.stateVersion = 4;
+
+  nix = {
+    settings = {
+      experimental-features = "nix-command flakes";
+      trusted-users = [ "@admin" "andrew" ];
+    };
+    linux-builder = {
+      enable = true;
+      package = pkgs.darwin.linux-builder;
+    };
+  };
+  nixpkgs.config.allowUnfree = true;
+  services.activate-system.enable = true;
+  programs.nix-index.enable = true;
 
   system.keyboard = {
     enableKeyMapping = true;
