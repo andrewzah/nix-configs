@@ -5,6 +5,7 @@
     wev
     wofi
     wofi-emoji
+    wtype
   ];
 
   wayland.windowManager.hyprland.enable = true;
@@ -27,7 +28,7 @@
         "$mod SHIFT, L, movewindow, d"
         "$mod, Escape, exec, hyperctl kill"
         "$mod, Return, exec, foot"
-        "$mod, Space, exec, wofi"
+        "$mod, Space, exec, wofi --show run"
         "$mod, Tab, layoutmsg, cyclenext"
         "$mod, mouse:272, movewindow"
         #"$mod, mouse:273, resizewindow"
