@@ -47,6 +47,10 @@
   esc = capslock
   '';
 
+  virtualization.docker.enable = true;
+
+  users.users.andrew.extraGroups = [ "docker" ];
+
   networking.hostName = "xps9360";
   system.stateVersion = "23.11";
 }

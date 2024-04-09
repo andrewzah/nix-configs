@@ -17,6 +17,8 @@
     slack
     zoom-us
 
+    docker
+
     tree
 
     p7zip
