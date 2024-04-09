@@ -5,6 +5,8 @@
 
     font-awesome
 
+    keyd
+
     ethtool
     firefox
     lm_sensors

@@ -16,6 +16,12 @@
     ];
   };
 
+  systemd.services = {
+    keyd = {
+      enable = true;
+    };
+  };
+
   networking.hostName = "xps9360";
   system.stateVersion = "23.11";
 }
