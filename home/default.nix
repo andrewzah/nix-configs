@@ -7,8 +7,6 @@
     else "/home/andrew";
 
   home.packages = with pkgs; [
-    foot
-
     awscli
     entr
     kubectl
@@ -53,6 +51,19 @@
       };
     };
   };
+
+  {pkgs, ...}: let
+    a = {
+    };
+  in {
+  programs.foot = {
+    enable = true;
+    settings = {
+      main = {
+        include = "";
+      };
+    };
+  }
 
   programs.git = {
     enable = true;
