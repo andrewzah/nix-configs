@@ -6,8 +6,8 @@
 
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
-    enable = true;
     "$mod" = "SUPER";
+    "animation" = "workspaces,0";
     bind =
       [
         "$mod, F, exec, firefox"
