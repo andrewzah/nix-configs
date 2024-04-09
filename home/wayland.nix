@@ -1,8 +1,10 @@
 { config, pkgs, lib, ... }:
 {
   home.packages = with pkgs; [
+    hyprpaper
     waybar
     wev
+    rofi-wayland
     wofi
     wofi-emoji
     wtype
@@ -13,6 +15,12 @@
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     "animation" = "workspaces,0";
+    "exec-once" = "waybar & hyprpaper";
+    general = {
+      gaps_in = 5;
+      gaps_out = 5;
+      border_size = 2;
+    };
     bind =
       [
         "$mod, F, fullscreen"
@@ -28,7 +36,8 @@
         "$mod SHIFT, L, movewindow, d"
         "$mod, Escape, exec, hyperctl kill"
         "$mod, Return, exec, foot"
-        "$mod, Space, exec, wofi --show run"
+        "$mod, Space, exec, rofi -show run"
+        "$mod SHIFT, B, exec, rofi -show window"
         "$mod, Tab, layoutmsg, cyclenext"
         "$mod, mouse:272, movewindow"
         #"$mod, mouse:273, resizewindow"
@@ -54,7 +63,7 @@
   programs.waybar = {
     enable = true;
     settings = [{
-      height = 30;
+      height = 35;
       layer = "top";
       position = "bottom";
       tray = { spacing = 10; };
@@ -72,5 +81,14 @@
         max-length = 25;
       };
     }];
+
+    style = (builtins.readFile ../static-files/waybar-style.css);
   };
+
+  xdg.configFile."hypr/hyprpaper.conf".text = ''
+    preload = ~/Downloads/nix.png
+    wallpaper = ,~/Downloads/nix.png
+    ipc=true
+    splash=false
+  '';
 }

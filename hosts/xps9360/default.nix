@@ -8,6 +8,10 @@
       ./hardware-configuration.nix
     ];
 
+  programs.zsh.shellAliases = {
+    switch = "sudo nixos-rebuild switch --flake /etc/nixos#xps9360";
+  };
+
   programs.hyprland.enable = true;
   hardware.opengl = {
     enable = true;
@@ -19,13 +23,18 @@
   systemd.services = {
     keyd = {
       enable = true;
+
+      description = "keyd daemon";
+      wantedBy = [ "multi-user.target" ];
+      
       unitConfig = {
-        Requires = "local-fs.target";
         After = "local-fs.target";
       };
+
       serviceConfig = {
         Type = "simple";
 	ExecStart = "${pkgs.keyd}/bin/keyd";
+	Restart = "always";
       };
     };
   };

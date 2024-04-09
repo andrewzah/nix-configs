@@ -1,5 +1,9 @@
 { config, pkgs, lib, ... }:
 {
+  imports = [
+    ./atuin.nix
+  ];
+
   home.username = "andrew";
   home.homeDirectory =
     if pkgs.system == "aarch64-darwin"
@@ -12,6 +16,8 @@
     kubectl
     slack
     zoom-us
+
+    tree
 
     p7zip
     unzip
