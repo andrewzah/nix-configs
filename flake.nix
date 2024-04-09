@@ -31,7 +31,11 @@
           {
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
-	    home-manager.users.andrew = import ./home;
+            home-manager.users.andrew = {
+              imports = [
+                ./home/default.nix
+              ];
+            };
           }
         ];
       };
@@ -48,7 +52,12 @@
 	  {
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
-	    home-manager.users.andrew = import ./home;
+            home-manager.users.andrew = {
+              imports = [
+                ./home/default.nix
+                ./home/wayland.nix
+              ];
+            };
 	  }
 
           nixos-hardware.nixosModules.dell-xps-13-9360
