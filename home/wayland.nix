@@ -1,5 +1,9 @@
 { config, pkgs, lib, ... }:
 {
+  home.packages = with pkgs; [
+    wev
+  ];
+
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
     enable = true;
@@ -7,6 +11,7 @@
     bind =
       [
         "$mod, F, exec, firefox"
+        "$mod, Return, exec, foot"
       ]
       ++ (
         builtins.concatLists (builtins.genList (

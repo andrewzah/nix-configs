@@ -7,14 +7,7 @@
     else "/home/andrew";
 
   home.packages = with pkgs; [
-    #hyprland
-    #firefox
-    #strace
-    #ltrace
-    #ethtool
-    #lm_sensors
-    #sysstat
-    #usbutils
+    foot
 
     awscli
     entr

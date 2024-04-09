@@ -56,6 +56,7 @@
               imports = [
                 ./home/default.nix
                 ./home/wayland.nix
+                ./home/linux-pkgs.nix
               ];
             };
 	  }
