@@ -9,17 +9,6 @@
     ];
 
   programs.hyprland.enable = true;
-  programs.waybar = {
-    enable = true;
-    systemd.enable = true;
-    settings = [{
-      height = 30;
-      layer = "top";
-      position = "bottom";
-      tray = { spacing = 10; };
-    }];
-  };
-
   hardware.opengl = {
     enable = true;
     extraPackages = with pkgs; [

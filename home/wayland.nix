@@ -29,4 +29,28 @@
         10)
       );
   };
+
+  programs.waybar = {
+    enable = true;
+    systemd.enable = true;
+    settings = [{
+      height = 30;
+      layer = "top";
+      position = "bottom";
+      tray = { spacing = 10; };
+      modules-left = [ "hyprland/workspaces" ];
+      modules-center = [ "hyprland/window" ];
+      modules-right = [
+        "hyprland/language"
+        "battery"
+        "clock"
+      ];
+
+      "clock" = {
+        interval = 60;
+        format = "{:%H:%M}";
+        max-length = 25;
+      };
+    }];
+  };
 }

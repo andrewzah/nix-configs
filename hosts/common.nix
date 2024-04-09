@@ -12,4 +12,6 @@
     nix-index
     zsh
   ];
+
+  programs.zsh.enable = true;
 }
