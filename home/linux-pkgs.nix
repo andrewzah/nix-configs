@@ -2,6 +2,9 @@
 {
   home.packages = with pkgs; [
     firefox
+
+    font-awesome
+
     ethtool
     firefox
     lm_sensors

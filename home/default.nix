@@ -52,18 +52,18 @@
     };
   };
 
-  {pkgs, ...}: let
-    a = {
-    };
-  in {
+  #{pkgs, ...}: let
+  #  a = {
+  #  };
+  #in {
   programs.foot = {
     enable = true;
-    settings = {
-      main = {
-        include = "";
-      };
-    };
-  }
+    #settings = {
+    #  main = {
+    #    include = "";
+    #  };
+    #};
+  };
 
   programs.git = {
     enable = true;
