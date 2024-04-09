@@ -30,7 +30,7 @@
         "$mod, Space, exec, wofi"
         "$mod, Tab, layoutmsg, cyclenext"
         "$mod, mouse:272, movewindow"
-        "$mod, mouse:273, resizewindow"
+        #"$mod, mouse:273, resizewindow"
         "$mod ALT, E, exec, wofi-emoji"
         "$mod SHIFT, R, exec, hyperctl reload"
       ]
