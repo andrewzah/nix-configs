@@ -5,7 +5,7 @@
     [
       ../common/default.nix
       ../common-linux/default.nix
-      ../../modules/wayland.nix
+      ../../home/wayland.nix
       ./hardware-configuration.nix
     ];
 
