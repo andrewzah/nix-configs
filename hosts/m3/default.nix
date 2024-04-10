@@ -13,11 +13,12 @@
   };
 
   services.nix-daemon.enable = true;
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+  };
 
   nix = {
     settings = {
-      experimental-features = "nix-command flakes";
       trusted-users = [ "@admin" "andrew" ];
     };
     linux-builder = {

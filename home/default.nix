@@ -47,32 +47,6 @@
     pciutils
   ];
 
-  programs.firefox.enable = true;
-  programs.firefox.profiles = {
-    myuser = {
-      id = 0;
-      settings = {
-        "media.ffmpeg.vaapi.enabled" = true;
-        "media.ffvpx.enabled" = true;
-        "media.av1.enabled" = true;
-        "gfx.webrender.all" = true;
-      };
-    };
-  };
-
-  #{pkgs, ...}: let
-  #  a = {
-  #  };
-  #in {
-  programs.foot = {
-    enable = true;
-    #settings = {
-    #  main = {
-    #    include = "";
-    #  };
-    #};
-  };
-
   programs.git = {
     enable = true;
     userName = "Andrew Zah";
