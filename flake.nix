@@ -34,6 +34,7 @@
             home-manager.users.andrew = {
               imports = [
                 ./home/default.nix
+                ./home/darwin-pkgs.nix
               ];
             };
           }

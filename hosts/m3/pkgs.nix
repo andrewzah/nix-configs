@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 {
+  services.sketchybar.enable = false;
+
   homebrew = {
     enable = true;
 

@@ -59,6 +59,8 @@
 
     shellAliases = {
       k = "kubectl";
+      ll = "ls -la";
+      v = "nvim";
     };
   };
 
