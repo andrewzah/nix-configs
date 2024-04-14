@@ -26,7 +26,6 @@
 
       description = "keyd daemon";
       wantedBy = [ "multi-user.target" ];
-      
       unitConfig = {
         After = "local-fs.target";
       };
@@ -47,8 +46,8 @@
   esc = capslock
   '';
 
-  virtualization.docker.enable = true;
 
+  virtualization.docker.enable = true;
   users.users.andrew.extraGroups = [ "docker" ];
 
   networking.hostName = "xps9360";

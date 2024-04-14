@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+
+# General Icons
+LOADING=􀖇
+APPLE=􀣺
+PREFERENCES=􀺽
+ACTIVITY=􀒓
+LOCK=􀒳
+BELL=􀋚
+BELL_DOT=􀝗
+export -n LOADING
+export -n APPLE
+export -n PREFERENCES
+export -n ACTIVITY
+export -n LOCK
+export -n BELL
+export -n BELL_DOT
+MAIL=􀍕
+
+export -n MAIL
+# Git Icons
+GIT_ISSUE=􀍷
+GIT_DISCUSSION=􀒤
+GIT_PULL_REQUEST=􀙡
+GIT_COMMIT=􀡚
+GIT_INDICATOR=􀂓
+
+export -n GIT_ISSUE
+export -n GIT_DISCUSSION
+export -n GIT_PULL_REQUEST
+export -n GIT_COMMIT
+export -n GIT_INDICATOR
+
+# Yabai Icons
+YABAI_BSP=􀻤
+YABAI_STACK=􀏭
+YABAI_FULLSCREEN_ZOOM=􀏜
+YABAI_PARENT_ZOOM=􀥃
+YABAI_FLOAT=􀢌
+YABAI_GRID=􀧍
+
+export -n YABAI_BSP
+export -n YABAI_STACK
+export -n YABAI_FULLSCREEN_ZOOM
+export -n YABAI_PARENT_ZOOM
+export -n YABAI_FLOAT
+export -n YABAI_GRID
+# Battery Icons
+BATTERY_100=􀛨
+BATTERY_75=􀺸
+BATTERY_50=􀺶
+BATTERY_25=􀛩
+BATTERY_0=􀛪
+BATTERY_CHARGING=􀢋
+
+export -n BATTERY_100
+export -n BATTERY_75
+export -n BATTERY_50
+export -n BATTERY_25
+export -n BATTERY_0
+export -n BATTERY_CHARGING
+
+# Volume Icons
+VOLUME_100=􀊩
+VOLUME_66=􀊧
+VOLUME_33=􀊥
+VOLUME_10=􀊡
+VOLUME_0=􀊣
+
+export -n VOLUME_100
+export -n VOLUME_66
+export -n VOLUME_33
+export -n VOLUME_10
+export -n VOLUME_0

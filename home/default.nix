@@ -18,7 +18,11 @@
     zoom-us
 
     docker
+    go
+    rustup
+    libiconv
 
+    macchina
     tree
 
     p7zip
