@@ -17,6 +17,7 @@
     slack
     zoom-us
 
+    just
     docker
     go
     rustup
@@ -62,9 +63,15 @@
     enableCompletion = true;
 
     shellAliases = {
+      v = "nvim";
+      j = "just";
       k = "kubectl";
       ll = "ls -la";
-      v = "nvim";
+
+      gpod = "git push origin dev";
+      gpodr = "git pull origin dev --rebase";
+      gpom = "git push origin master";
+      gpomr = "git pull origin master --rebase";
     };
   };
 
