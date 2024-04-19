@@ -2,6 +2,7 @@
 {
   imports = [
     ./atuin.nix
+    #./syncthing.nix
   ];
 
   home.username = "andrew";
@@ -11,17 +12,21 @@
     else "/home/andrew";
 
   home.packages = with pkgs; [
-    awscli
-    entr
-    kubectl
+    syncthing
     slack
     zoom-us
+    discord
 
+    tmux
     just
     docker
     go
     rustup
     libiconv
+    git-lfs
+    awscli
+    entr
+    kubectl
 
     macchina
     tree
@@ -35,6 +40,7 @@
     jq
     lsd
     ripgrep
+    vimv-rs
 
     dnsutils # dig + nslookup
     iperf3
@@ -50,6 +56,9 @@
     lsof
 
     pciutils
+
+    # my scripts
+    (pkgs.buildEnv { name = "az-personal-scripts"; paths = [ ../scripts ]; })
   ];
 
   programs.git = {

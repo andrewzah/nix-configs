@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
   imports = [
@@ -30,6 +30,8 @@
   nixpkgs.config.allowUnfree = true;
   services.activate-system.enable = true;
   security.pam.enableSudoTouchIdAuth = true;
+
+  time.timeZone = lib.mkOverride 50 "Asia/Tokyo";
 
   #system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
   system.stateVersion = 4;
