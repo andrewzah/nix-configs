@@ -17,6 +17,7 @@
     zoom-us
     discord
 
+    gron
     tmux
     just
     docker
@@ -76,6 +77,13 @@
       j = "just";
       k = "kubectl";
       ll = "ls -la";
+
+      dc = "docker compose";
+      dps = "docker ps";
+      dil = "docker image ls";
+      deit = "docker exec -it";
+      drri = "docker run --rm -it";
+      drrie = "docker run --rm -it --entrypoint=/usr/bin/env bash";
 
       gpod = "git push origin dev";
       gpodr = "git pull origin dev --rebase";
