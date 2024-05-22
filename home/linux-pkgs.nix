@@ -5,6 +5,7 @@
 
     font-awesome
 
+    pavucontrol
     keyd
 
     ethtool

@@ -8,6 +8,10 @@
     wofi
     wofi-emoji
     wtype
+
+    grim
+    slurp
+    wl-clipboard
   ];
 
   wayland.windowManager.hyprland.enable = true;

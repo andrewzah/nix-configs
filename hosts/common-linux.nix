@@ -21,7 +21,7 @@
   users.users.andrew = {
     isNormalUser = true;
     description = "Andrew Zah";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "docker" "networkmanager" "wheel" ];
     shell = pkgs.zsh;
   };
 

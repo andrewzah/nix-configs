@@ -47,7 +47,13 @@
   '';
 
 
-  virtualization.docker.enable = true;
+  virtualisation = {
+    docker.enable = true;
+    docker.autoPrune.enable = true;
+
+    containerd.enable = true;
+  };
+
   users.users.andrew.extraGroups = [ "docker" ];
 
   networking.hostName = "xps9360";
