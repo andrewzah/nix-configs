@@ -19,12 +19,23 @@
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     "animation" = "workspaces,0";
-    "exec-once" = "waybar & hyprpaper & fcitx5";
+    "exec-once" = [
+      "waybar &"
+      "hyprpaper &"
+      "fcitx5 &"
+      "foot --server &"
+    ]; 
     general = {
-      gaps_in = 5;
-      gaps_out = 5;
+      gaps_in = 2;
+      gaps_out = 2;
       border_size = 2;
     };
+    windowrule = [
+      "float, dialog"
+      "float, file_progress"
+      "float, confirm"
+      "float, confirmreset"
+    ];
     bind =
       [
         "$mod, F, fullscreen"

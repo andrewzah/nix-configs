@@ -38,6 +38,11 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  fonts.packages = with pkgs; [
+    nanum
+    noto-fonts
+  ];
+
   nix = {
     gc = {
       automatic = true;
