@@ -91,6 +91,11 @@
       gpom = "git push origin master";
       gpomr = "git pull origin master --rebase";
     };
+
+    initExtra = ''
+      #PROMPT=" (%?) [%n@%m:%2/] λ "
+      export PROMPT=" %F{yellow}(%?:%j - %T)%F{cyan} %3~ %F{#FFFFFF}λ "
+    '';
   };
 
   home.sessionVariables.EDITOR = "nvim";

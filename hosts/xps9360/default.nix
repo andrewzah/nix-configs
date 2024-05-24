@@ -149,6 +149,8 @@
     };
   };
 
+  time.timeZone = "Asia/Seoul";
+
   networking.hostName = "xps9360";
   system.stateVersion = "23.11";
 }
