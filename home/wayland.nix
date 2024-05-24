@@ -19,7 +19,7 @@
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     "animation" = "workspaces,0";
-    "exec-once" = "waybar & hyprpaper";
+    "exec-once" = "waybar & hyprpaper & fcitx5";
     general = {
       gaps_in = 5;
       gaps_out = 5;
@@ -62,6 +62,13 @@
         )
         10)
       );
+    env = [
+      "GTK_IM_MODULE,fcitx"
+      "QT_IM_MODULE,fcitx"
+      "XMODIFIERS,@im,fcitx"
+      "SDL_IM_MODULE,fcitx"
+      "GLFW_IM_MODULE,ibus"
+    ];
   };
 
   programs.waybar = {

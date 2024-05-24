@@ -17,6 +17,7 @@
     zoom-us
     discord
 
+    gavin-bc
     gron
     tmux
     just
