@@ -1,10 +1,11 @@
 { config, pkgs, lib, ... }:
 {
   home.packages = with pkgs; [
+    foot
     firefox
     ungoogled-chromium
 
-    font-awesome
+    libnotify
 
     pavucontrol
     keyd
@@ -16,20 +17,9 @@
     strace
     sysstat
     usbutils
-  ];
 
-  #{pkgs, ...}: let
-  #  a = {
-  #  };
-  #in {
-  programs.foot = {
-    enable = true;
-    #settings = {
-    #  main = {
-    #    include = "";
-    #  };
-    #};
-  };
+    (pkgs.callPackage ../packages/iosevka-consolas-ttf.nix {})
+  ];
 
   programs.firefox.enable = true;
   programs.firefox.profiles = {

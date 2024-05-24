@@ -12,6 +12,7 @@
     grim
     slurp
     wl-clipboard
+    mako
   ];
 
   wayland.windowManager.hyprland.enable = true;
@@ -24,6 +25,7 @@
       "hyprpaper &"
       "fcitx5 &"
       "foot --server &"
+      "mako &"
     ]; 
     general = {
       gaps_in = 2;
@@ -106,6 +108,8 @@
 
     style = (builtins.readFile ../static-files/waybar-style.css);
   };
+
+  xdg.configFile."foot/foot.ini".text = (builtins.readFile ../static-files/foot.ini);
 
   xdg.configFile."hypr/hyprpaper.conf".text = ''
     preload = ~/Downloads/nix.png

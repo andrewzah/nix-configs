@@ -9,7 +9,6 @@
     colima
 
     sketchybar
-    nerdfonts
     (pkgs.callPackage ../packages/sf_symbols.nix {})
     (pkgs.callPackage ../packages/sketchybar-app-font.nix {})
   ];

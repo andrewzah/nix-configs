@@ -77,7 +77,7 @@
       v = "nvim";
       j = "just";
       k = "kubectl";
-      ll = "ls -la";
+      ll = "lsd -la --icon never";
 
       dc = "docker compose";
       dps = "docker ps";
