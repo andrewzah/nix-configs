@@ -202,15 +202,15 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1714145009,
-        "narHash": "sha256-UILmtYi8kjJQAyixNjcPprExIMwowmroP7Nf7YJJrOY=",
-        "owner": "kevinlmadison",
+        "lastModified": 1716708662,
+        "narHash": "sha256-1w550eNUvLIYVqFWANaJHLN1iZyuT5l5mn/eSJiwE+0=",
+        "owner": "andrewzah",
         "repo": "neovim-flake",
-        "rev": "6d63a6d62fd2e9744517eee892996fc2022e5163",
+        "rev": "b97fbccf6d00fadfecbf9ba08c00bda6144d89b9",
         "type": "github"
       },
       "original": {
-        "owner": "kevinlmadison",
+        "owner": "andrewzah",
         "repo": "neovim-flake",
         "type": "github"
       }

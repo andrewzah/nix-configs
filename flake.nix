@@ -13,7 +13,7 @@
     nix-hardware.url = "github:NixOS/nixos-hardware/master";
 
     # personal flake
-    neovim-flake.url = "github:kevinlmadison/neovim-flake";
+    neovim-flake.url = "github:andrewzah/neovim-flake";
   };
 
   outputs = {
@@ -42,7 +42,7 @@
 
           home-manager.darwinModules.home-manager
           {
-	    home-manager.useUserPackages = true;
+            home-manager.useUserPackages = true;
             home-manager.users.andrew = {
               imports = [
                 ./home/default.nix
@@ -58,13 +58,13 @@
     nixosConfigurations = {
       xps9360 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-	specialArgs = inputs;
+        specialArgs = inputs;
         modules = [
           ./hosts/xps9360/default.nix
 
-	  home-manager.nixosModules.home-manager
-	  {
-	    home-manager.useUserPackages = true;
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useUserPackages = true;
             home-manager.users.andrew = {
               imports = [
                 ./home/default.nix
@@ -72,8 +72,8 @@
                 ./home/linux-pkgs.nix
               ];
             };
-	  }
-	  home-modules
+          }
+          home-modules
 
           nixos-hardware.nixosModules.dell-xps-13-9360
         ];
