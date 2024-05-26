@@ -7,7 +7,6 @@
   environment.variables.EDITOR = "nvim";
   environment.systemPackages = with pkgs; [
     git
-    neovim
     fzf
     nix-index
     zsh

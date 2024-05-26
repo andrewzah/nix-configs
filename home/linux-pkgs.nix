@@ -5,13 +5,15 @@
     firefox
     ungoogled-chromium
 
+    pavucontrol
+    brightnessctl
+
     libnotify
 
-    pavucontrol
     keyd
 
+    acpi
     ethtool
-    firefox
     lm_sensors
     ltrace
     strace

@@ -11,6 +11,9 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    # personal flake
+    neovim-flake.url = "github:kevinlmadison/neovim-flake";
   };
 
   outputs = {
@@ -19,8 +22,18 @@
     home-manager,
     nixos-hardware,
     nix-darwin,
+    neovim-flake,
     ...
-  } @ inputs: {
+  } @ inputs: let
+    username = "andrew";
+    stateVersion = "23.11";
+
+    home-modules = {
+      home-manager.useGlobalPkgs = true;
+      home-manager.useUserPackages = true;
+      home-manager.extraSpecialArgs = {inherit inputs username stateVersion;};
+    };
+  in {
     darwinConfigurations = {
       "Inspire-Others" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
@@ -29,7 +42,6 @@
 
           home-manager.darwinModules.home-manager
           {
-	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
             home-manager.users.andrew = {
               imports = [
@@ -46,12 +58,12 @@
     nixosConfigurations = {
       xps9360 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+	specialArgs = inputs;
         modules = [
           ./hosts/xps9360/default.nix
 
 	  home-manager.nixosModules.home-manager
 	  {
-	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
             home-manager.users.andrew = {
               imports = [
@@ -61,6 +73,7 @@
               ];
             };
 	  }
+	  home-modules
 
           nixos-hardware.nixosModules.dell-xps-13-9360
         ];

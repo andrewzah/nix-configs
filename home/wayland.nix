@@ -1,19 +1,31 @@
 { config, pkgs, lib, ... }:
 {
   home.packages = with pkgs; [
+    # utilities
     hyprpaper
     waybar
-    wev
     rofi-wayland
+
+    # emojis
     wofi
     wofi-emoji
     wtype
 
+    # screenshots / clipboard
     grim
     slurp
     wl-clipboard
+
+    # notifs
     mako
+
+    # misc
+    wev
   ];
+
+  home.sessionVariables = {
+    NIXOS_OZONE_WL = 1;
+  };
 
   wayland.windowManager.hyprland.enable = true;
   # https://github.com/JaKooLit/Hyprland-v3/blob/main/config/hypr/configs/Keybinds.conf
@@ -60,6 +72,8 @@
         #"$mod, mouse:273, resizewindow"
         "$mod ALT, E, exec, wofi-emoji"
         "$mod SHIFT, R, exec, hyperctl reload"
+        ", F7, exec, brightnessctl set 10%-"
+        ", F8, exec, brightnessctl set +10%"
       ]
       ++ (
         builtins.concatLists (builtins.genList (

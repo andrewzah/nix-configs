@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 {
   imports = [
     ./atuin.nix
@@ -16,6 +16,8 @@
     slack
     zoom-us
     discord
+
+    inputs.neovim-flake.packages.${pkgs.system}.default
 
     gavin-bc
     gron
@@ -99,7 +101,6 @@
   };
 
   home.sessionVariables.EDITOR = "nvim";
-  home.sessionVariables.NIXOS_OZONE_WL = "1";
 
   programs.home-manager.enable = true;
   manual.manpages.enable = true;
