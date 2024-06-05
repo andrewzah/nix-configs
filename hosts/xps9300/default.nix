@@ -9,7 +9,7 @@
     ];
 
   programs.zsh.shellAliases = {
-    switch = "sudo nixos-rebuild switch --flake /etc/nixos#xps9360";
+    switch = "sudo nixos-rebuild switch --flake /etc/nixos#xps9300";
   };
 
   programs.hyprland.enable = true;
@@ -150,6 +150,6 @@
 
   time.timeZone = "Asia/Seoul";
 
-  networking.hostName = "xps9360";
+  networking.hostName = "xps9300";
   system.stateVersion = "23.11";
 }

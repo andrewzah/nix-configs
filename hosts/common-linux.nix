@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -8,6 +8,10 @@
     enableIPv6 = false;
     dhcpcd.wait = "background";   # don't wait on interfaces to boot
     dhcpcd.extraConfig = "noarp"; # avoid checking if IP is already taken, boot faster
+
+    extraHosts = lib.concatStrings [
+      "127.0.0.1 airflow.arpa\n"
+    ];
   };
 
   services.pipewire = {

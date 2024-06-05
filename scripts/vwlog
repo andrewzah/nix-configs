@@ -1,5 +1,0 @@
-#!/usr/bin/env sh
-
-WLOG_FILE="$HOME/work/log.md"
-
-exec $EDITOR "$WLOG_FILE"

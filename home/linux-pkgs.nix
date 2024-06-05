@@ -13,6 +13,7 @@
     keyd
 
     acpi
+    dmidecode
     ethtool
     lm_sensors
     ltrace

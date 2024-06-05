@@ -56,11 +56,11 @@
     darwinPackages = self.darwinConfigurations."Inspire-Others".pkgs;
 
     nixosConfigurations = {
-      xps9360 = nixpkgs.lib.nixosSystem {
+      xps9300 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = inputs;
         modules = [
-          ./hosts/xps9360/default.nix
+          ./hosts/xps9300/default.nix
 
           home-manager.nixosModules.home-manager
           {

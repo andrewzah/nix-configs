@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-WLOG_FILE="$HOME/work/log.md"
-
-[ ! -d ~/work ] && mkdir -p ~/work
-
-printf "\n## $(date)\n\n" >> "$WLOG_FILE"
-
-exec $EDITOR "$WLOG_FILE"

@@ -12,28 +12,40 @@
     else "/home/andrew";
 
   home.packages = with pkgs; [
+    # 3.0.13
+    openssl
+    python312
+
     syncthing
     slack
     zoom-us
     discord
+    gavin-bc
 
     inputs.neovim-flake.packages.${pkgs.system}.default
 
-    gavin-bc
-    gron
-    tmux
-    just
-    docker
-    go
-    rustup
-    libiconv
-    git-lfs
+    apacheHttpd
     awscli
+    bat
+    caddy
+    docker
     entr
+    git-lfs
+    go
+    gron
+    just
     kubectl
-
+    libiconv
     macchina
+    rustup
+    tmux
     tree
+    trino-cli
+    wthrr
+
+    ruff
+    shellcheck
+    yamllint
 
     p7zip
     unzip
@@ -62,7 +74,7 @@
     pciutils
 
     # my scripts
-    (pkgs.buildEnv { name = "az-personal-scripts"; paths = [ ../scripts ]; })
+    (pkgs.buildEnv { name = "az-personal-scripts"; paths = [ ../static-files ]; })
   ];
 
   programs.git = {

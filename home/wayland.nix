@@ -55,14 +55,14 @@
         "$mod, F, fullscreen"
         "$mod, G, togglefloating"
         "$mod, Q, killactive"
-        "$mod, J, movefocus, l"
-        "$mod, K, movefocus, r"
-        "$mod, H, movefocus, u"
-        "$mod, L, movefocus, d"
-        "$mod SHIFT, J, movewindow, l"
-        "$mod SHIFT, K, movewindow, r"
-        "$mod SHIFT, H, movewindow, u"
-        "$mod SHIFT, L, movewindow, d"
+        "$mod, H, movefocus, l"
+        "$mod, J, movefocus, d"
+        "$mod, K, movefocus, u"
+        "$mod, L, movefocus, r"
+        "$mod SHIFT, H, movewindow, l"
+        "$mod SHIFT, J, movewindow, d"
+        "$mod SHIFT, K, movewindow, u"
+        "$mod SHIFT, L, movewindow, r"
         "$mod, Escape, exec, hyperctl kill"
         "$mod, Return, exec, foot"
         "$mod, Space, exec, rofi -show run"
@@ -72,8 +72,8 @@
         #"$mod, mouse:273, resizewindow"
         "$mod ALT, E, exec, wofi-emoji"
         "$mod SHIFT, R, exec, hyperctl reload"
-        ", F7, exec, brightnessctl set 10%-"
-        ", F8, exec, brightnessctl set +10%"
+        ", F6, exec, brightnessctl set 10%-"
+        ", F7, exec, brightnessctl set +10%"
       ]
       ++ (
         builtins.concatLists (builtins.genList (
@@ -95,6 +95,7 @@
       "XMODIFIERS,@im,fcitx"
       "SDL_IM_MODULE,fcitx"
       "GLFW_IM_MODULE,ibus"
+      "XCURSOR_SIZE,108"
     ];
   };
 
