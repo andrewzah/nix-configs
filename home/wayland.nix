@@ -5,6 +5,7 @@
     hyprpaper
     waybar
     rofi-wayland
+    swaylock
 
     # emojis
     wofi
@@ -25,6 +26,8 @@
 
   home.sessionVariables = {
     NIXOS_OZONE_WL = 1;
+    WLR_NO_HARDWARE_CURSORS = "1";
+    XCURSOR_SIZE = "108";
   };
 
   wayland.windowManager.hyprland.enable = true;
@@ -74,6 +77,8 @@
         "$mod SHIFT, R, exec, hyperctl reload"
         ", F6, exec, brightnessctl set 10%-"
         ", F7, exec, brightnessctl set +10%"
+        ", XF86Copy, exec, wl-copy"
+        ", XF86Paste, exec, wl-paste"
       ]
       ++ (
         builtins.concatLists (builtins.genList (
@@ -89,8 +94,8 @@
         )
         10)
       );
+    # "GTK_IM_MODULE,fcitx"
     env = [
-      "GTK_IM_MODULE,fcitx"
       "QT_IM_MODULE,fcitx"
       "XMODIFIERS,@im,fcitx"
       "SDL_IM_MODULE,fcitx"

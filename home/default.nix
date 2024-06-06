@@ -43,6 +43,7 @@
     trino-cli
     wthrr
 
+    marksman
     ruff
     shellcheck
     yamllint

@@ -4,11 +4,14 @@
     foot
     firefox
     ungoogled-chromium
+    thunderbird-unwrapped
 
     pavucontrol
     brightnessctl
 
+    xfce.thunar
     libnotify
+    xdg-utils
 
     keyd
 
