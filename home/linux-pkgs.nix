@@ -8,6 +8,7 @@
 
     pavucontrol
     brightnessctl
+    lsix
 
     xfce.thunar
     libnotify
