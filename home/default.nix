@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, ... }:
+{ pkgs, inputs, stateVersion, ... }:
 {
   imports = [
     ./atuin.nix
@@ -118,5 +118,5 @@
   programs.home-manager.enable = true;
   manual.manpages.enable = true;
 
-  home.stateVersion = "23.11";
+  home.stateVersion = stateVersion;
 }

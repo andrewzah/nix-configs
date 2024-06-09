@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, stateVersion, ... }:
 
 {
   imports =
@@ -151,5 +151,5 @@
   time.timeZone = "Asia/Seoul";
 
   networking.hostName = "xps9300";
-  system.stateVersion = "23.11";
+  system.stateVersion = stateVersion;
 }

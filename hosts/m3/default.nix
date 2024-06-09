@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, lib, ... }:
+{ pkgs, lib, stateVersion, ... }:
 
 {
   imports = [
@@ -34,5 +34,5 @@
   time.timeZone = lib.mkOverride 50 "Asia/Tokyo";
 
   #system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
-  system.stateVersion = 4;
+  system.stateVersion = stateVersion;
 }
