@@ -28,6 +28,10 @@
     (pkgs.callPackage ../packages/iosevka-consolas-ttf.nix {})
   ];
 
+  home.pointerCursor.gtk.enable = true;
+  home.pointerCursor.package = pkgs.vanilla-dmz;
+  home.pointerCursor.name = "Vanilla-DMZ";
+
   programs.firefox.enable = true;
   programs.firefox.profiles = {
     myuser = {

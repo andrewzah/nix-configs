@@ -132,8 +132,8 @@
   xdg.configFile."foot/foot.ini".text = (builtins.readFile ../static-files/foot.ini);
 
   xdg.configFile."hypr/hyprpaper.conf".text = ''
-    preload = ~/Downloads/nix.png
-    wallpaper = ,~/Downloads/nix.png
+    preload = /etc/nixos/static-files/wallpapers/nix-wallpaper-nineish.png
+    wallpaper = ,/etc/nixos/static-files/wallpapers/nix-wallpaper-nineish.png
     ipc=true
     splash=false
   '';
