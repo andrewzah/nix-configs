@@ -41,11 +41,13 @@
       "fcitx5 &"
       "foot --server &"
       "mako &"
-    ]; 
+    ];
     general = {
       gaps_in = 2;
       gaps_out = 2;
       border_size = 2;
+      "col.active_border" = "rgba(fabd2fee) rgba(fabd2fee) 45deg";
+      "col.inactive_border" = "rgba(595959aa)";
     };
     windowrule = [
       "float, dialog"
@@ -114,15 +116,14 @@
       modules-left = [ "hyprland/workspaces" ];
       modules-center = [ "hyprland/window" ];
       modules-right = [
-        "hyprland/language"
         "battery"
         "clock"
       ];
 
       "clock" = {
         interval = 60;
-        format = "{:%H:%M}";
-        max-length = 25;
+        format = "{:%A | %H:%M | Week %V}";
+        max-length = 40;
       };
     }];
 

@@ -24,6 +24,7 @@
 
     inputs.neovim-flake.packages.${pkgs.system}.default
 
+    fd
     apacheHttpd
     awscli
     bat

@@ -6,6 +6,7 @@
     ungoogled-chromium
     thunderbird-unwrapped
 
+    killall
     pavucontrol
     brightnessctl
     lsix
