@@ -11,6 +11,7 @@
     brightnessctl
     lsix
 
+    pinentry-curses
     xfce.thunar
     libnotify
     xdg-utils

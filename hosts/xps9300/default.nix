@@ -1,5 +1,4 @@
 { pkgs, stateVersion, ... }:
-
 {
   imports =
     [
@@ -10,6 +9,11 @@
 
   programs.zsh.shellAliases = {
     switch = "sudo nixos-rebuild switch --flake /etc/nixos#xps9300";
+  };
+
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-curses;
   };
 
   programs.hyprland.enable = true;
@@ -51,8 +55,8 @@
 
       serviceConfig = {
         Type = "simple";
-	ExecStart = "${pkgs.keyd}/bin/keyd";
-	Restart = "always";
+        ExecStart = "${pkgs.keyd}/bin/keyd";
+        Restart = "always";
       };
     };
   };
@@ -117,36 +121,27 @@
       "0" = "Control+Alt+space";
       #2=Hangul
     };
-
     "Hotkey/AltTriggerKeys" = {
       "0" = "Shift_L";
     };
-
     "Hotkey/ActivateKeys" = {
       "0" = "Hangul_Hanja";
     };
-      
     "Hotkey/DeactivateKeys" = {
       "0" = "Hangul_Romaja";
     };
-      
     "Hotkey/PrevPage" = {
       "0" = "Up";
     };
-
-    
     "Hotkey/NextPage" = {
       "0" = "Down";
     };
-    
     "Hotkey/PrevCandidate" = {
       "0" = "Shift+Tab";
     };
-    
     "Hotkey/NextCandidate" = {
       "0" = "Tab";
     };
-    
     "Hotkey/TogglePreedit" = {
       "0" = "Control+Alt+P";
     };
