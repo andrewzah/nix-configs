@@ -122,6 +122,11 @@ button:hover {
     background-color: #26A65B;
 }
 
+#custom-volume {
+    background-color: #98971a;
+    color: #fbf1c7;
+}
+
 @keyframes blink {
     to {
         background-color: #ffffff;

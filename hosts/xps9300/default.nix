@@ -7,6 +7,11 @@
       ./hardware-configuration.nix
     ];
 
+  security.pki.certificateFiles = [
+    /home/andrew/work/0proxy/pki/docker-registry.arpa.crt
+    #../../static-files/docker-registry.arpa.crt
+  ];
+
   programs.zsh.shellAliases = {
     switch = "sudo nixos-rebuild switch --flake /etc/nixos#xps9300";
   };

@@ -3,10 +3,13 @@
 set -e
 
 WLOG_FILE="$HOME/work/log.md"
+
+# example: 24-06-21 - Fri - 15:49
 fmt='+%y-%m-%d - %a - %H:%M'
 
 [ ! -d "$HOME/work" ] && mkdir -p "$HOME/work"
 
 printf "\n## %s\n\n" "$(date "$fmt")" >> "$WLOG_FILE"
 
-exec "${EDITOR:-nvim}" "$WLOG_FILE"
+# puts cursor at end of line and inserts
+exec "${EDITOR:-nvim}" "+normal G$" +startinsert "$WLOG_FILE"

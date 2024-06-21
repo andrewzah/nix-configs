@@ -39,7 +39,6 @@
       "waybar &"
       "hyprpaper &"
       "fcitx5 &"
-      "foot --server &"
       "mako &"
     ];
     general = {
@@ -79,6 +78,10 @@
         "$mod SHIFT, R, exec, hyperctl reload"
         ", F6, exec, brightnessctl set 10%-"
         ", F7, exec, brightnessctl set +10%"
+        ", F1, exec, wpctl set-mute 47 toggle"
+        ", F2, exec, wpctl set-volume 47 2.5%-"
+        ", F3, exec, wpctl set-volume 47 2.5%+"
+        ", F10, exec, screenshot-tmp-fullscreen.sh"
         ", XF86Copy, exec, wl-copy"
         ", XF86Paste, exec, wl-paste"
       ]
@@ -116,14 +119,31 @@
       modules-left = [ "hyprland/workspaces" ];
       modules-center = [ "hyprland/window" ];
       modules-right = [
+        "custom/volume"
         "battery"
         "clock"
+        "sway/language"
       ];
+
+      "custom/volume" = {
+        interval = 10;
+        exec = "/etc/nixos/static-files/bin/pipewire-get-volume.sh";
+        max-length = 15;
+        return-type = "json";
+      };
+
+      "battery" = {
+        format = "BAT {capacity}%";
+      };
 
       "clock" = {
         interval = 60;
         format = "{:%A | %H:%M | Week %V}";
         max-length = 40;
+      };
+
+      "sway/language" = {
+        format = "{short} {variant}";
       };
     }];
 

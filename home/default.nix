@@ -21,6 +21,9 @@
     zoom-us
     discord
     gavin-bc
+    vlc
+    bitwarden-desktop
+    yt-dlp
 
     inputs.neovim-flake.packages.${pkgs.system}.default
 
@@ -74,9 +77,6 @@
     lsof
 
     pciutils
-
-    # my scripts
-    (pkgs.buildEnv { name = "az-personal-scripts"; paths = [ ../static-files ]; })
   ];
 
   programs.git = {
@@ -100,17 +100,24 @@
       dil = "docker image ls";
       deit = "docker exec -it";
       drri = "docker run --rm -it";
-      drrie = "docker run --rm -it --entrypoint=/usr/bin/env bash";
+      drrie = "docker run --rm -it --entrypoint='/bin/bash'";
 
       gpod = "git push origin dev";
       gpodr = "git pull origin dev --rebase";
       gpom = "git push origin master";
       gpomr = "git pull origin master --rebase";
+
+      ta = "tmux attach";
+      tat = "tmux attach -t";
     };
 
     initExtra = ''
       #PROMPT=" (%?) [%n@%m:%2/] λ "
       export PROMPT=" %F{yellow}(%? - %T)%F{cyan} %3~ %F{#FFFFFF}λ "
+
+      function preexec {
+          print -Pn "\e]0;''${(q)1}\e\\"
+      }
     '';
   };
 

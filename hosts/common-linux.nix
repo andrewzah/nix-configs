@@ -12,6 +12,7 @@
     extraHosts = lib.concatStrings [
       "127.0.0.1 airflow.arpa\n"
       "127.0.0.1 jupyterhub.arpa\n"
+      "127.0.0.1 docker-registry.arpa\n"
     ];
   };
 

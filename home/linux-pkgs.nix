@@ -1,15 +1,17 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     foot
     firefox
     ungoogled-chromium
     thunderbird-unwrapped
+    ffmpeg_7-headless
 
     killall
     pavucontrol
     brightnessctl
     lsix
+    dive
 
     pinentry-curses
     xfce.thunar
@@ -28,6 +30,7 @@
     usbutils
 
     (pkgs.callPackage ../packages/iosevka-consolas-ttf.nix {})
+    (pkgs.callPackage ../packages/andrew-zah-scripts.nix {})
   ];
 
   home.pointerCursor.gtk.enable = true;

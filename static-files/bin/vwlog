@@ -4,4 +4,5 @@ WLOG_FILE="$HOME/work/log.md"
 
 [ ! -d "$HOME/work" ] && mkdir -p "$HOME/work"
 
-exec "${EDITOR:-nvim}" "$WLOG_FILE"
+# puts cursor at end of line
+exec "${EDITOR:-nvim}" "+normal G$" "$WLOG_FILE"
