@@ -14,6 +14,11 @@
 
     # personal flake
     neovim-flake.url = "github:andrewzah/neovim-flake";
+
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -23,6 +28,7 @@
     nixos-hardware,
     nix-darwin,
     neovim-flake,
+    rust-overlay,
     ...
   } @ inputs: let
     username = "andrew";
@@ -74,6 +80,11 @@
             };
           }
           home-modules
+
+          ({ pkgs, ... }: {
+            nixpkgs.overlays = [ rust-overlay.overlays.default ];
+            environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+          })
 
           nixos-hardware.nixosModules.dell-xps-13-9360
         ];

@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./games/dwarf-fortress-classic.nix
+  ];
+
   home.packages = with pkgs; [
     foot
     firefox

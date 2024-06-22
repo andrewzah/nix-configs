@@ -76,8 +76,8 @@
         #"$mod, mouse:273, resizewindow"
         "$mod ALT, E, exec, wofi-emoji"
         "$mod SHIFT, R, exec, hyperctl reload"
-        ", F6, exec, brightnessctl set 10%-"
-        ", F7, exec, brightnessctl set +10%"
+        ", F6, exec, brightnessctl set 2.5%-"
+        ", F7, exec, brightnessctl set +2.5%"
         ", F1, exec, wpctl set-mute 47 toggle"
         ", F2, exec, wpctl set-volume 47 2.5%-"
         ", F3, exec, wpctl set-volume 47 2.5%+"
@@ -147,15 +147,9 @@
       };
     }];
 
-    style = (builtins.readFile ../static-files/waybar-style.css);
+    style = (builtins.readFile ../static-files/configs/waybar-style.css);
   };
 
-  xdg.configFile."foot/foot.ini".text = (builtins.readFile ../static-files/foot.ini);
-
-  xdg.configFile."hypr/hyprpaper.conf".text = ''
-    preload = /etc/nixos/static-files/wallpapers/nix-wallpaper-nineish.png
-    wallpaper = ,/etc/nixos/static-files/wallpapers/nix-wallpaper-nineish.png
-    ipc=true
-    splash=false
-  '';
+  xdg.configFile."foot/foot.ini".text = (builtins.readFile ../static-files/configs/foot.ini);
+  xdg.configFile."hypr/hyprpaper.conf".text = (builtins.readFile ../static-files/configs/hyprpaper.conf);
 }
