@@ -14,69 +14,82 @@
   home.packages = with pkgs; [
     # 3.0.13
     openssl
-    python312
 
-    syncthing
-    slack
-    zoom-us
-    discord
-    gavin-bc
-    vlc
+    (python312.withPackages (ps:
+      with ps; [
+        python-lsp-server
+        python-lsp-ruff
+    ]))
+
+    # web ui / gui apps
     bitwarden-desktop
+    discord
+    slack
+    syncthing
+    vlc
     yt-dlp
+    zoom-us
 
+    # development
     inputs.neovim-flake.packages.${pkgs.system}.default
 
+    # langs
+    go
+
+    # rust coreutils alternatives & just rust programs
+    bat
+    bat-extras.batgrep
     fd
+    just
+    lsd
+    ripgrep
+    sd
+    vimv-rs
+    wthrr
+
+    # system tools
+    btop
+    file
+    gavin-bc
+    gnupg
+    lsof
+    which
+    pciutils
+
+
+    # networks
+    dnsutils # dig + nslookup
+    iperf3
+    ldns # dig alternative
+    nmap
+    socat
+
     apacheHttpd
     awscli
-    bat
     caddy
     docker
     entr
+    fzf
     git-lfs
-    go
     gron
-    just
     kubectl
+    jq
     libiconv
     macchina
-    rustup
     tmux
     tree
     trino-cli
-    wthrr
 
+    # linters / LSPs
     marksman
-    ruff
     shellcheck
     yamllint
 
+    # compression
     p7zip
     unzip
     xz
     zip
-
-    fzf
-    jq
-    lsd
-    ripgrep
-    vimv-rs
-
-    dnsutils # dig + nslookup
-    iperf3
-    ldns     # dig alternative
-    nmap
-    socat
-
-    file
-    gnupg
-    which
-
-    btop
-    lsof
-
-    pciutils
   ];
 
   programs.git = {
