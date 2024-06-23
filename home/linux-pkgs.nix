@@ -21,6 +21,7 @@
     lsix
     dive
     unixtools.xxd
+    sshfs
 
     pinentry-curses
     xfce.thunar
