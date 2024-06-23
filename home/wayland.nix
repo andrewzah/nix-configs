@@ -28,6 +28,7 @@
     NIXOS_OZONE_WL = 1;
     WLR_NO_HARDWARE_CURSORS = "1";
     XCURSOR_SIZE = "108";
+    XKB_DEFAULT_LAYOUT = "en,us";
   };
 
   wayland.windowManager.hyprland.enable = true;

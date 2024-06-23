@@ -5,6 +5,10 @@
   ];
 
   home.packages = with pkgs; [
+    unar
+    poppler
+    yazi
+
     foot
     firefox
     ungoogled-chromium
@@ -16,6 +20,7 @@
     brightnessctl
     lsix
     dive
+    unixtools.xxd
 
     pinentry-curses
     xfce.thunar
