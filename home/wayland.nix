@@ -127,7 +127,7 @@
       ];
 
       "custom/volume" = {
-        interval = 10;
+        interval = 1;
         exec = "/etc/nixos/static-files/bin/pipewire-get-volume.sh";
         max-length = 15;
         return-type = "json";

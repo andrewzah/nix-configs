@@ -8,12 +8,13 @@
     unar
     poppler
     yazi
+    ffmpeg_7-headless
 
     foot
     firefox
     ungoogled-chromium
     thunderbird-unwrapped
-    ffmpeg_7-headless
+    obsidian
 
     killall
     pavucontrol
@@ -29,6 +30,7 @@
     xdg-utils
 
     keyd
+    pass
 
     acpi
     dmidecode
