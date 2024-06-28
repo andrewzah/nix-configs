@@ -10,6 +10,11 @@
     yazi
     ffmpeg_7-headless
 
+    trivy
+    syft
+    grype
+    cosign
+
     foot
     firefox
     ungoogled-chromium
