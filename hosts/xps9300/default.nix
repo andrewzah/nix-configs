@@ -7,6 +7,17 @@
       ./hardware-configuration.nix
     ];
 
+  # bluetooth
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    package = pkgs.bluez;
+    settings.General = {
+      ControllerMode = "dual";
+    };
+  };
+  services.blueman.enable = true;
+
   security.pki.certificateFiles = [
     /home/andrew/work/0proxy/pki/docker-registry.arpa.crt
   ];
@@ -84,7 +95,7 @@
     containerd.enable = true;
   };
 
-  users.users.andrew.extraGroups = [ "docker" ];
+  users.users.andrew.extraGroups = [ "docker" "input" ];
 
   i18n.inputMethod.enabled = "fcitx5";
   i18n.inputMethod.fcitx5.addons = with pkgs; [ fcitx5-hangul ];

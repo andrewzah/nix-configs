@@ -6,6 +6,7 @@
     waybar
     rofi-wayland
     swaylock
+    libinput-gestures
 
     # emojis
     wofi
@@ -41,6 +42,7 @@
       "hyprpaper &"
       "fcitx5 &"
       "mako &"
+      "libinput-gestures &"
     ];
     general = {
       gaps_in = 2;
@@ -48,6 +50,12 @@
       border_size = 2;
       "col.active_border" = "rgba(fabd2fee) rgba(fabd2fee) 45deg";
       "col.inactive_border" = "rgba(595959aa)";
+    };
+    gestures = {
+      workspace_swipe = true;
+      workspace_swipe_fingers = 3;
+      workspace_swipe_min_fingers = 3;
+      workspace_swipe_distance = 100;
     };
     windowrule = [
       "float, dialog"
@@ -59,11 +67,11 @@
       [
         "$mod, F, fullscreen"
         "$mod, G, togglefloating"
-        "$mod, Q, killactive"
         "$mod, H, movefocus, l"
         "$mod, J, movefocus, d"
         "$mod, K, movefocus, u"
         "$mod, L, movefocus, r"
+        "$mod, Q, focuscurrentorlast"
         "$mod SHIFT, H, movewindow, l"
         "$mod SHIFT, J, movewindow, d"
         "$mod SHIFT, K, movewindow, u"
@@ -75,8 +83,9 @@
         "$mod, Tab, layoutmsg, cyclenext"
         "$mod, mouse:272, movewindow"
         #"$mod, mouse:273, resizewindow"
-        "$mod ALT, E, exec, wofi-emoji"
+        "$mod CONTROL, E, exec, wofi-emoji"
         "$mod SHIFT, R, exec, hyperctl reload"
+        "$mod CONTROL_L, K, killactive"
         ", F6, exec, brightnessctl set 2.5%-"
         ", F7, exec, brightnessctl set +2.5%"
         ", F1, exec, wpctl set-mute 47 toggle"
@@ -153,4 +162,6 @@
 
   xdg.configFile."foot/foot.ini".text = (builtins.readFile ../static-files/configs/foot.ini);
   xdg.configFile."hypr/hyprpaper.conf".text = (builtins.readFile ../static-files/configs/hyprpaper.conf);
+  xdg.configFile."mako/config".text = (builtins.readFile ../static-files/configs/mako.conf);
+  xdg.configFile."libinput-gestures.conf".text = (builtins.readFile ../static-files/configs/libinput-gestures.conf);
 }

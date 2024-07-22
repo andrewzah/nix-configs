@@ -1,4 +1,7 @@
 { pkgs, inputs, stateVersion, ... }:
+let
+  shellAliases = (import ./shell-aliases.nix{}).aliases;
+in
 {
   imports = [
     ./atuin.nix
@@ -84,6 +87,7 @@
     marksman
     shellcheck
     yamllint
+    eslint_d
 
     # compression
     p7zip
@@ -101,28 +105,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-
-    shellAliases = {
-      v = "nvim";
-      j = "just";
-      k = "kubectl";
-      ll = "lsd -la --icon never";
-
-      dc = "docker compose";
-      dps = "docker ps";
-      dil = "docker image ls";
-      deit = "docker exec -it";
-      drri = "docker run --rm -it";
-      drrie = "docker run --rm -it --entrypoint='/bin/bash'";
-
-      gpod = "git push origin dev";
-      gpodr = "git pull origin dev --rebase";
-      gpom = "git push origin master";
-      gpomr = "git pull origin master --rebase";
-
-      ta = "tmux attach";
-      tat = "tmux attach -t";
-    };
+    inherit shellAliases;
 
     initExtra = ''
       #PROMPT=" (%?) [%n@%m:%2/] λ "

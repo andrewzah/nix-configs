@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+start_time=$(date +%s)
+
+output=$("$@")
+result_code=$?
+
+cmd="$1"
+duration=$(($(date +%s) - start_time))
+
+tput bel
+notify-send \
+  "(${result_code}) ${cmd} - ${duration}s" \
+  "$output"

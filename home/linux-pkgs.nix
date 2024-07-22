@@ -9,6 +9,10 @@
     poppler
     yazi
     ffmpeg_7-headless
+    vbam # visualboyadvance-m
+
+    bluez
+    blueman
 
     trivy
     syft
@@ -37,14 +41,23 @@
     keyd
     pass
 
+    tiny
+
+    dracut
     acpi
     dmidecode
     ethtool
     lm_sensors
-    ltrace
-    strace
     sysstat
     usbutils
+
+    ltrace
+    strace
+    pstree
+    dstat
+    tcpdump
+    ngrep
+    bingrep
 
     (pkgs.callPackage ../packages/iosevka-consolas-ttf.nix {})
     (pkgs.callPackage ../packages/andrew-zah-scripts.nix {})
@@ -66,4 +79,6 @@
       };
     };
   };
+
+  xdg.configFile."tiny/config.yml".text = (builtins.readFile ../static-files/configs/tiny-irc.yml);
 }
