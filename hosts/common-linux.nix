@@ -49,6 +49,13 @@
     };
   };
 
+  services.udev.extraRules = lib.concatStrings [
+    # increase polling rate to 1ms for ps5 dualsense
+    ''
+    ACTION=="bind", SUBSYSTEM=="hid", DRIVER=="sony", KERNEL=="*054C:0CE6*", ATTR{bt_poll_interval}="1"
+    ''
+  ];
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;

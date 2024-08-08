@@ -48,7 +48,6 @@
 
           home-manager.darwinModules.home-manager
           {
-            home-manager.useUserPackages = true;
             home-manager.users.andrew = {
               imports = [
                 ./home/default.nix
@@ -70,7 +69,6 @@
 
           home-manager.nixosModules.home-manager
           {
-            home-manager.useUserPackages = true;
             home-manager.users.andrew = {
               imports = [
                 ./home/default.nix

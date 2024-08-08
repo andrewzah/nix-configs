@@ -26,7 +26,7 @@ in
 
     # web ui / gui apps
     bitwarden-desktop
-    discord
+    #discord
     slack
     syncthing
     vlc
@@ -59,6 +59,7 @@ in
     which
     pciutils
 
+    foliate # epub reader
 
     # networks
     dnsutils # dig + nslookup

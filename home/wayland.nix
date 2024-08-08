@@ -8,6 +8,9 @@
     swaylock
     libinput-gestures
 
+    discord
+    #(pkgs.discord.override { })
+
     # emojis
     wofi
     wofi-emoji
