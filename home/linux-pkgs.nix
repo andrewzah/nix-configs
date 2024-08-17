@@ -5,6 +5,8 @@
   ];
 
   home.packages = with pkgs; [
+    mullvad-vpn
+
     unar
     poppler
     yazi

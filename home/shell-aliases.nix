@@ -1,5 +1,5 @@
 {}:
-rec {
+{
   aliases = {
     j = "just";
     k = "kubectl";
@@ -22,8 +22,11 @@ rec {
     gpom = "git push origin master";
     gpomr = "git pull origin master --rebase";
 
-    nb = "nix-build";
+    nib = "nix-build";
     ns = "nix-shell";
+    nd = "nix develop";
+    nf = "nix flake";
+    nr = "nix run";
 
     ta = "tmux attach";
     tat = "tmux attach -t";

@@ -1,6 +1,8 @@
 { pkgs, inputs, stateVersion, ... }:
 let
   shellAliases = (import ./shell-aliases.nix{}).aliases;
+
+  neovim-flake = inputs.neovim-flake.packages.${pkgs.system}.default;
 in
 {
   imports = [
@@ -14,7 +16,7 @@ in
     then "/Users/andrew"
     else "/home/andrew";
 
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     # 3.0.13
     openssl
 
@@ -32,9 +34,7 @@ in
     vlc
     yt-dlp
     zoom-us
-
-    # development
-    inputs.neovim-flake.packages.${pkgs.system}.default
+    nb
 
     # langs
     go
@@ -95,7 +95,11 @@ in
     unzip
     xz
     zip
-  ];
+  ]);
+
+  programs.neovim-flake = {
+    background = "dark";
+  };
 
   programs.git = {
     enable = true;
