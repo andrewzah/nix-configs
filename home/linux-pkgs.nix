@@ -2,9 +2,10 @@
 {
   imports = [
     ./games/dwarf-fortress-classic.nix
+    ./fonts.nix
   ];
 
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     mullvad-vpn
 
     unar
@@ -61,9 +62,8 @@
     ngrep
     bingrep
 
-    (pkgs.callPackage ../packages/iosevka-consolas-ttf.nix {})
-    (pkgs.callPackage ../packages/andrew-zah-scripts.nix {})
-  ];
+    (callPackage ../packages/andrew-zah-scripts.nix {})
+  ]);
 
   home.pointerCursor.gtk.enable = true;
   home.pointerCursor.package = pkgs.vanilla-dmz;

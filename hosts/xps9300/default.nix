@@ -7,6 +7,11 @@
       ./hardware-configuration.nix
     ];
 
+  #programs.neovim-flake = {
+  #  enable = true;
+  #  background = "light";
+  #};
+
   # bluetooth
   hardware.bluetooth = {
     enable = true;

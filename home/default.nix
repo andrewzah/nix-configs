@@ -95,7 +95,14 @@ in
     unzip
     xz
     zip
-  ]) ++ [ neovim-flake ];
+  ]) ++ [
+    neovim-flake
+  ];
+
+  #programs.neovim-flake = {
+  # enable = true;
+  # background = "light";
+  #};
 
   programs.git = {
     enable = true;

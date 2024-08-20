@@ -13,7 +13,8 @@
     nix-hardware.url = "github:NixOS/nixos-hardware/master";
 
     # personal flake
-    neovim-flake.url = "github:andrewzah/neovim-flake";
+    #neovim-flake.url = "github:andrewzah/neovim-flake";
+    neovim-flake.url = git+file:///home/andrew/programming/neovim-flake;
 
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
@@ -39,6 +40,14 @@
       home-manager.useUserPackages = true;
       home-manager.extraSpecialArgs = {inherit inputs username stateVersion;};
     };
+
+    #overlays = import ./lib/overlays.nix { inherit inputs system; };
+
+    #system = "x86_64-linux";
+    #pkgs = import inputs.nixpkgs {
+    #  inherit overlays system;
+    #  config.allowUnfree = true;
+    #};
   in {
     darwinConfigurations = {
       "Inspire-Others" = nix-darwin.lib.darwinSystem {
@@ -63,7 +72,8 @@
     nixosConfigurations = {
       xps9300 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {inherit inputs stateVersion;};
+        #specialArgs = {inherit pkgs inputs stateVersion;};
+        specialArgs = { inherit inputs stateVersion; };
         modules = [
           ./hosts/xps9300/default.nix
 
@@ -80,6 +90,7 @@
           home-modules
 
           ({ pkgs, ... }: {
+            #nixpkgs.overlays = [ rust-overlay.overlays.default ] ++ overlays;
             nixpkgs.overlays = [ rust-overlay.overlays.default ];
             environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
           })
