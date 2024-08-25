@@ -1,6 +1,5 @@
-{ pkgs, ... }:
-let
-  dwarf-fortress = (pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {
+{pkgs, ...}: let
+  dwarf-fortress = pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {
     dfVersion = "0.47.05";
     enableIntro = false;
     enableSound = false;
@@ -11,8 +10,7 @@ let
     enableDwarfTherapist = true;
     enableLegendsBrowser = true;
     enableStoneSense = true;
-  });
-in
-{
-  home.packages = [ dwarf-fortress ];
+  };
+in {
+  home.packages = [dwarf-fortress];
 }

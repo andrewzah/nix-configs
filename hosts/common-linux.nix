@@ -1,12 +1,15 @@
-{ pkgs, lib, ... }:
 {
+  pkgs,
+  lib,
+  ...
+}: {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking = {
     networkmanager.enable = true;
     enableIPv6 = false;
-    dhcpcd.wait = "background";   # don't wait on interfaces to boot
+    dhcpcd.wait = "background"; # don't wait on interfaces to boot
     dhcpcd.extraConfig = "noarp"; # avoid checking if IP is already taken, boot faster
 
     extraHosts = lib.concatStrings [
@@ -52,7 +55,7 @@
   services.udev.extraRules = lib.concatStrings [
     # increase polling rate to 1ms for ps5 dualsense
     ''
-    ACTION=="bind", SUBSYSTEM=="hid", DRIVER=="sony", KERNEL=="*054C:0CE6*", ATTR{bt_poll_interval}="1"
+      ACTION=="bind", SUBSYSTEM=="hid", DRIVER=="sony", KERNEL=="*054C:0CE6*", ATTR{bt_poll_interval}="1"
     ''
   ];
 
@@ -67,7 +70,7 @@
   users.users.andrew = {
     isNormalUser = true;
     description = "Andrew Zah";
-    extraGroups = [ "docker" "networkmanager" "wheel" ];
+    extraGroups = ["docker" "networkmanager" "wheel"];
     shell = pkgs.zsh;
   };
 

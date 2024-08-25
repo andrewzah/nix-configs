@@ -1,5 +1,4 @@
-{  pkgs, ... }:
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     # utilities
     hyprpaper
@@ -100,17 +99,17 @@
       ]
       ++ (
         builtins.concatLists (builtins.genList (
-          x: let
-            ws = let
-              c = (x + 1) / 10;
-            in
-              builtins.toString (x + 1 - (c * 10));
-          in [
-            "$mod, ${ws}, workspace, ${toString (x + 1)}"
-            "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-          ]
-        )
-        10)
+            x: let
+              ws = let
+                c = (x + 1) / 10;
+              in
+                builtins.toString (x + 1 - (c * 10));
+            in [
+              "$mod, ${ws}, workspace, ${toString (x + 1)}"
+              "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+            ]
+          )
+          10)
       );
     # "GTK_IM_MODULE,fcitx"
     env = [
@@ -124,47 +123,49 @@
 
   programs.waybar = {
     enable = true;
-    settings = [{
-      height = 35;
-      layer = "top";
-      position = "bottom";
-      tray = { spacing = 10; };
-      modules-left = [ "hyprland/workspaces" ];
-      modules-center = [ "hyprland/window" ];
-      modules-right = [
-        "custom/volume"
-        "battery"
-        "clock"
-        "sway/language"
-      ];
+    settings = [
+      {
+        height = 35;
+        layer = "top";
+        position = "bottom";
+        tray = {spacing = 10;};
+        modules-left = ["hyprland/workspaces"];
+        modules-center = ["hyprland/window"];
+        modules-right = [
+          "custom/volume"
+          "battery"
+          "clock"
+          "sway/language"
+        ];
 
-      "custom/volume" = {
-        interval = 1;
-        exec = "/etc/nixos/static-files/bin/pipewire-get-volume.sh";
-        max-length = 15;
-        return-type = "json";
-      };
+        "custom/volume" = {
+          interval = 1;
+          exec = "/etc/nixos/static-files/bin/pipewire-get-volume.sh";
+          max-length = 15;
+          return-type = "json";
+        };
 
-      "battery" = {
-        format = "BAT {capacity}%";
-      };
+        "battery" = {
+          format = "BAT {capacity}%";
+        };
 
-      "clock" = {
-        interval = 60;
-        format = "{:%A | %H:%M | Week %V}";
-        max-length = 40;
-      };
+        "clock" = {
+          interval = 60;
+          format = "{:%A | %H:%M | Week %V}";
+          max-length = 40;
+        };
 
-      "sway/language" = {
-        format = "{short} {variant}";
-      };
-    }];
+        "sway/language" = {
+          format = "{short} {variant}";
+        };
+      }
+    ];
 
-    style = (builtins.readFile ../static-files/configs/waybar-style.css);
+    style = builtins.readFile ../static-files/configs/waybar-style.css;
   };
 
-  xdg.configFile."foot/foot.ini".text = (builtins.readFile ../static-files/configs/foot.ini);
-  xdg.configFile."hypr/hyprpaper.conf".text = (builtins.readFile ../static-files/configs/hyprpaper.conf);
-  xdg.configFile."mako/config".text = (builtins.readFile ../static-files/configs/mako.conf);
-  xdg.configFile."libinput-gestures.conf".text = (builtins.readFile ../static-files/configs/libinput-gestures.conf);
+  xdg.configFile."foot/foot.ini".text = builtins.readFile ../static-files/configs/foot.ini;
+  xdg.configFile."hypr/hyprpaper.conf".text = builtins.readFile ../static-files/configs/hyprpaper.conf;
+  xdg.configFile."mako/config".text = builtins.readFile ../static-files/configs/mako.conf;
+  xdg.configFile."libinput-gestures.conf".text = builtins.readFile ../static-files/configs/libinput-gestures.conf;
 }

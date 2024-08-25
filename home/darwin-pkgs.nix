@@ -1,5 +1,8 @@
-{ pkgs, lib, ... }:
 {
+  pkgs,
+  lib,
+  ...
+}: {
   xdg.configFile."sketchybar" = {
     source = ../static-files/configs/sketchybar;
     recursive = true;

@@ -1,4 +1,10 @@
-{ stdenv, fetchurl, lib, pkgs, ... }:
+{
+  stdenv,
+  fetchurl,
+  lib,
+  pkgs,
+  ...
+}:
 stdenv.mkDerivation rec {
   pname = "iosevka-consolas-ttf";
   version = "30.0.1";
@@ -10,7 +16,7 @@ stdenv.mkDerivation rec {
   unpackPhase = ''
     unzip $src
   '';
-  buildInputs = with pkgs; [ unzip ];
+  buildInputs = with pkgs; [unzip];
   installPhase = ''
     mkdir -p $out/share/fonts/truetype
     find -name \*.ttf -exec mv {} $out/share/fonts/truetype/ \;

@@ -1,11 +1,13 @@
-{ pkgs, stateVersion, ... }:
 {
-  imports =
-    [
-      ../common.nix
-      ../common-linux.nix
-      ./hardware-configuration.nix
-    ];
+  pkgs,
+  stateVersion,
+  ...
+}: {
+  imports = [
+    ../common.nix
+    ../common-linux.nix
+    ./hardware-configuration.nix
+  ];
 
   #programs.neovim-flake = {
   #  enable = true;
@@ -58,7 +60,7 @@
         urAccepted = -1;
       };
       devices = {
-        "eagle" = { id = "KBKNDRJ-2HCG7A4-OOR7NX6-APK3DUU-KKODEFE-GCFPD5S-SHLRNFJ-OFKIHQX"; };
+        "eagle" = {id = "KBKNDRJ-2HCG7A4-OOR7NX6-APK3DUU-KKODEFE-GCFPD5S-SHLRNFJ-OFKIHQX";};
       };
     };
   };
@@ -68,7 +70,7 @@
       enable = true;
 
       description = "keyd daemon";
-      wantedBy = [ "multi-user.target" ];
+      wantedBy = ["multi-user.target"];
       unitConfig = {
         After = "local-fs.target";
       };
@@ -81,17 +83,16 @@
     };
   };
   environment.etc."keyd/default.conf".text = ''
-  [ids]
-  0001:0001
+    [ids]
+    0001:0001
 
-  [main]
-  capslock = overload(control, esc)
+    [main]
+    capslock = overload(control, esc)
 
-  leftmeta = layer(alt)
-  leftalt = layer(meta)
-  rightalt = layer(meta)
+    leftmeta = layer(alt)
+    leftalt = layer(meta)
+    rightalt = layer(meta)
   '';
-
 
   virtualisation = {
     docker.enable = true;
@@ -100,10 +101,10 @@
     containerd.enable = true;
   };
 
-  users.users.andrew.extraGroups = [ "docker" "input" ];
+  users.users.andrew.extraGroups = ["docker" "input"];
 
   i18n.inputMethod.enabled = "fcitx5";
-  i18n.inputMethod.fcitx5.addons = with pkgs; [ fcitx5-hangul ];
+  i18n.inputMethod.fcitx5.addons = with pkgs; [fcitx5-hangul];
   i18n.inputMethod.fcitx5.ignoreUserConfig = true;
   i18n.inputMethod.fcitx5.settings.inputMethod = {
     "Groups/0" = {
@@ -167,22 +168,22 @@
     };
 
     "Behavior" = {
-     ActiveByDefault = false;
-     ShareInputState = "No";
-     PreeditEnabledByDefault = true;
-     ShowInputMethodInformation = true;
-     showInputMethodInformationWhenFocusIn = false;
-     CompactInputMethodInformation = true;
-     ShowFirstInputMethodInformation = true;
-     DefaultPageSize = "5";
-     OverrideXkbOption = false;
-     CustomXkbOption = null;
-     EnabledAddons = null;
-     DisabledAddons = null;
-     PreloadInputMethod = true;
-     AllowInputMethodForPassword = false;
-     ShowPreeditForPassword = false;
-     AutoSavePeriod = "30";
+      ActiveByDefault = false;
+      ShareInputState = "No";
+      PreeditEnabledByDefault = true;
+      ShowInputMethodInformation = true;
+      showInputMethodInformationWhenFocusIn = false;
+      CompactInputMethodInformation = true;
+      ShowFirstInputMethodInformation = true;
+      DefaultPageSize = "5";
+      OverrideXkbOption = false;
+      CustomXkbOption = null;
+      EnabledAddons = null;
+      DisabledAddons = null;
+      PreloadInputMethod = true;
+      AllowInputMethodForPassword = false;
+      ShowPreeditForPassword = false;
+      AutoSavePeriod = "30";
     };
   };
 

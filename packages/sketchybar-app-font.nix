@@ -1,5 +1,8 @@
-{ stdenv, fetchurl, lib }:
-
+{
+  stdenv,
+  fetchurl,
+  lib,
+}:
 stdenv.mkDerivation rec {
   pname = "sketchybar-app-font";
   version = "2.0.17";

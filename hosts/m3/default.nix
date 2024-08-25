@@ -1,6 +1,9 @@
-{ pkgs, lib, stateVersion, ... }:
-
 {
+  pkgs,
+  lib,
+  stateVersion,
+  ...
+}: {
   imports = [
     ../common.nix
     ./pkgs.nix
@@ -19,7 +22,7 @@
 
   nix = {
     settings = {
-      trusted-users = [ "@admin" "andrew" ];
+      trusted-users = ["@admin" "andrew"];
     };
     linux-builder = {
       enable = true;

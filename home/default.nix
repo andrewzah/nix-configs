@@ -1,10 +1,13 @@
-{ pkgs, inputs, stateVersion, ... }:
-let
-  shellAliases = (import ./shell-aliases.nix{}).aliases;
+{
+  pkgs,
+  inputs,
+  stateVersion,
+  ...
+}: let
+  shellAliases = (import ./shell-aliases.nix {}).aliases;
 
   neovim-flake = inputs.neovim-flake.packages.${pkgs.system}.default;
-in
-{
+in {
   imports = [
     ./atuin.nix
     #./syncthing.nix
@@ -16,88 +19,90 @@ in
     then "/Users/andrew"
     else "/home/andrew";
 
-  home.packages = (with pkgs; [
-    # 3.0.13
-    openssl
+  home.packages =
+    (with pkgs; [
+      # 3.0.13
+      openssl
 
-    (python312.withPackages (ps:
-      with ps; [
-        python-lsp-server
-        python-lsp-ruff
-    ]))
+      (python312.withPackages (ps:
+        with ps; [
+          python-lsp-server
+          python-lsp-ruff
+        ]))
 
-    # web ui / gui apps
-    bitwarden-desktop
-    #discord
-    slack
-    syncthing
-    vlc
-    yt-dlp
-    zoom-us
-    nb
+      # web ui / gui apps
+      bitwarden-desktop
+      #discord
+      slack
+      syncthing
+      vlc
+      yt-dlp
+      zoom-us
+      nb
 
-    # langs
-    go
+      # langs
+      go
 
-    # rust coreutils alternatives & just rust programs
-    bat
-    bat-extras.batgrep
-    fd
-    just
-    lsd
-    ripgrep
-    sd
-    vimv-rs
-    wthrr
+      # rust coreutils alternatives & just rust programs
+      bat
+      bat-extras.batgrep
+      fd
+      just
+      lsd
+      ripgrep
+      sd
+      vimv-rs
+      wthrr
 
-    # system tools
-    btop
-    file
-    gavin-bc
-    gnupg
-    lsof
-    which
-    pciutils
+      # system tools
+      btop
+      file
+      gavin-bc
+      gnupg
+      lsof
+      which
+      pciutils
 
-    foliate # epub reader
+      foliate # epub reader
 
-    # networks
-    dnsutils # dig + nslookup
-    iperf3
-    ldns # dig alternative
-    nmap
-    socat
+      # networks
+      dnsutils # dig + nslookup
+      iperf3
+      ldns # dig alternative
+      nmap
+      socat
 
-    apacheHttpd
-    awscli
-    caddy
-    docker
-    entr
-    fzf
-    git-lfs
-    gron
-    kubectl
-    jq
-    libiconv
-    macchina
-    tmux
-    tree
-    trino-cli
+      apacheHttpd
+      awscli
+      caddy
+      docker
+      entr
+      fzf
+      git-lfs
+      gron
+      kubectl
+      jq
+      libiconv
+      macchina
+      tmux
+      tree
+      trino-cli
 
-    # linters / LSPs
-    marksman
-    shellcheck
-    yamllint
-    eslint_d
+      # linters / LSPs
+      marksman
+      shellcheck
+      yamllint
+      eslint_d
 
-    # compression
-    p7zip
-    unzip
-    xz
-    zip
-  ]) ++ [
-    neovim-flake
-  ];
+      # compression
+      p7zip
+      unzip
+      xz
+      zip
+    ])
+    ++ [
+      neovim-flake
+    ];
 
   #programs.neovim-flake = {
   # enable = true;

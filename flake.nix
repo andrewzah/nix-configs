@@ -40,9 +40,7 @@
       home-manager.useUserPackages = true;
       home-manager.extraSpecialArgs = {inherit inputs username stateVersion;};
     };
-
     #overlays = import ./lib/overlays.nix { inherit inputs system; };
-
     #system = "x86_64-linux";
     #pkgs = import inputs.nixpkgs {
     #  inherit overlays system;
@@ -73,7 +71,7 @@
       xps9300 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         #specialArgs = {inherit pkgs inputs stateVersion;};
-        specialArgs = { inherit inputs stateVersion; };
+        specialArgs = {inherit inputs stateVersion;};
         modules = [
           ./hosts/xps9300/default.nix
 
@@ -89,10 +87,10 @@
           }
           home-modules
 
-          ({ pkgs, ... }: {
+          ({pkgs, ...}: {
             #nixpkgs.overlays = [ rust-overlay.overlays.default ] ++ overlays;
-            nixpkgs.overlays = [ rust-overlay.overlays.default ];
-            environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+            nixpkgs.overlays = [rust-overlay.overlays.default];
+            environment.systemPackages = [pkgs.rust-bin.stable.latest.default];
           })
 
           nixos-hardware.nixosModules.dell-xps-13-9360

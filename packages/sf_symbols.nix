@@ -1,4 +1,10 @@
-{ stdenv, fetchurl, lib, pkgs, ... }:
+{
+  stdenv,
+  fetchurl,
+  lib,
+  pkgs,
+  ...
+}:
 stdenv.mkDerivation rec {
   pname = "sf-symbols";
   version = "5.1";
@@ -13,7 +19,7 @@ stdenv.mkDerivation rec {
     7z x 'SF Symbols.pkg'
     7z x 'Payload~'
   '';
-  buildInputs = [ pkgs.p7zip pkgs.undmg ];
+  buildInputs = [pkgs.p7zip pkgs.undmg];
   installPhase = ''
     mkdir -p $out/share/fonts
     mkdir -p $out/share/fonts/opentype

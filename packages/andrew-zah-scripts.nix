@@ -1,4 +1,8 @@
-{ stdenv, lib, ... }:
+{
+  stdenv,
+  lib,
+  ...
+}:
 stdenv.mkDerivation rec {
   pname = "andrew-zah-scripts";
   version = "1.0";

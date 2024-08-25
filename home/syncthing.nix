@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   # Wrap syncthing with various commands to keep its resource usage low.
   # only one core (https://docs.syncthing.net/users/faq.html#why-does-it-use-so-much-cpu)
   # minimum scheduling priority

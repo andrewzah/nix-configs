@@ -1,7 +1,10 @@
-{ pkgs, lib, ... }:
 {
+  pkgs,
+  lib,
+  ...
+}: {
   nixpkgs.config.allowUnfree = lib.mkDefault true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
   time.timeZone = lib.mkDefault "America/New_York";
 
   environment.variables.EDITOR = "nvim";

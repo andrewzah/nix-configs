@@ -1,10 +1,14 @@
-{ inputs, system }:
-let
+{
+  inputs,
+  system,
+}: let
   buildersOverlay = f: p: {
-    mkHomeConfigurations = { pkgs ? f, extraPkgs ? [] }:
-      import ./lib/hm.nix { inherit extraPkgs inputs pkgs system; };
+    mkHomeConfigurations = {
+      pkgs ? f,
+      extraPkgs ? [],
+    }:
+      import ./lib/hm.nix {inherit extraPkgs inputs pkgs system;};
   };
-in
-[
+in [
   buildersOverlay
 ]

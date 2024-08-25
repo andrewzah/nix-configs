@@ -1,11 +1,10 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   imports = [
     ./games/dwarf-fortress-classic.nix
     ./fonts.nix
   ];
 
-  home.packages = (with pkgs; [
+  home.packages = with pkgs; [
     mullvad-vpn
 
     unar
@@ -63,7 +62,7 @@
     bingrep
 
     (callPackage ../packages/andrew-zah-scripts.nix {})
-  ]);
+  ];
 
   home.pointerCursor.gtk.enable = true;
   home.pointerCursor.package = pkgs.vanilla-dmz;
@@ -82,5 +81,5 @@
     };
   };
 
-  xdg.configFile."tiny/config.yml".text = (builtins.readFile ../static-files/configs/tiny-irc.yml);
+  xdg.configFile."tiny/config.yml".text = builtins.readFile ../static-files/configs/tiny-irc.yml;
 }

@@ -1,5 +1,9 @@
-{ config, pkgs, inputs, ... }:
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   # https://daiderd.com/nix-darwin/manual/index.html#sec-options
   system = {
     keyboard = {

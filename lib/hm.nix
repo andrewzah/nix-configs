@@ -1,25 +1,27 @@
-{ extraPkgs, inputs, system, pkgs, ... }:
-let
+{
+  extraPkgs,
+  inputs,
+  system,
+  pkgs,
+  ...
+}: let
   sharedImports = [
     inputs.neovim-flake.homeManagerModules.${system}.default
-    ({ home.packages = extraPkgs; })
+    {home.packages = extraPkgs;}
   ];
 
-  mkHyprlandHome = { hidpi ? true }:
-    let
-      imports = sharedImports;
-      # ++ ../home/wayland.nix ...
-    in
-    (
-      inputs.home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = pkgs.xargs { inherit hidpi; };
-        modules = [
-          { inherit imports; }
-        ];
-      }
-    );
-in
-{
-  hyprland-hdmi = mkHyprlandHome { hidpi = true; };
+  mkHyprlandHome = {hidpi ? true}: let
+    imports = sharedImports;
+    # ++ ../home/wayland.nix ...
+  in (
+    inputs.home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      extraSpecialArgs = pkgs.xargs {inherit hidpi;};
+      modules = [
+        {inherit imports;}
+      ];
+    }
+  );
+in {
+  hyprland-hdmi = mkHyprlandHome {hidpi = true;};
 }
