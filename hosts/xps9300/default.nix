@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   stateVersion,
   ...
 }: {
@@ -7,6 +8,7 @@
     ../common.nix
     ../common-linux.nix
     ./hardware-configuration.nix
+    ./unfree.nix
   ];
 
   #programs.neovim-flake = {
