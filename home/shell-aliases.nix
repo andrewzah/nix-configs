@@ -1,5 +1,4 @@
-{}:
-{
+{}: {
   aliases = {
     j = "just";
     k = "kubectl";
@@ -30,5 +29,9 @@
 
     ta = "tmux attach";
     tat = "tmux attach -t";
+
+    # philips TAH7508 bluetooth headphones
+    bcp = "bluetoothctl connect 00:1E:7C:C9:39:6C";
+    bdp = "bluetoothctl disconnect 00:1E:7C:C9:39:6C";
   };
 }
