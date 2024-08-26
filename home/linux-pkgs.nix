@@ -2,6 +2,7 @@
   imports = [
     ./games/dwarf-fortress-classic.nix
     ./fonts.nix
+    ./audio.nix
   ];
 
   home.packages = with pkgs; [
@@ -82,4 +83,5 @@
   };
 
   xdg.configFile."tiny/config.yml".text = builtins.readFile ../static-files/configs/tiny-irc.yml;
+  #xdg.configFile."ncmcpp/config".text = builtins.readFile ../static-files/configs/ncmcpp.conf;
 }

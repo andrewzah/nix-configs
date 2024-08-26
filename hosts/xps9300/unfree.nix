@@ -3,7 +3,7 @@
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "discord"
     "dwarf-fortress"
-    "exactaudiocopy"
+    "exact-audio-copy"
     "obsidian"
     "slack"
     "zoom"

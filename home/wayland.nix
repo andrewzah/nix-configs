@@ -1,5 +1,9 @@
-{pkgs, ...}: {
-  home.packages = with pkgs; [
+{pkgs, ...}: let
+  discordWrapper = pkgs.writeShellScriptBin "discord" ''
+    ${pkgs.discord}/bin/discord --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime
+  '';
+in {
+  home.packages = (with pkgs; [
     # utilities
     hyprpaper
     waybar
@@ -7,8 +11,6 @@
     swaylock
     libinput-gestures
 
-    discord
-    #(pkgs.discord.override { })
 
     # emojis
     wofi
@@ -25,7 +27,7 @@
 
     # misc
     wev
-  ];
+  ]) ++ [ discordWrapper ];
 
   home.sessionVariables = {
     NIXOS_OZONE_WL = 1;
