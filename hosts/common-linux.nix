@@ -12,10 +12,11 @@
     dhcpcd.wait = "background"; # don't wait on interfaces to boot
     dhcpcd.extraConfig = "noarp"; # avoid checking if IP is already taken, boot faster
 
-    extraHosts = lib.concatStrings [
-      "127.0.0.1 airflow.arpa\n"
-      "127.0.0.1 jupyterhub.arpa\n"
-      "127.0.0.1 docker-registry.arpa\n"
+    extraHosts = lib.concatStringsSep "\n" [
+      "127.0.0.1 airflow.arpa"
+      "127.0.0.1 apiman.arpa"
+      "127.0.0.1 docker-registry.arpa"
+      "127.0.0.1 jupyterhub.arpa"
     ];
   };
 

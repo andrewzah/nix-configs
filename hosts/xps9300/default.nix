@@ -64,6 +64,9 @@
     containerd.enable = true;
   };
 
+  # 'sg' for dvd drives w/ encrypted content
+  #boot.kernelModules = ["sg"];
+
   #programs.neovim-flake = {
   #  enable = true;
   #  background = "light";

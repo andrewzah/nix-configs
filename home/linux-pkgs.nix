@@ -3,6 +3,7 @@
     ./games/dwarf-fortress-classic.nix
     ./fonts.nix
     ./audio.nix
+    ./video.nix
   ];
 
   home.packages = with pkgs; [

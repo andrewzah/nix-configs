@@ -16,10 +16,10 @@
     #neovim-flake.url = "github:andrewzah/neovim-flake";
     neovim-flake.url = git+file:///home/andrew/programming/neovim-flake;
 
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #rust-overlay = {
+    #  url = "github:oxalica/rust-overlay";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
   };
 
   outputs = {
@@ -28,8 +28,6 @@
     home-manager,
     nixos-hardware,
     nix-darwin,
-    neovim-flake,
-    rust-overlay,
     ...
   } @ inputs: let
     username = "andrew";
@@ -89,8 +87,8 @@
 
           ({pkgs, ...}: {
             #nixpkgs.overlays = [ rust-overlay.overlays.default ] ++ overlays;
-            nixpkgs.overlays = [rust-overlay.overlays.default];
-            environment.systemPackages = [pkgs.rust-bin.stable.latest.default];
+            #nixpkgs.overlays = [rust-overlay.overlays.default];
+            #environment.systemPackages = [pkgs.rust-bin.stable.latest.default];
           })
 
           nixos-hardware.nixosModules.dell-xps-13-9360

@@ -24,12 +24,6 @@ in {
       # 3.0.13
       openssl
 
-      (python312.withPackages (ps:
-        with ps; [
-          python-lsp-server
-          python-lsp-ruff
-        ]))
-
       # web ui / gui apps
       bitwarden-desktop
       #discord
@@ -39,9 +33,7 @@ in {
       yt-dlp
       zoom-us
       nb
-
-      # langs
-      go
+      foliate # epub reader
 
       # rust coreutils alternatives & just rust programs
       bat
@@ -63,8 +55,6 @@ in {
       which
       pciutils
 
-      foliate # epub reader
-
       # networks
       dnsutils # dig + nslookup
       iperf3
@@ -72,10 +62,6 @@ in {
       nmap
       socat
 
-      apacheHttpd
-      awscli
-      caddy
-      docker
       entr
       fzf
       git-lfs
@@ -83,10 +69,8 @@ in {
       kubectl
       jq
       libiconv
-      macchina
       tmux
       tree
-      trino-cli
 
       # linters / LSPs
       marksman
@@ -99,6 +83,9 @@ in {
       unzip
       xz
       zip
+
+      # fun
+      macchina
     ])
     ++ [
       neovim-flake

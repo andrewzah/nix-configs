@@ -3,31 +3,32 @@
     ${pkgs.discord}/bin/discord --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime
   '';
 in {
-  home.packages = (with pkgs; [
-    # utilities
-    hyprpaper
-    waybar
-    rofi-wayland
-    swaylock
-    libinput-gestures
+  home.packages =
+    (with pkgs; [
+      # utilities
+      hyprpaper
+      waybar
+      rofi-wayland
+      swaylock
+      libinput-gestures
 
+      # emojis
+      wofi
+      wofi-emoji
+      wtype
 
-    # emojis
-    wofi
-    wofi-emoji
-    wtype
+      # screenshots / clipboard
+      grim
+      slurp
+      wl-clipboard
 
-    # screenshots / clipboard
-    grim
-    slurp
-    wl-clipboard
+      # notifs
+      mako
 
-    # notifs
-    mako
-
-    # misc
-    wev
-  ]) ++ [ discordWrapper ];
+      # misc
+      wev
+    ])
+    ++ [discordWrapper];
 
   home.sessionVariables = {
     NIXOS_OZONE_WL = 1;

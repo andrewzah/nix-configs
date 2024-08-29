@@ -1,5 +1,7 @@
 ## prio 1
 - learn how to wrap nix programs
+- adjust volume and brightness ctl %s
+- change bar to top to prevent burn in, or remove it entirely
 
 ## prio 2
 - add to git config ?: https://github.com/nobssoftware/nocommit/blob/master/pre-commit

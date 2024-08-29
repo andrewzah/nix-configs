@@ -16,17 +16,6 @@ servers:
     nickserv_ident:
       command: 'pass show irc-libera-jazz'
 
-  - addr: irc.scratch-network.net
-    port: 6697
-    tls: true
-    nicks: [<age>]
-    notify: mentions
-    alias: SCRH
-    realname: <age>
-    join: [ <age> ]
-    #nickserv_ident:
-    #  command: 'pass show irc-libera-jazz'
-
 # Defaults used when connecting to a server with the `/connect` command.
 defaults:
   tls: true
