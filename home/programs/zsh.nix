@@ -1,5 +1,5 @@
 {...}: let
-  shellAliases = import ./shell-aliases.nix {};
+  shellAliases = (import ../shell-aliases.nix {}).aliases;
 in {
   programs.zsh = {
     enable = true;

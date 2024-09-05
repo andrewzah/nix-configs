@@ -5,7 +5,7 @@
   ...
 }: let
   neovim-flake = inputs.neovim-flake.packages.${pkgs.system}.default;
-  homeSessionVariables = import ./home-session-variables.nix;
+  homeSessionVariables = import ./home-session-variables.nix{};
 in {
   imports = [
     ./programs/atuin.nix
@@ -93,7 +93,6 @@ in {
       neovim-flake
     ];
 
-  # TODO: left-side merge w/ existing sessionVariables
   home.sessionVariables = homeSessionVariables;
 
   programs.home-manager.enable = true;
