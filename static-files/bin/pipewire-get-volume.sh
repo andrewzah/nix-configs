@@ -2,7 +2,7 @@
 
 set -e
 
-VOL_RAW=$(wpctl get-volume 47)
+VOL_RAW=$(wpctl get-volume 44)
 if [ $(grep -c "MUTED" <<< "$VOL_RAW") -eq 1 ]; then
   TEXT="VOL MUTE"
 else
