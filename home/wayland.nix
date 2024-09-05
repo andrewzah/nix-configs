@@ -3,6 +3,10 @@
     ${pkgs.discord}/bin/discord --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime
   '';
 in {
+  imports = [
+    ./programs/waybar.nix
+  ];
+
   home.packages =
     (with pkgs; [
       # utilities
@@ -91,11 +95,11 @@ in {
         "$mod CONTROL, E, exec, wofi-emoji"
         "$mod SHIFT, R, exec, hyperctl reload"
         "$mod CONTROL_L, K, killactive"
-        ", F6, exec, brightnessctl set 2.5%-"
-        ", F7, exec, brightnessctl set +2.5%"
+        ", F6, exec, brightnessctl set 5%-"
+        ", F7, exec, brightnessctl set +5%"
         ", F1, exec, wpctl set-mute 44 toggle"
-        ", F2, exec, wpctl set-volume 44 2.5%-"
-        ", F3, exec, wpctl set-volume 44 2.5%+"
+        ", F2, exec, wpctl set-volume 44 5%-"
+        ", F3, exec, wpctl set-volume 44 5%+"
         ", F10, exec, screenshot-tmp-fullscreen.sh"
         ", XF86Copy, exec, wl-copy"
         ", XF86Paste, exec, wl-paste"
@@ -122,49 +126,6 @@ in {
       "GLFW_IM_MODULE,ibus"
       "XCURSOR_SIZE,108"
     ];
-  };
-
-  programs.waybar = {
-    enable = true;
-    settings = [
-      {
-        height = 35;
-        layer = "top";
-        position = "bottom";
-        tray = {spacing = 10;};
-        modules-left = ["hyprland/workspaces"];
-        modules-center = ["hyprland/window"];
-        modules-right = [
-          "custom/volume"
-          "battery"
-          "clock"
-          "sway/language"
-        ];
-
-        "custom/volume" = {
-          interval = 1;
-          exec = "/etc/nixos/static-files/bin/pipewire-get-volume.sh";
-          max-length = 15;
-          return-type = "json";
-        };
-
-        "battery" = {
-          format = "BAT {capacity}%";
-        };
-
-        "clock" = {
-          interval = 60;
-          format = "{:%A | %H:%M | Week %V}";
-          max-length = 40;
-        };
-
-        "sway/language" = {
-          format = "{short} {variant}";
-        };
-      }
-    ];
-
-    style = builtins.readFile ../static-files/configs/waybar-style.css;
   };
 
   xdg.configFile."foot/foot.ini".text = builtins.readFile ../static-files/configs/foot.ini;

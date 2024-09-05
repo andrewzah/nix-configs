@@ -1,27 +1,20 @@
 {pkgs, ...}: {
   imports = [
-    ./games/dwarf-fortress-classic.nix
-    ./fonts.nix
     ./audio.nix
+    ./bluetooth.nix
+    ./fonts.nix
+    ./games.nix
     ./video.nix
+
+    ./programs/firefox.nix
   ];
 
   home.packages = with pkgs; [
     mullvad-vpn
 
     unar
-    poppler
-    yazi
+    poppler # ?
     ffmpeg_7-headless
-    vbam # visualboyadvance-m
-
-    bluez
-    blueman
-
-    trivy
-    syft
-    grype
-    cosign
 
     foot
     firefox
@@ -34,18 +27,18 @@
     brightnessctl
     lsix
     dive
-    unixtools.xxd
     sshfs
 
-    pinentry-curses
-    xfce.thunar
+    pinentry-curses # GPG entry
+    xfce.thunar # GTK file browser
+    yazi # TUI file browser
     libnotify
     xdg-utils
 
     keyd
     pass
 
-    tiny
+    tiny # IRC
 
     dracut
     acpi
@@ -66,23 +59,11 @@
     (callPackage ../packages/andrew-zah-scripts.nix {})
   ];
 
-  home.pointerCursor.gtk.enable = true;
-  home.pointerCursor.package = pkgs.vanilla-dmz;
-  home.pointerCursor.name = "Vanilla-DMZ";
-
-  programs.firefox.enable = true;
-  programs.firefox.profiles = {
-    myuser = {
-      id = 0;
-      settings = {
-        "media.ffmpeg.vaapi.enabled" = true;
-        "media.ffvpx.enabled" = true;
-        "media.av1.enabled" = true;
-        "gfx.webrender.all" = true;
-      };
-    };
+  home.pointerCursor = {
+    name = "Vanilla-DMZ";
+    package = pkgs.vanilla-dmz;
+    gtk.enable = true;
   };
 
   xdg.configFile."tiny/config.yml".text = builtins.readFile ../static-files/configs/tiny-irc.yml;
-  #xdg.configFile."ncmcpp/config".text = builtins.readFile ../static-files/configs/ncmcpp.conf;
 }

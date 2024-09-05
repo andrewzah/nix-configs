@@ -4,12 +4,14 @@
   stateVersion,
   ...
 }: let
-  shellAliases = (import ./shell-aliases.nix {}).aliases;
-
   neovim-flake = inputs.neovim-flake.packages.${pkgs.system}.default;
+  homeSessionVariables = import ./home-session-variables.nix;
 in {
   imports = [
-    ./atuin.nix
+    ./programs/atuin.nix
+    ./programs/git.nix
+    ./programs/zsh.nix
+
     #./syncthing.nix
   ];
 
@@ -91,37 +93,8 @@ in {
       neovim-flake
     ];
 
-  #programs.neovim-flake = {
-  # enable = true;
-  # background = "light";
-  #};
-
-  programs.git = {
-    enable = true;
-    userName = "Andrew Zah";
-    userEmail = "zah@andrewzah.com";
-  };
-
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    inherit shellAliases;
-
-    initExtra = ''
-      #PROMPT=" (%?) [%n@%m:%2/] λ "
-      export PROMPT=" %F{yellow}(%? - %T)%F{cyan} %3~ %F{#FFFFFF}λ "
-
-      # foot doesn't consider these valid by default
-      bindkey "\e[27;2;13~" accept-line  # shift+return
-      bindkey "\e[27;5;13~" accept-line  # ctrl+return
-
-      function preexec {
-          print -Pn "\e]0;''${(q)1}\e\\"
-      }
-    '';
-  };
-
-  home.sessionVariables.EDITOR = "nvim";
+  # TODO: left-side merge w/ existing sessionVariables
+  home.sessionVariables = homeSessionVariables;
 
   programs.home-manager.enable = true;
   manual.manpages.enable = true;
