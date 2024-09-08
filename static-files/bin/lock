@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+exec swaylock \
+  --show-keyboard-layout \
+  --ignore-empty-password \
+  --scaling stretch \
+  --image /etc/nixos/static-files/wallpapers/DF-1.png

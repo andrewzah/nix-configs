@@ -57,6 +57,7 @@
     bingrep
 
     (callPackage ../packages/andrew-zah-scripts.nix {})
+    (callPackage ../packages/rbonsai.nix {})
   ];
 
   home.pointerCursor = {
