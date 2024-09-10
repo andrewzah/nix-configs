@@ -2,7 +2,8 @@
 
 set -e
 
-VOL_RAW=$(wpctl get-volume 44)
+SINK="@DEFAULT_AUDIO_SINK@"
+VOL_RAW=$(wpctl get-volume "$SINK")
 if [ $(grep -c "MUTED" <<< "$VOL_RAW") -eq 1 ]; then
   TEXT="VOL MUTE"
 else

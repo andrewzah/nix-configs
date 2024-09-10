@@ -7,14 +7,36 @@
         layer = "top";
         position = "top";
         tray = {spacing = 10;};
-        modules-left = ["hyprland/workspaces"];
+        modules-left = [
+          "clock"
+          "hyprland/workspaces"
+        ];
         modules-center = ["hyprland/window"];
         modules-right = [
+          "disk"
+          "memory"
+          "cpu"
           "custom/volume"
           "battery"
-          "clock"
-          "sway/language"
+          #"hyprland/language"
         ];
+
+        cpu = {
+          format = "CPU {usage:2}%";
+          interval = 3;
+          states = {
+            critical = 90;
+            warning = 70;
+          };
+        };
+        memory = {
+          format = "MEM {}%";
+          interval = 3;
+          states = {
+            critical = 90;
+            warning = 70;
+          };
+        };
 
         "custom/volume" = {
           interval = 1;
@@ -23,18 +45,24 @@
           return-type = "json";
         };
 
+        disk = {
+          interval = 30;
+          format = "/: {percentage_used}%";
+          path = "/";
+        };
+
         "battery" = {
           format = "BAT {capacity}%";
         };
 
         "clock" = {
           interval = 60;
-          format = "{:%A | %H:%M | Week %V}";
-          max-length = 40;
+          format = "{:%a, %b %d | %H:%M | W %V}";
         };
 
-        "sway/language" = {
-          format = "{short} {variant}";
+        "hyprland/language" = {
+          format = "KBR {}";
+          keyboard-name = "at-translated-set-2-keyboard";
         };
       }
     ];

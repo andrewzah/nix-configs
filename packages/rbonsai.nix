@@ -3,14 +3,14 @@
   fetchFromGitHub,
   rustPlatform
 }:
-rustPlatform.buildRustPackage (finalAttrs: {
+rustPlatform.buildRustPackage rec {
   pname = "rbonsai";
   version = "0.1.2";
 
   src = fetchFromGitHub {
     owner = "roberte777";
-    repo = finalAttrs.pname;
-    rev = "v${finalAttrs.version}";
+    repo = pname;
+    rev = "v${version}";
     hash = "sha256-W5j3uLNRC+RkNQFXEf27h2cLgyJtfqmwnbeFvcrH/z8=";
   };
 
@@ -25,4 +25,4 @@ rustPlatform.buildRustPackage (finalAttrs: {
     homepage = "https://github.com/roberte777/rbonsai";
     license = lib.licenses.gpl3Only;
   };
-})
+}

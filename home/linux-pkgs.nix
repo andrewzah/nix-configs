@@ -10,6 +10,7 @@
   ];
 
   home.packages = with pkgs; [
+    appimage-run
     mullvad-vpn
 
     unar
@@ -58,6 +59,7 @@
 
     (callPackage ../packages/andrew-zah-scripts.nix {})
     (callPackage ../packages/rbonsai.nix {})
+    (callPackage ../packages/cider-wrapper.nix {})
   ];
 
   home.pointerCursor = {
