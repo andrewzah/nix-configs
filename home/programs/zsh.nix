@@ -7,6 +7,8 @@ in {
     inherit shellAliases;
 
     initExtra = ''
+      set -o emacs
+
       #PROMPT=" (%?) [%n@%m:%2/] λ "
       export PROMPT="%F{cyan} %3~ %F{#FFFFFF}λ "
 

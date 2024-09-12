@@ -13,11 +13,4 @@
     nix-index
     zsh
   ];
-
-  programs.zsh = {
-    enable = true;
-    interactiveShellInit = ''
-      set -o emacs
-    '';
-  };
 }
