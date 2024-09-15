@@ -7,6 +7,8 @@
     ./video.nix
 
     ./programs/firefox.nix
+    ./programs/git.nix
+    ./programs/zsh.nix
   ];
 
   home.packages = with pkgs; [
@@ -29,6 +31,7 @@
     lsix
     dive
     sshfs
+    dust
 
     pinentry-curses # GPG entry
     xfce.thunar # GTK file browser

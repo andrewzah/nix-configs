@@ -10,7 +10,6 @@ in {
   imports = [
     ./programs/atuin.nix
     ./programs/git.nix
-    ./programs/zsh.nix
 
     #./syncthing.nix
   ];

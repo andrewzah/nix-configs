@@ -5,17 +5,18 @@
     userName = "Andrew Zah";
     userEmail = "zah@andrewzah.com";
 
-    config = {
-      alias = {
-        aliases = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort";
-        churn = "!git log --all -M -C --name-only --format='format:' \"$@\" | sort | grep -v '^$' | uniq -c | sort | awk 'BEGIN {print \"count,file\"} {print $1 \",\" $2}'";
-        l = "!f() { git log $* | grep '^commit ' | cut -f 2 -d ' '; }; f";
-        please = "push --force-with-lease";
-        tags = "tag -l";
-        overview = "log --all --oneline --no-merges";
-        recap = "log --all --pretty=format:'%h %ad %s' --no-merges --author=<zah@andrewzah.com> --date=short";
-        st = "status --short --branch";
-      };
+    aliases = {
+      aliases = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort";
+      churn = "!git log --all -M -C --name-only --format='format:' \"$@\" | sort | grep -v '^$' | uniq -c | sort | awk 'BEGIN {print \"count,file\"} {print $1 \",\" $2}'";
+      l = "!f() { git log $* | grep '^commit ' | cut -f 2 -d ' '; }; f";
+      please = "push --force-with-lease";
+      tags = "tag -l";
+      overview = "log --all --oneline --no-merges";
+      recap = "log --all --pretty=format:'%h %ad %s' --no-merges --author=<zah@andrewzah.com> --date=short";
+      st = "status --short --branch";
+    };
+
+    extraConfig = {
       color.ui = true;
       commit.gpgsign = true;
       core.editor = "nvim";

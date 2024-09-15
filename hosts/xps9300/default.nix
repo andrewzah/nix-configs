@@ -48,6 +48,7 @@
     };
   };
 
+  programs.zsh.enable = true;
   programs.zsh.shellAliases = {
     switch = "sudo nixos-rebuild switch --flake /etc/nixos#xps9300";
   };

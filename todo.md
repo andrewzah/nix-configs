@@ -12,6 +12,7 @@
   - really, refactor how different personal log files are created and opened
 
 ## low prio
+- https://github.com/NotAShelf/nyx/blob/main/modules/core/common/system/security/auditd.nix
 - figure out more about term title updates
   - right now, I use zsh's preexec() to show the last run command,
     otherwise there are no updates. however, when I run
