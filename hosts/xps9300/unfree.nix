@@ -7,6 +7,7 @@
       "makemkv"
       "obsidian"
       "slack"
+      "webstorm"
       "zoom"
     ];
 }

@@ -1,16 +1,16 @@
-{pkgs}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     apacheHttpd
-    caddy
-    docker
     awscli
-    trino-cli
-
-    trivy
-    syft
-    grype
+    caddy
     cosign
-
+    docker
+    grype
+    jetbrains.webstorm
+    skopeo
+    syft
+    trino-cli
+    trivy
     unixtools.xxd
   ];
 }

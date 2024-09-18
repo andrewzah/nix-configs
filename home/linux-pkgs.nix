@@ -5,6 +5,7 @@
     ./fonts.nix
     ./games.nix
     ./video.nix
+    ./work.nix
 
     ./programs/firefox.nix
     ./programs/git.nix
