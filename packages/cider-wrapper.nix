@@ -1,4 +1,8 @@
-{ pkgs, stdenv, writeScriptBin }:
+{
+  pkgs,
+  stdenv,
+  writeScriptBin,
+}:
 writeScriptBin "cider" ''
   #!${stdenv.shell}
   set -euo pipefail

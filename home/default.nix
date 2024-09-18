@@ -5,7 +5,7 @@
   ...
 }: let
   neovim-flake = inputs.neovim-flake.packages.${pkgs.system}.default;
-  homeSessionVariables = import ./home-session-variables.nix{};
+  homeSessionVariables = import ./home-session-variables.nix {};
 in {
   imports = [
     ./programs/atuin.nix
