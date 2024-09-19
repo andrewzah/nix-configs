@@ -33,8 +33,8 @@ in {
       vlc
       yt-dlp
       zoom-us
-      nb
       foliate # epub reader
+      bartib # time trackiing
 
       # rust coreutils alternatives & just rust programs
       bat

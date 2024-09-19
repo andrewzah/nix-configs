@@ -6,11 +6,13 @@
     cosign
     docker
     grype
-    jetbrains.webstorm
     skopeo
     syft
     trino-cli
     trivy
     unixtools.xxd
+
+    #TODO: wrapping
+    #jetbrains.webstorm
   ];
 }

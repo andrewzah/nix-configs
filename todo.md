@@ -1,4 +1,6 @@
+#
 ## prio 1
+- https://github.com/tomodachi94/dotfiles/blob/main/flake.nix
 - learn how to wrap nix programs
 - change bar to top to prevent burn in, or remove it entirely
 - vim: bind :W to :w

@@ -1,8 +1,11 @@
 {}: {
   aliases = {
+    b = "bartib";
+    d = "pushd ~/sync/thoughts && nvim storage/dump.md && popd";
     j = "just";
     k = "kubectl";
     ll = "lsd -la --icon never";
+    lll = "/usr/bin/env ls -la";
     v = "nvim";
 
     dc = "docker compose";
