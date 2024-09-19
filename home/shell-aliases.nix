@@ -1,12 +1,14 @@
 {}: {
   aliases = {
-    b = "bartib";
+    b = "bartib-wrapped";
     d = "pushd ~/sync/thoughts && nvim storage/dump.md && popd";
     j = "just";
     k = "kubectl";
     ll = "lsd -la --icon never";
     lll = "/usr/bin/env ls -la";
     v = "nvim";
+
+    cst = "cd ~/sync/thoughts";
 
     dc = "docker compose";
     deit = "docker exec -it";

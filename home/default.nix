@@ -6,6 +6,12 @@
 }: let
   neovim-flake = inputs.neovim-flake.packages.${pkgs.system}.default;
   homeSessionVariables = import ./home-session-variables.nix {};
+
+  bartib = pkgs.runCommand "bartib-wrapped" {nativeBuildInputs = [pkgs.makeWrapper];} ''
+    mkdir -p $out/bin
+    makeWrapper ${pkgs.bartib}/bin/bartib $out/bin/bartib-wrapped \
+      --set BARTIB_FILE /home/andrew/sync/thoughts/storage/bartib.bartib
+  '';
 in {
   imports = [
     ./programs/atuin.nix
@@ -34,7 +40,6 @@ in {
       yt-dlp
       zoom-us
       foliate # epub reader
-      bartib # time trackiing
 
       # rust coreutils alternatives & just rust programs
       bat
@@ -89,6 +94,7 @@ in {
       macchina
     ])
     ++ [
+      bartib
       neovim-flake
     ];
 
