@@ -2,14 +2,11 @@
 ## prio 1
 - https://github.com/tomodachi94/dotfiles/blob/main/flake.nix
 - learn how to wrap nix programs
-- change bar to top to prevent burn in, or remove it entirely
 - vim: bind :W to :w
 
 ## prio 2
-- add to git config ?: https://github.com/nobssoftware/nocommit/blob/master/pre-commit
 - refactor repo
   - particularly with nix/darwin conditional logic
-  - and packages being split over various files
 - set up personal & work logfiles w/ syncthing: (ln -s ?)
   - really, refactor how different personal log files are created and opened
 
