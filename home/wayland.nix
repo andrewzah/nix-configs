@@ -126,6 +126,12 @@ in {
       "GLFW_IM_MODULE,ibus"
       "XCURSOR_SIZE,108"
     ];
+
+    # disable the anime girl wallpaper
+    misc = {
+      force_default_wallpaper = 0;
+      disable_hyprland_logo = true;
+    };
   };
 
   xdg.configFile."foot/foot.ini".text = builtins.readFile ../static-files/configs/foot.ini;

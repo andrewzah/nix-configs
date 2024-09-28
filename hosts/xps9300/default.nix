@@ -8,8 +8,9 @@
     ../common.nix
     ../common-linux.nix
     ./hardware-configuration.nix
-    ./services.nix
     ./i18n.nix
+    ./power.nix
+    ./services.nix
     ./unfree.nix
   ];
   networking.hostName = "xps9300";
@@ -42,7 +43,7 @@
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
-    package = pkgs.bluez;
+    package = pkgs.bluez5-experimental;
     settings.General = {
       ControllerMode = "dual";
     };

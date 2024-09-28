@@ -5,6 +5,7 @@
     caddy
     cosign
     docker
+    gh
     grype
     skopeo
     syft

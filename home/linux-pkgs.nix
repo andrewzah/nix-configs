@@ -46,12 +46,16 @@
     tiny # IRC
 
     dracut
-    acpi
     dmidecode
     ethtool
     lm_sensors
     sysstat
     usbutils
+
+    # power management
+    acpi
+    tlp
+    powertop
 
     ltrace
     strace
