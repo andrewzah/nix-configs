@@ -1,4 +1,3 @@
-#
 ## prio 1
 - https://github.com/tomodachi94/dotfiles/blob/main/flake.nix
 - learn how to wrap nix programs
@@ -18,3 +17,7 @@
     `nix-shell -p foot.terminfo`,
     it shows the cwd (but not the last run command)
   - the current situation is adequate.
+- https://github.com/sei40kr/dotfiles/blob/36916db5d20fb3899e6ac0a6378bb8d800474646/darwin/modules/homebrew.nix#L8
+
+- ff:
+  browser.tabs.insertAfterCurrent = true

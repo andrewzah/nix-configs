@@ -32,8 +32,13 @@
 
     casks = [
       "bitwarden"
+      "deluge"
+      "discord"
+      "docker"
       "firefox"
+      "mullvadvpn"
       "slack"
+      "vlc"
       "zoom"
     ];
   };
