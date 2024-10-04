@@ -13,8 +13,8 @@
     nix-hardware.url = "github:NixOS/nixos-hardware/master";
 
     # personal flake
-    #neovim-flake.url = "github:andrewzah/neovim-flake";
-    neovim-flake.url = git+file:///home/andrew/programming/neovim-flake;
+    neovim-flake.url = "github:andrewzah/neovim-flake";
+    #neovim-flake.url = git+file:///home/andrew/programming/neovim-flake;
 
     #rust-overlay = {
     #  url = "github:oxalica/rust-overlay";
@@ -53,6 +53,9 @@
 
           home-manager.darwinModules.home-manager
           {
+	    home-manager.useGlobalPkgs = true;
+	    home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.andrew = {
               imports = [
                 ./home/default.nix

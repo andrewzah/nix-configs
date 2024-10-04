@@ -1,12 +1,13 @@
 {
   pkgs,
   lib,
-  stateVersion,
   ...
 }: {
   imports = [
     ../common.nix
     ./pkgs.nix
+    ./unfree.nix
+    ./services.nix
   ];
 
   users.users.andrew = {
@@ -37,5 +38,5 @@
   time.timeZone = lib.mkOverride 50 "Asia/Tokyo";
 
   #system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
-  system.stateVersion = stateVersion;
+  system.stateVersion = 5;
 }

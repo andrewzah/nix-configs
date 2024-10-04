@@ -9,10 +9,13 @@
 
     ./programs/firefox.nix
     ./programs/git.nix
-    ./programs/zsh.nix
   ];
 
   home.packages = with pkgs; [
+    bitwarden-desktop
+
+    vlc
+
     appimage-run
     mullvad-vpn
 

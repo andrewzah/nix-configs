@@ -1,7 +1,6 @@
 {
   pkgs,
   inputs,
-  stateVersion,
   ...
 }: let
   neovim-flake = inputs.neovim-flake.packages.${pkgs.system}.default;
@@ -16,6 +15,7 @@ in {
   imports = [
     ./programs/atuin.nix
     ./programs/git.nix
+    ./programs/zsh.nix
 
     #./syncthing.nix
   ];
@@ -29,69 +29,69 @@ in {
   home.packages =
     (with pkgs; [
       # 3.0.13
-      openssl
+      #openssl
+      atuin
+      neovim
 
-      # web ui / gui apps
-      bitwarden-desktop
-      #discord
-      slack
-      syncthing
-      vlc
-      yt-dlp
-      zoom-us
-      foliate # epub reader
+      ## web ui / gui apps
+      ##discord
+      ##slack
+      #syncthing
+      #yt-dlp
+      ##zoom-us
+      #foliate # epub reader
 
-      # rust coreutils alternatives & just rust programs
-      bat
-      bat-extras.batgrep
+      ## rust coreutils alternatives & just rust programs
+      #bat
+      #bat-extras.batgrep
       fd
       just
       lsd
       ripgrep
       sd
-      vimv-rs
-      wthrr
+      #vimv-rs
+      #wthrr
 
-      # system tools
-      btop
-      file
-      gavin-bc
-      gnupg
-      lsof
-      which
-      pciutils
+      ## system tools
+      #btop
+      #file
+      #gavin-bc
+      #gnupg
+      #lsof
+      #which
+      #pciutils
 
-      # networks
-      dnsutils # dig + nslookup
-      iperf3
-      ldns # dig alternative
-      nmap
-      socat
+      ## networks
+      #dnsutils # dig + nslookup
+      #iperf3
+      #ldns # dig alternative
+      #nmap
+      #socat
 
-      entr
-      fzf
-      git-lfs
-      gron
-      kubectl
+      #entr
+      #fzf
+      #git-lfs
+      #gron
+      #kubectl
       jq
-      libiconv
-      tmux
-      tree
+      #libiconv
+      #tmux
+      #tree
 
-      # linters / LSPs
-      marksman
-      shellcheck
-      yamllint
-      eslint_d
+      ## linters / LSPs
+      #marksman
+      #shellcheck
+      #yamllint
+      #eslint_d
 
-      # compression
-      p7zip
-      unzip
-      xz
-      zip
+      ## compression
+      #p7zip
+      #unzip
+      #xz
+      #zip
 
-      # fun
-      macchina
+      ## fun
+      #macchina
     ])
     ++ [
       bartib
@@ -103,5 +103,5 @@ in {
   programs.home-manager.enable = true;
   manual.manpages.enable = true;
 
-  home.stateVersion = stateVersion;
+  home.stateVersion = "24.05";
 }

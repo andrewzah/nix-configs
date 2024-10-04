@@ -14,32 +14,28 @@
       cleanup = "zap";
     };
 
-    brews = [
-      "yabai"
-      "skhd"
-    ];
+    #brews = [ ];
 
     extraConfig = ''
       cask_args appdir: "~/Applications"
     '';
 
     taps = [
-      "homebrew/cask-fonts"
-      "homebrew/cask-versions"
+      #"homebrew/cask-fonts"
       "homebrew/services"
       "koekeishiya/formulae"
     ];
 
     casks = [
-      "bitwarden"
-      "deluge"
-      "discord"
-      "docker"
+      #"bitwarden"
+      #"deluge"
+      #"discord"
+      #"docker"
       "firefox"
-      "mullvadvpn"
-      "slack"
-      "vlc"
-      "zoom"
+      #"mullvadvpn"
+      #"slack"
+      #"vlc"
+      #"zoom"
     ];
   };
 }
