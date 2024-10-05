@@ -12,6 +12,7 @@
     trino-cli
     trivy
     unixtools.xxd
+    alejandra
 
     #TODO: wrapping
     #jetbrains.webstorm

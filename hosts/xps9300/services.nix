@@ -3,6 +3,8 @@
   pkgs,
   ...
 }: {
+  services.sshd.enable = true;
+
   services = {
     blueman.enable = true;
 
