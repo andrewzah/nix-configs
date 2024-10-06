@@ -66,7 +66,9 @@
   hardware.opengl = {
     enable = true;
     extraPackages = with pkgs; [
-      vaapiIntel
+      (vaapiIntel.overrideAttrs (prev: {
+        meta.priority = 1;
+      }))
     ];
   };
 
