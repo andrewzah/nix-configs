@@ -4,5 +4,7 @@
 
     pkgs.libre-baskerville
     pkgs.unifont
+
+    pkgs.noto-fonts-cjk
   ];
 }

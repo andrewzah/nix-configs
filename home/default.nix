@@ -31,7 +31,7 @@ in {
 
       # web ui / gui apps
       bitwarden-desktop
-      discord
+      #discord
       syncthing
       vlc
       yt-dlp
