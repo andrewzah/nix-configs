@@ -23,71 +23,68 @@ in {
   home.packages =
     (with pkgs; [
       # 3.0.13
-      #openssl
+      openssl
+      wireguard-go
+      wireguard-tools
 
       anki
 
       # web ui / gui apps
       bitwarden-desktop
-      #discord
-      slack
+      discord
       syncthing
       vlc
       yt-dlp
-      zoom-us
       foliate # epub reader
 
       ## rust coreutils alternatives & just rust programs
-      #bat
+      bat
       #bat-extras.batgrep
       fd
       just
       lsd
       ripgrep
       sd
-      #vimv-rs
-      #wthrr
+      vimv-rs
 
       ## system tools
       #btop
-      #file
-      #gavin-bc
-      #gnupg
-      #lsof
-      #which
-      #pciutils
+      file
+      gavin-bc
+      gnupg
+      lsof
+      which
+      pciutils
 
-      ## networks
-      #dnsutils # dig + nslookup
-      #iperf3
-      #ldns # dig alternative
-      #nmap
-      #socat
+      # networks
+      dnsutils # dig + nslookup
+      iperf3
+      ldns # dig alternative
+      nmap
+      socat
+      inetutils # telnet
 
-      #entr
-      #fzf
-      #git-lfs
-      #gron
-      #kubectl
+      entr
+      fzf
+      git-lfs
+      gron
+      kubectl
       jq
-      #libiconv
-      #tmux
-      #tree
+      libiconv
+      tmux
+      tree
 
       ## linters / LSPs
-      #marksman
-      #shellcheck
-      #yamllint
-      #eslint_d
+      marksman
+      shellcheck
+      yamllint
+      eslint_d
 
       ## compression
-      #p7zip
-      #unzip
-      #xz
-      #zip
-
-      ## fun
-      #macchina
+      p7zip
+      unzip
+      xz
+      zip
     ])
     ++ [
       neovim-flake

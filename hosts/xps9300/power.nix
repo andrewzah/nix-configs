@@ -1,4 +1,4 @@
-{ config, ... }:
+{config, ...}:
 #{ modulesPath, options, inputs, stateVersion, lib, specialArgs, config }:
 {
   #services.thermald.enable = false;
@@ -29,7 +29,6 @@
       #on supported devices only, e.g. thinkpads
       #START_CHARGE_THRESH_BAT0 = 40; # 40 and below it starts to charge
       #STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
-
     };
   };
 

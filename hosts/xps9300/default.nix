@@ -12,6 +12,9 @@
     ./power.nix
     ./services.nix
     ./unfree.nix
+
+    ./remotebuild.nix
+    ./wireguard-client.nix
   ];
   networking.hostName = "xps9300";
   time.timeZone = "Asia/Seoul";
