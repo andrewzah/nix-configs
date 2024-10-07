@@ -52,6 +52,14 @@
     };
   };
 
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+    extraPackages = (with pkgs; [
+      bibata-cursors
+    ]);
+  };
+
   programs.zsh.enable = true;
   programs.zsh.shellAliases = {
     switch = "sudo nixos-rebuild switch --flake /etc/nixos#xps9300";
@@ -62,7 +70,6 @@
     pinentryPackage = pkgs.pinentry-curses;
   };
 
-  programs.hyprland.enable = true;
   hardware.opengl = {
     enable = true;
     extraPackages = with pkgs; [
@@ -78,6 +85,7 @@
 
     containerd.enable = true;
   };
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   # 'sg' for dvd drives w/ encrypted content
   #boot.kernelModules = ["sg"];

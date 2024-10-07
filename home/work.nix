@@ -1,20 +1,21 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    alejandra
+
     apacheHttpd
     awscli
     caddy
-    cosign
-    docker
     gh
-    grype
-    skopeo
-    syft
     trino-cli
-    trivy
     unixtools.xxd
-    alejandra
 
-    #TODO: wrapping
-    #jetbrains.webstorm
+    docker
+    manifest-tool
+    skopeo
+
+    cosign
+    grype
+    syft
+    trivy
   ];
 }

@@ -13,8 +13,8 @@
     nix-hardware.url = "github:NixOS/nixos-hardware/master";
 
     # personal flake
-    neovim-flake.url = "github:andrewzah/neovim-flake";
-    #neovim-flake.url = git+file:///home/andrew/programming/neovim-flake;
+    #neovim-flake.url = "github:andrewzah/neovim-flake";
+    neovim-flake.url = git+file:///home/andrew/programming/neovim-flake;
 
     #rust-overlay = {
     #  url = "github:oxalica/rust-overlay";

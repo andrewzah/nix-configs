@@ -1,7 +1,8 @@
 ## prio 1
+- set system env var XDG_DEFAULT_LAYOUT=us, not just for sway/h.m.
 - https://github.com/tomodachi94/dotfiles/blob/main/flake.nix
 - learn how to wrap nix programs
-- vim: bind :W to :w
+- vim bind :W to :w
 
 ## prio 2
 - refactor repo
