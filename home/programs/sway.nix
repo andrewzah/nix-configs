@@ -2,7 +2,10 @@
   imports = [
     ./waybar.nix
   ];
-  home.packages = [ pkgs.sway ];
+  home.packages = with pkgs; [
+    sway
+  ];
+
   home.sessionVariables = {
     XDG_DEFAULT_LAYOUT = "us";
   };
@@ -12,18 +15,14 @@
     checkConfig = false;
     package = null;
 
-    #config = rec {
-    #  modifier = "Mod1";
-    #  terminal = "foot";
-    #};
-
     config = let
       swaymsg = "${pkgs.sway}/bin/swaymsg";
-    in rec {
-      fonts.names = [ "Iosevka SS03" ];
-      menu = "rofi";
-      terminal = "foot";
       modifier = "Mod4";
+      terminal = "foot";
+    in {
+      inherit modifier terminal;
+      fonts.names = ["Iosevka SS03"];
+      menu = "rofi";
       keybindings = {
         "${modifier}+Space" = "exec rofi -show run";
         "${modifier}+f" = "fullscreen toggle";
@@ -40,7 +39,7 @@
 
         "${modifier}+h" = "focus left";
         "${modifier}+j" = "focus down";
-        "${modifier}+k" = "focus, up";
+        "${modifier}+k" = "focus up";
         "${modifier}+l" = "focus right";
 
         "${modifier}+Shift+h" = "move left";
@@ -53,7 +52,7 @@
         "${modifier}+Shift+Escape" = "exec ${swaymsg} exit";
         "${modifier}+Return" = "exec ${terminal}";
 
-        "F6" = "exec, brightnessctl set 5%-";
+        "F6" = "exec brightnessctl set 5%-";
         "F7" = "exec brightnessctl set +5%";
         "F1" = "exec wpctl set-mute 44 toggle";
         "F2" = " exec wpctl set-volume 44 5%-";
@@ -87,7 +86,7 @@
 
       modes.resize = {};
 
-      input = { "*" = { xkb_layout = "us"; }; };
+      input = {"*" = {xkb_layout = "us,kr";};};
 
       seat = {
         "*" = {
@@ -101,13 +100,20 @@
       };
 
       startup = [
-        { always = true; command = "fcitx5 &"; }
-        { always = true; command = "mako &"; }
+        {
+          always = true;
+          command = "fcitx5 &";
+        }
+        {
+          always = true;
+          command = "mako &";
+        }
+        {command = "swaymsg -s $SWAYSOCK output eDP-1 bg /etc/nixos/static-files/wallpapers/DF-1.png fill";}
       ];
 
       bars = [
         {
-          position = "top";
+          position = "bottom";
           command = "${pkgs.waybar}/bin/waybar";
         }
       ];

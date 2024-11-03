@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  home.packages = [ pkgs.waybar ];
+  home.packages = [pkgs.waybar];
 
   programs.waybar = {
     enable = true;
@@ -7,7 +7,7 @@
       {
         height = 35;
         layer = "top";
-        position = "top";
+        position = "bottom";
         tray = {spacing = 10;};
         modules-left = [
           "clock"

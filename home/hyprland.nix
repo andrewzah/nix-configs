@@ -1,4 +1,4 @@
-{ pkgs }: {
+{pkgs}: {
   home.packages = [
     pkgs.hyprpaper
   ];
@@ -98,4 +98,3 @@
 
   xdg.configFile."hypr/hyprpaper.conf".text = builtins.readFile ../static-files/configs/hyprpaper.conf;
 }
-

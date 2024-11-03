@@ -6,6 +6,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  environment.variables = {
+    XKB_DEFAULT_LAYOUT = "us";
+  };
+
   networking = {
     networkmanager.enable = true;
     enableIPv6 = false;
@@ -15,8 +19,10 @@
     extraHosts = lib.concatStringsSep "\n" [
       "127.0.0.1 airflow.arpa"
       "127.0.0.1 apiman.arpa"
+      "127.0.0.1 attic.arpa"
       "127.0.0.1 docker-registry.arpa"
       "127.0.0.1 jupyterhub.arpa"
+      "127.0.0.1 keycloak.arpa"
     ];
   };
 

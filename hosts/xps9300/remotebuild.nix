@@ -1,9 +1,10 @@
 {...}: {
   nix.buildMachines = [
-    { hostName = "eu.nixbuild.net";
+    {
+      hostName = "eu.nixbuild.net";
       system = "aarch64-linux";
       maxJobs = 100;
-      supportedFeatures = [ "benchmark" "big-parallel" ];
+      supportedFeatures = ["benchmark" "big-parallel"];
     }
     #{
     #  hostName = "remotebuild@inspire-others";

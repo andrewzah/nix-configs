@@ -8,7 +8,7 @@
     recursive = true;
   };
 
-  home.packages = (with pkgs; [
+  home.packages = with pkgs; [
     colima
     skhd
     yabai
@@ -17,7 +17,7 @@
 
     (callPackage ../packages/sf_symbols.nix {})
     (callPackage ../packages/sketchybar-app-font.nix {})
-  ]);
+  ];
 
   programs.zsh = {
     shellAliases = {

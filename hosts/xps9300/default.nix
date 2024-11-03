@@ -13,7 +13,8 @@
     ./services.nix
     ./unfree.nix
 
-    #./remotebuild.nix
+    ./nix.nix
+    ./remotebuild.nix
     #./wireguard-client.nix
   ];
   networking.hostName = "xps9300";
@@ -21,26 +22,37 @@
   users.users.andrew.extraGroups = ["docker" "input"];
   system.stateVersion = stateVersion;
 
-  services.udev.extraRules = lib.concatStrings [
-    # increase polling rate to 1ms for ps5 dualsense
-    ''
-      ACTION=="bind", SUBSYSTEM=="hid", DRIVER=="sony", KERNEL=="*054C:0CE6*", ATTR{bt_poll_interval}="1"
-    ''
-  ];
-
-  fileSystems."/mnt/cd1" = {
-    device = "/dev/sr0";
-    fsType = "auto";
-    options = [
-      "ro"
-      "user"
-      "noauto"
-      "unhide"
-    ];
+  # for work
+  services.hydra = {
+    enable = false;
+    hydraURL = "http://localhost:33000";
+    notificationSender = "hydra@localhost";
+    buildMachinesFiles = [];
+    useSubstitutes = true;
   };
 
+  # ps5 increase polling rate - but does it work with bluetooth ?
+  #services.udev.extraRules = lib.concatStrings [
+  #  # increase polling rate to 1ms for ps5 dualsense
+  #  ''
+  #    ACTION=="bind", SUBSYSTEM=="hid", DRIVER=="sony", KERNEL=="*054C:0CE6*", ATTR{bt_poll_interval}="1"
+  #  ''
+  #];
+
+  #fileSystems."/mnt/cd1" = {
+  #  device = "/dev/sr0";
+  #  fsType = "auto";
+  #  options = [
+  #    "ro"
+  #    "user"
+  #    "noauto"
+  #    "unhide"
+  #  ];
+  #};
+
   security.pki.certificateFiles = [
-    /home/andrew/work/0proxy/pki/docker-registry.arpa.crt
+    /home/andrew/work/platform/nix/local-proxy/pki/docker-registry.arpa.crt
+    /home/andrew/work/platform/nix/local-proxy/pki/attic.arpa.crt
   ];
 
   hardware.bluetooth = {
@@ -55,9 +67,9 @@
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
-    extraPackages = (with pkgs; [
+    extraPackages = with pkgs; [
       bibata-cursors
-    ]);
+    ];
   };
 
   programs.zsh.enable = true;
@@ -85,7 +97,7 @@
 
     containerd.enable = true;
   };
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  #boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   # 'sg' for dvd drives w/ encrypted content
   #boot.kernelModules = ["sg"];
