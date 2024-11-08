@@ -23,6 +23,7 @@
       "127.0.0.1 docker-registry.arpa"
       "127.0.0.1 jupyterhub.arpa"
       "127.0.0.1 keycloak.arpa"
+      "127.0.0.1 nginx.arpa"
     ];
   };
 

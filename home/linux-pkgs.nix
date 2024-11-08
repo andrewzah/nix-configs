@@ -72,6 +72,7 @@
     (callPackage ../packages/andrew-zah-scripts.nix {})
     (callPackage ../packages/rbonsai.nix {})
     (callPackage ../packages/cider-wrapper.nix {})
+    (callPackage ../packages/intentrace.nix {})
   ];
 
   home.pointerCursor = {
