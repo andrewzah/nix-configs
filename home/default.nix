@@ -23,9 +23,6 @@ in {
 
   home.packages =
     (with pkgs; [
-      # tmp
-      go
-
       # 3.0.13
       openssl
       wireguard-go
