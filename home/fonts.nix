@@ -1,10 +1,9 @@
 {pkgs, ...}: {
   home.packages = [
-    (pkgs.callPackage ../packages/iosevka-consolas-ttf.nix {})
+    (pkgs.callPackage ../pkgs/iosevka-consolas-ttf.nix {})
+    #(pkgs.callPackage ../pkgs/iosevka-custom-ttf/default.nix {})
 
-    pkgs.libre-baskerville
     pkgs.unifont
-
     pkgs.noto-fonts-cjk
   ];
 }

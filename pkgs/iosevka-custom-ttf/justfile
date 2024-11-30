@@ -1,0 +1,2 @@
+toml:
+  nix run github:erooke/toml2nix -- private-build-plans.toml

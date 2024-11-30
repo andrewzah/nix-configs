@@ -69,10 +69,10 @@
     ngrep
     bingrep
 
-    (callPackage ../packages/andrew-zah-scripts.nix {})
-    (callPackage ../packages/rbonsai.nix {})
-    (callPackage ../packages/cider-wrapper.nix {})
-    (callPackage ../packages/intentrace.nix {})
+    (callPackage ../pkgs/andrew-zah-scripts.nix {})
+    (callPackage ../pkgs/rbonsai.nix {})
+    (callPackage ../pkgs/cider-wrapper.nix {})
+    (callPackage ../pkgs/intentrace.nix {})
   ];
 
   home.pointerCursor = {

@@ -1,0 +1,25 @@
+[buildPlans.IosevkaCustom]
+family = "Iosevka Custom"
+spacing = "term"
+serifs = "slab"
+noCvSs = true
+exportGlyphNames = false
+noLigation = true
+
+[buildPlans.IosevkaCustom.variants]
+inherits = "ss03"
+
+[buildPlans.IosevkaCustom.widths.Normal]
+shape = 500
+menu = 5
+css = "normal"
+
+[buildPlans.IosevkaCustom.widths.Condensed]
+shape = 416
+menu = 3
+css = "condensed"
+
+[buildPlans.IosevkaCustom.widths.SemiCondensed]
+shape = 456
+menu = 4
+css = "semi-condensed"

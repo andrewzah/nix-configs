@@ -7,25 +7,26 @@
 }:
 stdenv.mkDerivation rec {
   pname = "iosevka-consolas-ttf";
-  version = "30.0.1";
+  version = "32.1.0";
 
   src = fetchurl {
     url = "https://github.com/be5invis/Iosevka/releases/download/v${version}/PkgTTF-IosevkaSS03-${version}.zip";
-    hash = "sha256-1XK7eFR+8CEqhtVbDt9wN1+oIA8CPhw7eWIxa6Oe764=";
+    hash = "sha256-ryNx3q3oCNbsBB610Ad6asK4c+dwP2y//1aDu0R1WNA=";
   };
+
   unpackPhase = ''
     unzip $src
   '';
-  buildInputs = with pkgs; [unzip];
+
+  nativeBuildInputs = [pkgs.unzip];
   installPhase = ''
     mkdir -p $out/share/fonts/truetype
     find -name \*.ttf -exec mv {} $out/share/fonts/truetype/ \;
   '';
-  meta = with lib; {
-    description = ''
-      Iosevka SS03 (Consolas) TTF
-    '';
+
+  meta = {
+    description = "Iosevka SS03 (Consolas) TTF";
     homepage = "https://github.com/be5invis/Iosevka";
-    platforms = platforms.x86_64;
+    license = lib.licenses.ofl;
   };
 }
