@@ -1,7 +1,6 @@
 {
   pkgs,
-  lib,
-  stateVersion,
+  username,
   ...
 }: {
   imports = [
@@ -19,8 +18,8 @@
   ];
   networking.hostName = "xps9300";
   time.timeZone = "Asia/Seoul";
-  users.users.andrew.extraGroups = ["docker" "input"];
-  system.stateVersion = stateVersion;
+  users.users."${username}".extraGroups = ["docker" "input"];
+  system.stateVersion = "24.05";
 
   # for work
   services.hydra = {
@@ -51,8 +50,8 @@
   #};
 
   security.pki.certificateFiles = [
-    /home/andrew/work/platform/nix/local-proxy/pki/docker-registry.arpa.crt
-    /home/andrew/work/platform/nix/local-proxy/pki/attic.arpa.crt
+    /home/${username}/work/platform/nix/local-proxy/pki/docker-registry.arpa.crt
+    /home/${username}/work/platform/nix/local-proxy/pki/attic.arpa.crt
   ];
 
   hardware.bluetooth = {

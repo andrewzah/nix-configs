@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    ./games/dwarf-fortress-classic.nix
+    #./games/dwarf-fortress-classic.nix
   ];
 
   home.packages = with pkgs; [

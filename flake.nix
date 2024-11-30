@@ -1,26 +1,5 @@
 {
-  description = "Andrew's NixOS & MacOS Flake";
-
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
-
-    home-manager.url = "github:nix-community/home-manager/release-24.05";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    nix-darwin.url = "github:LnL7/nix-darwin";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-
-    nix-hardware.url = "github:NixOS/nixos-hardware/master";
-
-    # personal flake
-    #neovim-flake.url = "github:andrewzah/neovim-flake";
-    neovim-flake.url = git+file:///home/andrew/programming/neovim-flake;
-
-    #rust-overlay = {
-    #  url = "github:oxalica/rust-overlay";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
-  };
+  description = "Andrew's General Flake";
 
   outputs = {
     self,
@@ -29,22 +8,7 @@
     nixos-hardware,
     nix-darwin,
     ...
-  } @ inputs: let
-    username = "andrew";
-    stateVersion = "24.05";
-
-    home-modules = {
-      home-manager.useGlobalPkgs = true;
-      home-manager.useUserPackages = true;
-      home-manager.extraSpecialArgs = {inherit inputs username stateVersion;};
-    };
-    #overlays = import ./lib/overlays.nix { inherit inputs system; };
-    #system = "x86_64-linux";
-    #pkgs = import inputs.nixpkgs {
-    #  inherit overlays system;
-    #  config.allowUnfree = true;
-    #};
-  in {
+  } @ inputs: {
     darwinConfigurations = {
       "Inspire-Others" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
@@ -69,16 +33,21 @@
     darwinPackages = self.darwinConfigurations."Inspire-Others".pkgs;
 
     nixosConfigurations = {
-      xps9300 = nixpkgs.lib.nixosSystem {
+      xps9300 = let
+        username = "andrew";
+      in nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        #specialArgs = {inherit pkgs inputs stateVersion;};
-        specialArgs = {inherit inputs stateVersion;};
+        specialArgs = {inherit inputs username;};
         modules = [
           ./hosts/xps9300/default.nix
 
           home-manager.nixosModules.home-manager
           {
-            home-manager.users.andrew = {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = {inherit username inputs;};
+
+            home-manager.users."${username}" = {
               imports = [
                 ./home/default.nix
                 ./home/wayland.nix
@@ -86,17 +55,20 @@
               ];
             };
           }
-          home-modules
-
-          ({pkgs, ...}: {
-            #nixpkgs.overlays = [ rust-overlay.overlays.default ] ++ overlays;
-            #nixpkgs.overlays = [rust-overlay.overlays.default];
-            #environment.systemPackages = [pkgs.rust-bin.stable.latest.default];
-          })
 
           nixos-hardware.nixosModules.dell-xps-13-9360
         ];
       };
     };
+  };
+
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    home-manager.url = "github:nix-community/home-manager/release-24.05";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nix-hardware.url = "github:NixOS/nixos-hardware/master";
+    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    neovim-flake.url = "github:andrewzah/neovim-flake";
   };
 }
