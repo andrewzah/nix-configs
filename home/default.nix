@@ -10,16 +10,15 @@ in {
     ./programs/git.nix
     ./programs/zsh.nix
 
-    ./programs/vscode.nix
-
+    #./programs/vscode.nix
     #./syncthing.nix
   ];
 
-  home.username = "andrew";
+  home.username = "dragon";
   home.homeDirectory =
     if pkgs.system == "aarch64-darwin"
     then "/Users/andrew"
-    else "/home/andrew";
+    else "/home/dragon";
 
   home.packages =
     (with pkgs; [

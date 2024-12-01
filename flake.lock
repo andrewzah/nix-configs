@@ -202,15 +202,15 @@
       "locked": {
         "lastModified": 1723974195,
         "narHash": "sha256-upaUnDGoXUvXbt2P10axc2rMHm6gWBaob85ybrv9mmk=",
-        "ref": "refs/heads/master",
+        "owner": "andrewzah",
+        "repo": "neovim-flake",
         "rev": "c65d435919b467ab57afd45b748fc49bf8642ebf",
-        "revCount": 12,
-        "type": "git",
-        "url": "file:///home/andrew/programming/neovim-flake"
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/andrew/programming/neovim-flake"
+        "owner": "andrewzah",
+        "repo": "neovim-flake",
+        "type": "github"
       }
     },
     "nix-darwin": {

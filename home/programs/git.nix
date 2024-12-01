@@ -18,7 +18,7 @@
 
     extraConfig = {
       color.ui = true;
-      commit.gpgsign = true;
+      #commit.gpgsign = true;
       core.editor = "nvim";
       diff.indentHeuristic = "on";
       filter.lfs = {
@@ -35,7 +35,7 @@
       user = {
         email = "zah@andrewzah.com";
         name = "Andrew Zah";
-        signingkey = "D87BD9DCF11BACD6CDB40CB213732FB13E61E0BE";
+        #signingkey = "D87BD9DCF11BACD6CDB40CB213732FB13E61E0BE";
       };
     };
   };

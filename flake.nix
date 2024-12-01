@@ -13,13 +13,8 @@
     nix-hardware.url = "github:NixOS/nixos-hardware/master";
 
     # personal flake
-    #neovim-flake.url = "github:andrewzah/neovim-flake";
-    neovim-flake.url = git+file:///home/andrew/programming/neovim-flake;
-
-    #rust-overlay = {
-    #  url = "github:oxalica/rust-overlay";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
+    neovim-flake.url = "github:andrewzah/neovim-flake";
+    #neovim-flake.url = git+file:///home/andrew/programming/neovim-flake;
   };
 
   outputs = {
@@ -30,7 +25,7 @@
     nix-darwin,
     ...
   } @ inputs: let
-    username = "andrew";
+    username = "dragon";
     stateVersion = "24.05";
 
     home-modules = {
@@ -69,6 +64,26 @@
     darwinPackages = self.darwinConfigurations."Inspire-Others".pkgs;
 
     nixosConfigurations = {
+      donbyeorak = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs stateVersion;};
+        modules = [
+          ./hosts/donbyeorak/default.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.users.dragon = {
+              imports = [
+                ./home/default.nix
+                ./home/x11.nix
+                ./home/linux-pkgs.nix
+              ];
+            };
+          }
+          home-modules
+        ];
+      };
+
       xps9300 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         #specialArgs = {inherit pkgs inputs stateVersion;};
