@@ -32,7 +32,35 @@
     };
     darwinPackages = self.darwinConfigurations."Inspire-Others".pkgs;
 
-    nixosConfigurations = {
+    nixosConfigurations = let
+      home-modules = {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = {inherit inputs;};
+      };
+    in {
+      donbyeorak = let
+        username = "dragon";
+      in nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs username;};
+        modules = [
+          ./hosts/donbyeorak/default.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.users."${username}" = {
+              imports = [
+                ./home/default.nix
+                ./home/x11.nix
+                ./home/linux-pkgs.nix
+              ];
+            };
+          }
+          home-modules
+        ];
+      };
+
       xps9300 = let
         username = "andrew";
       in nixpkgs.lib.nixosSystem {
@@ -43,10 +71,6 @@
 
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = {inherit username inputs;};
-
             home-manager.users."${username}" = {
               imports = [
                 ./home/default.nix
@@ -55,7 +79,7 @@
               ];
             };
           }
-
+          home-modules
           nixos-hardware.nixosModules.dell-xps-13-9360
         ];
       };

@@ -35,9 +35,9 @@
     jack.enable = false;
   };
 
-  users.users.andrew = {
+  users.users.dragon = {
     isNormalUser = true;
-    description = "Andrew Zah";
+    description = "Dragons Dream";
     extraGroups = ["docker" "networkmanager" "wheel"];
     shell = pkgs.zsh;
   };
