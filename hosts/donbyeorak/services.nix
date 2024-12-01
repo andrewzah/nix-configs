@@ -8,4 +8,6 @@
   };
 
   hardware.opengl.driSupport32Bit = true;
+
+  services.sshd.enable = true;
 }

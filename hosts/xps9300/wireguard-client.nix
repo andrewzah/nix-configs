@@ -1,4 +1,4 @@
-{...}: {
+{username,...}: {
   #networking.nat = {
   #  enable = true;
   #  externalInterface = "wlp0s20f3";
@@ -9,7 +9,7 @@
   #networking.wg-quick.interfaces.wg0 = {
   #  #ips = [];
   #  #listenPort = 51820;
-  #  privateKeyFile = "/home/andrew/.wireguard/private";
+  #  privateKeyFile = "/home/${username}/.wireguard/private";
   #  address = [ "175.193.252.129" ];
 
   #  peers = [

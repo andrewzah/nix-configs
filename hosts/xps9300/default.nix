@@ -7,14 +7,17 @@
     ../common.nix
     ../common-linux.nix
     ./hardware-configuration.nix
-    ./i18n.nix
+
+    ../../services/fcitx.nix
+    ../../services/keyd.nix
+
     ./power.nix
     ./services.nix
-    ./unfree.nix
 
     ./nix.nix
     ./remotebuild.nix
     #./wireguard-client.nix
+    ./unfree.nix
   ];
   networking.hostName = "xps9300";
   time.timeZone = "Asia/Seoul";

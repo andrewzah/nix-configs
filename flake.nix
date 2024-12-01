@@ -36,7 +36,6 @@
       home-modules = {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = {inherit inputs;};
       };
     in {
       donbyeorak = let
@@ -49,6 +48,7 @@
 
           home-manager.nixosModules.home-manager
           {
+            home-manager.extraSpecialArgs = {inherit inputs username;};
             home-manager.users."${username}" = {
               imports = [
                 ./home/default.nix
@@ -71,6 +71,7 @@
 
           home-manager.nixosModules.home-manager
           {
+            home-manager.extraSpecialArgs = {inherit inputs username;};
             home-manager.users."${username}" = {
               imports = [
                 ./home/default.nix

@@ -1,6 +1,8 @@
 {
   pkgs,
+  lib,
   inputs,
+  username,
   ...
 }: let
   neovim-flake = inputs.neovim-flake.packages.${pkgs.system}.default;
@@ -14,11 +16,8 @@ in {
     #./syncthing.nix
   ];
 
-  home.username = "dragon";
-  home.homeDirectory =
-    if pkgs.system == "aarch64-darwin"
-    then "/Users/andrew"
-    else "/home/dragon";
+  home.username = "${username}";
+  home.homeDirectory = lib.mkDefault "/home/${username}";
 
   home.packages =
     (with pkgs; [

@@ -1,19 +1,13 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{ username, ... }: {
   services.sshd.enable = true;
   services.tailscale.enable = true;
 
   services = {
-    blueman.enable = true;
-
     syncthing = {
       enable = true;
-      dataDir = "/home/andrew/sync";
-      configDir = "/home/andrew/sync/config";
-      user = "andrew";
+      dataDir = "/home/${username}/sync";
+      configDir = "/home/${username}/sync/config";
+      user = "${username}";
       group = "users";
       overrideFolders = false;
       overrideDevices = false;
@@ -29,23 +23,6 @@
     };
   };
 
-  systemd.services = {
-    keyd = {
-      enable = true;
-
-      description = "keyd daemon";
-      wantedBy = ["multi-user.target"];
-      unitConfig = {
-        After = "local-fs.target";
-      };
-
-      serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.keyd}/bin/keyd";
-        Restart = "always";
-      };
-    };
-  };
   environment.etc."keyd/default.conf".text = ''
     [ids]
     0001:0001

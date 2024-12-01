@@ -1,8 +1,8 @@
-{...}: {
+{username, ...}: {
   services.mpd = {
     enable = true;
-    musicDirectory = "/home/andrew/music";
-    dataDir = "/home/andrew/.cache/mpd";
+    musicDirectory = "/home/${username}/music";
+    dataDir = "/home/${username}/.cache/mpd";
     network = {
       listenAddress = "127.0.0.1";
       port = 6600;

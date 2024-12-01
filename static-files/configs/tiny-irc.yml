@@ -24,7 +24,7 @@ defaults:
   realname: jazz
 
 # Location for chat logs.
-log_dir: "/home/andrew/.cache/tiny_logs"
+log_dir: "/home/${username}/.cache/tiny_logs"
 
 # Limits the maximum number of messages stored in each tab. Default is
 # unlimited.

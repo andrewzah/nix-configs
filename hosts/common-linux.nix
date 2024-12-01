@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  username,
   ...
 }: {
   boot.loader.systemd-boot.enable = true;
@@ -35,9 +36,8 @@
     jack.enable = false;
   };
 
-  users.users.dragon = {
+  users.users."${username}" = {
     isNormalUser = true;
-    description = "Dragons Dream";
     extraGroups = ["docker" "networkmanager" "wheel"];
     shell = pkgs.zsh;
   };

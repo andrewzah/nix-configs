@@ -7,27 +7,17 @@
     ../common.nix
     ../common-linux.nix
 
-    ./i18n.nix
+    ../../services/fcitx.nix
+    ../../services/bluetooth.nix
+
     ./hardware-configuration.nix
     ./services.nix
     ./unfree.nix
-    ./bluetooth.nix
   ];
   networking.hostName = "donbyeorak";
   time.timeZone = "America/New_York";
   users.users.dragon.extraGroups = ["docker" "input"];
   system.stateVersion = "24.05";
-
-  services.sshd.enable = true;
-
-  #hardware.bluetooth = {
-  #  enable = true;
-  #  powerOnBoot = true;
-  #  package = pkgs.bluez5-experimental;
-  #  settings.General = {
-  #    ControllerMode = "dual";
-  #  };
-  #};
 
   programs.zsh.enable = true;
   programs.zsh.shellAliases = {

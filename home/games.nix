@@ -4,8 +4,8 @@
   ];
 
   home.packages = (with pkgs; [
-    steam
-    steam-run
-    vbam # visualboyadvance-m
+    #steam
+    #steam-run
+    #vbam # visualboyadvance-m
   ]);
 }
