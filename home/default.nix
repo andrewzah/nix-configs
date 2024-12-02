@@ -7,38 +7,42 @@
 }: let
   neovim-flake = inputs.neovim-flake.packages.${pkgs.system}.default;
 in {
+  home.username = "${username}";
+  home.homeDirectory = lib.mkDefault "/home/${username}";
+
   imports = [
     ./programs/atuin.nix
+    ./programs/firefox.nix
     ./programs/git.nix
+    ./programs/tiny.nix
     ./programs/zsh.nix
+
+    ./fonts.nix
+    ./work.nix
 
     #./programs/vscode.nix
     #./syncthing.nix
   ];
 
-  home.username = "${username}";
-  home.homeDirectory = lib.mkDefault "/home/${username}";
-
   home.packages =
     (with pkgs; [
-      # 3.0.13
       openssl
       wireguard-go
       wireguard-tools
 
       anki
       nix-tree
+      alejandra
 
       # web ui / gui apps
       bitwarden-desktop
-      syncthing
+      #syncthing
       vlc
       yt-dlp
       foliate # epub reader
 
       ## rust coreutils alternatives & just rust programs
       bat
-      #bat-extras.batgrep
       fd
       just
       lsd
@@ -65,10 +69,9 @@ in {
 
       entr
       fzf
+      jq
       git-lfs
       gron
-      kubectl
-      jq
       libiconv
       tmux
       tree
@@ -84,6 +87,60 @@ in {
       unzip
       xz
       zip
+
+      bitwarden-desktop
+
+      vlc
+
+      appimage-run
+      mullvad-vpn
+      tailscale
+
+      unar
+      poppler # ?
+      ffmpeg_7-headless
+
+      foot
+      firefox
+      ungoogled-chromium
+      thunderbird-unwrapped
+      obsidian
+
+      killall
+      pavucontrol
+      brightnessctl
+      lsix
+      dive
+      sshfs
+      dust
+
+      pinentry-curses # GPG entry
+      xfce.thunar # GTK file browser
+      yazi # TUI file browser
+      libnotify
+      xdg-utils
+
+      keyd
+      pass
+
+      dmidecode
+      ethtool
+      lm_sensors
+      sysstat
+      usbutils
+
+      ltrace
+      strace
+      pstree
+      dstat
+      tcpdump
+      ngrep
+      bingrep
+
+      (callPackage ../pkgs/andrew-zah-scripts.nix {})
+      (callPackage ../pkgs/rbonsai.nix {})
+      (callPackage ../pkgs/cider-wrapper.nix {})
+      (callPackage ../pkgs/intentrace.nix {})
     ])
     ++ [
       neovim-flake

@@ -1,13 +1,12 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    alejandra
-
     apacheHttpd
     awscli
     caddy
-    gh
     trino-cli
     unixtools.xxd
+    kubectl
+    dracut
 
     docker
     manifest-tool

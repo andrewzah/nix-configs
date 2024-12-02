@@ -1,6 +1,5 @@
 {
   pkgs,
-  lib,
   ...
 }: {
   imports = [
@@ -9,6 +8,7 @@
 
     ../../services/fcitx.nix
     ../../services/bluetooth.nix
+    ../../services/syncthing.nix
 
     ./hardware-configuration.nix
     ./services.nix

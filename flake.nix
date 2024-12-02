@@ -51,9 +51,10 @@
             home-manager.extraSpecialArgs = {inherit inputs username;};
             home-manager.users."${username}" = {
               imports = [
+                ./hosts/donbyeorak/home.nix
+
                 ./home/default.nix
                 ./home/x11.nix
-                ./home/linux-pkgs.nix
               ];
             };
           }
@@ -76,7 +77,6 @@
               imports = [
                 ./home/default.nix
                 ./home/wayland.nix
-                ./home/linux-pkgs.nix
               ];
             };
           }
