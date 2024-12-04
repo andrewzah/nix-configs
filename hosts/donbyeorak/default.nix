@@ -6,6 +6,7 @@
     ../common.nix
     ../common-linux.nix
 
+    ../../services/printing.nix
     ../../services/fcitx.nix
     ../../services/bluetooth.nix
     ../../services/syncthing.nix

@@ -103,7 +103,7 @@
   };
 
   home.sessionVariables = {
-    #XCURSOR_SIZE = "108";
+    XCURSOR_SIZE = "108";
     XKB_DEFAULT_LAYOUT = "us";
 
     GLFW_IM_MODULE = "ibus";
