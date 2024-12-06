@@ -8,7 +8,8 @@
     scrot
 
     xivlauncher
-    steam
-    steam-run
+    #steam
+    #steam-run
+    dualsensectl
   ]);
 }

@@ -10,6 +10,7 @@
     ../../services/fcitx.nix
     ../../services/bluetooth.nix
     ../../services/syncthing.nix
+    ../../services/steam.nix
 
     ./hardware-configuration.nix
     ./services.nix
