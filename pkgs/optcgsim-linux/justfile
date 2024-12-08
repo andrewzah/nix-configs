@@ -1,0 +1,12 @@
+b:
+ nix-build -E '{pkgs ? import <nixpkgs>{}}: pkgs.callPackage ./default.nix{}'
+
+r:
+  ./result/bin/OPTCGSim.x86_64
+
+s:
+  rm -f strace.log
+  strace -o strace.log ./result/bin/OPTCGSim.x86_64
+
+sv:
+  nvim strace.log

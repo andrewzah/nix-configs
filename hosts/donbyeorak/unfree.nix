@@ -21,5 +21,7 @@
       "vscode-extension-ms-vscode-remote-remote-ssh-edit"
       "vscode-extension-ms-vsliveshare-vsliveshare"
       "zoom"
+
+      "optcgsim"
     ];
 }
