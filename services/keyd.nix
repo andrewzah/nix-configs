@@ -1,18 +1,28 @@
-{pkgs,...}: {
-  systemd.services = {
-    keyd = {
-      enable = true;
+{...}: {
+  services.keyd = {
+    enable = true;
 
-      description = "keyd daemon";
-      wantedBy = ["multi-user.target"];
-      unitConfig = {
-        After = "local-fs.target";
+    keyboards = {
+      default = {
+        ids = ["*"];
+        settings = {
+          main = {
+            capslock = "overload(control,esc)";
+            leftmeta = "layer(alt)";
+            leftalt = "layer(meta)";
+            rightalt = "layer(meta)";
+          };
+        };
       };
 
-      serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.keyd}/bin/keyd";
-        Restart = "always";
+      system76_launch = {
+        ids = ["3384:0001"];
+        settings = {
+          main = {
+            capslock = "overload(control,esc)";
+            leftalt = "layer(meta)";
+          };
+        };
       };
     };
   };
