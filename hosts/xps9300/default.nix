@@ -8,6 +8,7 @@
     ../common-linux.nix
     ./hardware-configuration.nix
 
+    ../../services/bluetooth.nix
     ../../services/fcitx.nix
     ../../services/keyd.nix
 
@@ -56,15 +57,6 @@
     /home/${username}/work/platform/nix/local-proxy/pki/docker-registry.arpa.crt
     /home/${username}/work/platform/nix/local-proxy/pki/attic.arpa.crt
   ];
-
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-    package = pkgs.bluez5-experimental;
-    settings.General = {
-      ControllerMode = "dual";
-    };
-  };
 
   programs.sway = {
     enable = true;

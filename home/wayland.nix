@@ -5,14 +5,8 @@
 in {
   imports = [
     ./programs/sway.nix
-
     #./hyprland.nix
   ];
-
-  #xdg.portal = {
-  #  enable = true;
-  #  extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  #};
 
   home.packages =
     (with pkgs; [
