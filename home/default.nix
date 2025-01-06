@@ -152,7 +152,6 @@ in {
     XMODIFIERS = "@im,fcitx";
     SDL_IM_MODULE = "fcitx";
     GLFW_IM_MODULE = "ibus";
-    XCURSOR_SIZE = "108";
     XKB_DEFAULT_LAYOUT = "us";
   };
 

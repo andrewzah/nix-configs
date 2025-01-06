@@ -5,12 +5,12 @@
   ];
 
   home.packages = (with pkgs; [
+    morgen
     obsidian
     scrot
+    wthrr
 
-    xivlauncher
-    #steam
-    #steam-run
     dualsensectl
+    xivlauncher
   ]);
 }

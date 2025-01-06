@@ -23,5 +23,6 @@
       "zoom"
 
       "optcgsim"
+      "morgen"
     ];
 }

@@ -47,4 +47,7 @@
 
     containerd.enable = true;
   };
+
+  ## for pkgs.bottles
+  #programs.dconf.enable = true;
 }

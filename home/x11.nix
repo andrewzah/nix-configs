@@ -16,7 +16,7 @@
       startup = [
         {
           command = ''
-          ${pkgs.xorg.xrandr} \
+          ${pkgs.xorg.xrandr}/bin/xrandr \
             --output DP-0 \
               --mode 3440x1440 \
               --pos 1440x0 \
@@ -38,7 +38,17 @@
             --output USB-C-0 --off
           '';
           always = true;
-          notification = false;
+          notification = true;
+        }
+        {
+          command = "${pkgs.fcitx5}/bin/fcitx5";
+          always = true;
+          notification = true;
+        }
+        {
+          command = "${pkgs.dunst}/bin/dunst";
+          always = true;
+          notification = true;
         }
       ];
       gaps = {
@@ -95,15 +105,17 @@
         "${modifier}+Shift+8" = "move container to workspace number 8";
         "${modifier}+Shift+9" = "move container to workspace number 9";
         "${modifier}+Shift+0" = "move container to workspace number 10";
-
-        #modes.resize = {};
-        #input = {"*" = {xkb_layout = "us,kr"; }; };
       };
     };
+    extraConfig = ''
+      workspace 1 output DP-4
+      workspace 2 output DP-2
+      workspace 10 output DP-0
+    '';
   };
 
   home.sessionVariables = {
-    XCURSOR_SIZE = "108";
+    XCURSOR_SIZE = "182";
     XKB_DEFAULT_LAYOUT = "us";
 
     GLFW_IM_MODULE = "ibus";
