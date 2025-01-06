@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   mapAddonPath = id: "Anki2/addons21/${toString id}";
 
   anki-connect = pkgs.stdenv.mkDerivation {
@@ -37,25 +34,23 @@
         "webBindAddress": "127.0.0.1",
         "webBindPort": 8765,
         "webCorsOrigin": "http://localhost",
-        "webCorsOriginList": [
-          "http://localhost",
-        ]
+        "webCorsOriginList": [ "http://localhost" ]
       }
       EOF
     '';
   };
 
-  anki_24-11 = (pkgs.anki-bin.overrideAttrs (old: rec {
-      version = "24.11";
+  anki_24-11 = pkgs.anki-bin.overrideAttrs (old: rec {
+    version = "24.11";
 
-      sources.linux = pkgs.fetchurl {
-        url = "https://github.com/ankitects/anki/releases/download/${version}/anki-${version}-linux-qt6.tar.zst";
-        hash = "";
-      };
-
-    }));
-
+    src = pkgs.fetchurl {
+      url = "https://github.com/ankitects/anki/releases/download/${version}/anki-${version}-linux-qt6.tar.zst";
+      hash = "sha256-JXn4oxhRODHh6b5hFFj393xMRlaJRVcbMJ5AyXr+jq8=";
+    };
+  });
 in {
+  # not fully done; anki settings & addon settings
+  # still need to be done manually
   home.packages = [anki_24-11];
 
   xdg.dataFile = {
