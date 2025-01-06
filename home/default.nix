@@ -11,6 +11,7 @@ in {
   home.homeDirectory = lib.mkDefault "/home/${username}";
 
   imports = [
+    ./programs/anki.nix
     ./programs/atuin.nix
     ./programs/firefox.nix
     ./programs/git.nix
@@ -30,7 +31,6 @@ in {
       wireguard-go
       wireguard-tools
 
-      anki
       nix-tree
       alejandra
 

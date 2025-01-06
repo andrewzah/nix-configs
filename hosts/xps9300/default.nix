@@ -20,8 +20,9 @@
     #./wireguard-client.nix
     ./unfree.nix
   ];
+
   networking.hostName = "xps9300";
-  time.timeZone = "Asia/Seoul";
+  time.timeZone = "America/New_York";
   users.users."${username}".extraGroups = ["docker" "input"];
   system.stateVersion = "24.05";
 
@@ -68,7 +69,7 @@
 
   programs.zsh.enable = true;
   programs.zsh.shellAliases = {
-    switch = "sudo nixos-rebuild switch --flake /etc/nixos#xps9300";
+    switch = "sudo nixos-rebuild switch --flake ~/nix#xps9300";
   };
 
   programs.gnupg.agent = {
