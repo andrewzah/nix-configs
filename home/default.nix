@@ -27,6 +27,9 @@ in {
 
   home.packages =
     (with pkgs; [
+      age
+      sops
+
       openssl
       wireguard-go
       wireguard-tools
