@@ -105,7 +105,11 @@ in {
 
       foot
       firefox
+
+      # todo: https://github.com/killergerbah/asbplayer
+      # needs google-chromium or newer ver?
       ungoogled-chromium
+
       thunderbird-unwrapped
       obsidian
 
