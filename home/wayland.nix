@@ -5,6 +5,7 @@
 in {
   imports = [
     ./programs/sway.nix
+    ./programs/rofi-wayland.nix
     #./hyprland.nix
   ];
 
@@ -12,7 +13,6 @@ in {
     (with pkgs; [
       libinput-gestures
       mako
-      rofi-wayland
       swaylock
       wev
 

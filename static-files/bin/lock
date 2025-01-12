@@ -1,7 +1,18 @@
 #!/usr/bin/env sh
 
-exec swaylock \
-  --show-keyboard-layout \
-  --ignore-empty-password \
-  --scaling stretch \
-  --image /etc/nixos/static-files/wallpapers/DF-1.png
+if command -v swaylock > /dev/null 2>&1 ; then
+  exec swaylock \
+    --indicator-radius 100 \
+    --indicator-thickness 30 \
+    --ignore-empty-password \
+    --separator-color 228B22 \
+    --line-uses-ring \
+    --scaling stretch \
+    --show-failed-attempts \
+    --disable-caps-lock-text \
+    --hide-keyboard-layout \
+    --image /etc/nixos/static-files/wallpapers/DF-1.png
+else
+  echo "swaylock missing, add your lock program to the lock script"
+  exit 1
+fi
