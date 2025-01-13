@@ -7,6 +7,7 @@
     home-manager,
     nixos-hardware,
     nix-darwin,
+    slippi,
     ...
   } @ inputs: {
     darwinConfigurations = {
@@ -45,6 +46,7 @@
         specialArgs = {inherit inputs username;};
         modules = [
           ./hosts/donbyeorak/default.nix
+          slippi.nixosModules.default
 
           home-manager.nixosModules.home-manager
           {
@@ -55,6 +57,8 @@
 
                 ./home/default.nix
                 ./home/x11.nix
+
+                slippi.homeManagerModules.default
               ];
             };
           }
@@ -95,5 +99,8 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     neovim-flake.url = "github:andrewzah/neovim-flake";
+    slippi.url = "github:lytedev/slippi-nix";
+    #slippi.url = "github:andrewzah/slippi-nix";
+    #slippi.url = "git+file:///home/dragon/programming/slippi-nix";
   };
 }

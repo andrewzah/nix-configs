@@ -2,10 +2,12 @@
   imports = [
     ../../home/programs/git.nix
     ../../home/programs/alacritty.nix
+    ../../home/programs/slippi.nix
   ];
 
   home.packages = (with pkgs; [
-    morgen
+    dolphin-emu
+
     obsidian
     scrot
     wthrr
