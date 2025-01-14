@@ -1,7 +1,8 @@
-## prio 1
+## prio: high
 
-## prio 2
-- set sshd to use pubkey for donbyeorak
+## prio: low
+- ssh: CLEARLY show in prompt when ssh'd into device
+- reconfigure sshd to use pubkeys for homelab
 
 ## low prio
 - refactor repo

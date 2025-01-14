@@ -40,6 +40,36 @@
     '';
   };
 
+  #review-heatmap = pkgs.stdenv.mkDerivation {
+  #  name = "review-heatmap";
+
+  #  src = pkgs.fetchFromGitHub {
+  #    owner = "glutanimate";
+  #    repo = "review-heatmap";
+  #    rev = "b796468e99037726c4e46740e3c6dd3b6d80df34";
+  #    hash = "sha256-B43z4frHH8SQqHZ6bxp3PCyvibziZZkFdF7ubvq8rHs=";
+  #  };
+
+  #  installPhase = ''
+  #    mkdir -p $out
+  #    cp -r ./src/review_heatmap/* $out
+
+  #    cat <<EOF > $out/meta.json
+  #    {
+  #      "mod": 1656553428,
+  #      "name": "Review Heatmap",
+  #      "homepage": "https://github.com/glutanimate/review-heatmap",
+  #      "branch_index": 1,
+  #      "disabled": false
+  #    }
+  #    EOF
+
+  #    cat <<EOF > $out/config.json
+  #    {}
+  #    EOF
+  #  '';
+  #};
+
   anki_24-11 = pkgs.anki-bin.overrideAttrs (old: rec {
     version = "24.11";
 
@@ -58,5 +88,18 @@ in {
       source = anki-connect;
       recursive = true;
     };
+
+    # TODO: build this plugin
+    #"${mapAddonPath 1771074083}" = {
+    #  source = review-heatmap;
+    #  recursive = true;
+    #};
+
+    # TODO: these plugins
+    # https://ankiweb.net/shared/info/181243826 - hanzi stats
+    # https://ankiweb.net/shared/info/1084228676 - color confirmation
+    # https://ankiweb.net/shared/info/1247171202 - study time stats
+    # https://ankiweb.net/shared/info/876946123 - pass/fail 2
+    # https://ankiweb.net/shared/info/993120073 - correct answers graph
   };
 }
