@@ -9,8 +9,12 @@ in {
     initExtra = ''
       set -o emacs
 
-      #PROMPT=" (%?) [%n@%m:%2/] λ "
-      export PROMPT="%F{cyan} %3~ %F{#FFFFFF}λ "
+      if [[ -n "$SSH_CONNECTION" ]]; then
+        userip=$(echo $SSH_CONNECTION | cut -d' ' -f1)
+        ssh_conn_info="@$userip $USER@$(hostnamectl hostname)"
+      fi
+
+      export PROMPT=" %F{cyan}$ssh_conn_info %3~ %F{#FFFFFF}λ "
 
       # foot doesn't consider these valid by default
       bindkey "\e[27;2;13~" accept-line  # shift+return
