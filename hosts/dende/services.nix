@@ -14,6 +14,4 @@
 
     videoDrivers = ["amd"];
   };
-
-  hardware.opengl.driSupport32Bit = true;
 }

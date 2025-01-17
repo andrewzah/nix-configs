@@ -6,6 +6,7 @@
 
     ../../services/keyd.nix
   ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -38,10 +39,9 @@
   };
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    git
-    vim
-  ];
+  environment.systemPackages = [pkgs.vim];
+
+  #hardware.graphics.enable32Bit = true;
 
   system.stateVersion = "24.11";
 }

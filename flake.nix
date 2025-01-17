@@ -102,6 +102,7 @@
             home-manager.extraSpecialArgs = {inherit inputs username;};
             home-manager.users."${username}" = {
               imports = [
+                ./hosts/dende/home.nix
                 ./home/default.nix
                 ./home/x11.nix
               ];
