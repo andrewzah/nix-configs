@@ -103,9 +103,6 @@ in {
       poppler # ?
       ffmpeg_7-headless
 
-      foot
-      firefox
-
       # todo: https://github.com/killergerbah/asbplayer
       # needs google-chromium or newer ver?
       ungoogled-chromium

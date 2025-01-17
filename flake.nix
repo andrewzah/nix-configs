@@ -66,7 +66,7 @@
         ];
       };
 
-      xps9300 = let
+      ginyu = let
         username = "andrew";
       in nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -88,12 +88,35 @@
           nixos-hardware.nixosModules.dell-xps-13-9360
         ];
       };
+
+      dende = let
+        username = "dragon";
+      in nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs username;};
+        modules = [
+          ./hosts/dende/default.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.extraSpecialArgs = {inherit inputs username;};
+            home-manager.users."${username}" = {
+              imports = [
+                ./home/default.nix
+                ./home/x11.nix
+              ];
+            };
+          }
+          home-modules
+          nixos-hardware.nixosModules.lenovo-thinkpad-t14s
+        ];
+      };
     };
   };
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
-    home-manager.url = "github:nix-community/home-manager/release-24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-hardware.url = "github:NixOS/nixos-hardware/master";
     nix-darwin.url = "github:LnL7/nix-darwin";

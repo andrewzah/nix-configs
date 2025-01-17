@@ -1,4 +1,5 @@
 ## prio: high
+- split out x11 config for donbyeorak & dende
 
 ## prio: low
 - ssh: CLEARLY show in prompt when ssh'd into device

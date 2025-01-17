@@ -7,6 +7,8 @@ in {
     ./programs/sway.nix
     ./programs/rofi-wayland.nix
     #./hyprland.nix
+
+    pkgs.foot
   ];
 
   home.packages =
