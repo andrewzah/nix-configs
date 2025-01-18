@@ -2,8 +2,8 @@
 - split out x11 config for donbyeorak & dende
 
 ## prio: low
-- ssh: CLEARLY show in prompt when ssh'd into device
 - reconfigure sshd to use pubkeys for homelab
+- look into https://github.com/NotAShelf/Basix
 
 ## low prio
 - refactor repo
