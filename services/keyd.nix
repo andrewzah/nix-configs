@@ -8,9 +8,10 @@
         settings = {
           main = {
             capslock = "overload(control,esc)";
-            leftmeta = "layer(alt)";
-            leftalt = "layer(meta)";
-            rightalt = "layer(meta)";
+
+            #leftmeta = "layer(alt)";
+            #leftalt = "layer(meta)";
+            #rightalt = "layer(meta)";
           };
         };
       };
