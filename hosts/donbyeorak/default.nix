@@ -17,6 +17,7 @@
     ./services.nix
     ./unfree.nix
   ];
+
   networking.hostName = "donbyeorak";
   time.timeZone = "America/New_York";
   users.users.dragon.extraGroups = ["docker" "input"];
@@ -47,7 +48,4 @@
 
     containerd.enable = true;
   };
-
-  ## for pkgs.bottles
-  #programs.dconf.enable = true;
 }

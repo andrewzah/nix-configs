@@ -1,6 +1,5 @@
 {
   pkgs,
-  lib,
   username,
   ...
 }: {
@@ -17,15 +16,15 @@
     dhcpcd.wait = "background"; # don't wait on interfaces to boot
     dhcpcd.extraConfig = "noarp"; # avoid checking if IP is already taken, boot faster
 
-    extraHosts = lib.concatStringsSep "\n" [
-      "127.0.0.1 airflow.arpa"
-      "127.0.0.1 apiman.arpa"
-      "127.0.0.1 attic.arpa"
-      "127.0.0.1 docker-registry.arpa"
-      "127.0.0.1 jupyterhub.arpa"
-      "127.0.0.1 keycloak.arpa"
-      "127.0.0.1 nginx.arpa"
-    ];
+    #extraHosts = lib.concatStringsSep "\n" [
+    #  "127.0.0.1 airflow.arpa"
+    #  "127.0.0.1 apiman.arpa"
+    #  "127.0.0.1 attic.arpa"
+    #  "127.0.0.1 docker-registry.arpa"
+    #  "127.0.0.1 jupyterhub.arpa"
+    #  "127.0.0.1 keycloak.arpa"
+    #  "127.0.0.1 nginx.arpa"
+    #];
   };
 
   services.pipewire = {

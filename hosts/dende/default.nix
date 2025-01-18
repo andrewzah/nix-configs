@@ -1,22 +1,30 @@
 { config, pkgs, ... }:
 {
   imports = [
+    ../common.nix
+    ../common-linux.nix
+
+    ../../services/fcitx.nix
+    ../../services/gpg.nix
+    ../../services/keyd.nix
+
     ./hardware-configuration.nix
     ./services.nix
-
-    ../../services/keyd.nix
   ];
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.kernelModules = ["amdgpu"];
-  # required for the modern amdgpu and qualcomm WCN785x drivers
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_12;
 
   networking.hostName = "dende";
   networking.networkmanager.enable = true;
   time.timeZone = "America/New_York";
+
+  programs.zsh.enable = true;
+  programs.zsh.shellAliases = {
+    switch = "sudo nixos-rebuild switch --flake /home/dragon/nix#donbyeorak";
+  };
+
+  boot.initrd.kernelModules = ["amdgpu"];
+  ## required for the modern amdgpu and qualcomm WCN785x drivers
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_12;
+
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
@@ -41,7 +49,15 @@
 
   environment.systemPackages = [pkgs.vim];
 
-  #hardware.graphics.enable32Bit = true;
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-curses;
+  };
+
+  virtualisation = {
+    docker.enable = true;
+    containerd.enable = true;
+  };
 
   system.stateVersion = "24.11";
 }
