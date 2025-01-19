@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   i18n.inputMethod.enabled = "fcitx5";
-  i18n.inputMethod.fcitx5.addons = with pkgs; [fcitx5-hangul];
+  i18n.inputMethod.type = "fcitx5";
+  i18n.inputMethod.fcitx5.addons = (with pkgs; [fcitx5-hangul fcitx5-gtk]);
   i18n.inputMethod.fcitx5.ignoreUserConfig = true;
   i18n.inputMethod.fcitx5.settings.inputMethod = {
     "Groups/0" = {
@@ -35,8 +36,10 @@
     };
 
     "Hotkey/TriggerKeys" = {
-      "0" = "Control+Alt+space";
-      #2=Hangul
+      # alt seems to have some issue
+      # on the thinkpad - perhaps due to
+      # keyd?
+      "0" = "Control+Alt+Alt_L+space";
     };
     "Hotkey/AltTriggerKeys" = {
       "0" = "Shift_L";
@@ -64,8 +67,8 @@
     };
 
     "Behavior" = {
-      ActiveByDefault = false;
-      ShareInputState = "No";
+      ActiveByDefault = true;
+      ShareInputState = "Yes";
       PreeditEnabledByDefault = true;
       ShowInputMethodInformation = true;
       showInputMethodInformationWhenFocusIn = false;

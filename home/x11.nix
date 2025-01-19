@@ -10,7 +10,7 @@
     enable = true;
     package = pkgs.i3-gaps;
     config = let
-      modifier = "Mod1";
+      modifier = "Mod1"; # alt
       terminal = "alacritty";
     in {
       inherit modifier terminal;

@@ -4,10 +4,12 @@
 ## prio: low
 - reconfigure sshd to use pubkeys for homelab
 - look into https://github.com/NotAShelf/Basix
+- look into hyper key setup for all machines,
+  for fcitx + my shortcuts in general
 
 ## low prio
 - refactor repo
-  - particularly with nix/darwin conditional logic
+  - particularly with modules
 - set up personal & work logfiles w/ syncthing: (ln -s ?)
   - really, refactor how different personal log files are created and opened
 - https://github.com/NotAShelf/nyx/blob/main/modules/core/common/system/security/auditd.nix
@@ -18,6 +20,3 @@
     it shows the cwd (but not the last run command)
   - the current situation is adequate.
 - https://github.com/sei40kr/dotfiles/blob/36916db5d20fb3899e6ac0a6378bb8d800474646/darwin/modules/homebrew.nix#L8
-
-- ff:
-  browser.tabs.insertAfterCurrent = true

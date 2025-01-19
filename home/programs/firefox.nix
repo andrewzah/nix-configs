@@ -10,6 +10,7 @@
           "media.ffvpx.enabled" = true;
           "media.av1.enabled" = true;
           "gfx.webrender.all" = true;
+          "browser.tabs.insertAfterCurrent" = true;
         };
       };
     };
