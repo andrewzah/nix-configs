@@ -5,6 +5,12 @@
   ];
 
   home.packages = (with pkgs; [
+    obsidian
     scrot
+    wthrr
+
+    ## testing
+    darktable
+    rawtherapee
   ]);
 }

@@ -106,7 +106,7 @@
                 ./home/default.nix
                 ./home/x11.nix
 
-                ./modules/x11.nix
+                #./modules/x11.nix
               ];
             };
           }

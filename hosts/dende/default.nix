@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ../common.nix
@@ -7,6 +7,7 @@
     ../../services/fcitx.nix
     ../../services/gpg.nix
     ../../services/keyd.nix
+    ../../services/bluetooth.nix
 
     ./hardware-configuration.nix
     ./services.nix

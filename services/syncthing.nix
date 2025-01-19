@@ -13,6 +13,7 @@
         urAccepted = -1; # don't submit anon usage data
       };
       devices = {
+        # todo: map this per hostname
         "eagle" = {id = "KBKNDRJ-2HCG7A4-OOR7NX6-APK3DUU-KKODEFE-GCFPD5S-SHLRNFJ-OFKIHQX";};
       };
     };
