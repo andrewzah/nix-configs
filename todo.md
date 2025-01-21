@@ -1,6 +1,23 @@
 ## prio: high
 - split out x11 config for donbyeorak & dende
 
+```nix
+{
+  services.openssh = {
+    passwordAuthentication = false;
+    allowSFTP = false; # Don't set this if you need sftp
+    challengeResponseAuthentication = false;
+    extraConfig = ''
+      AllowTcpForwarding yes
+      X11Forwarding no
+      AllowAgentForwarding no
+      AllowStreamLocalForwarding no
+      AuthenticationMethods publickey
+    '';
+  };
+}
+```
+
 ## prio: low
 - reconfigure sshd to use pubkeys for homelab
 - look into https://github.com/NotAShelf/Basix

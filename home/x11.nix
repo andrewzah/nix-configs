@@ -55,7 +55,15 @@
       gaps = {
         inner = 0;
         #outer = 2;
+        smartBorders = "on";
       };
+      bars = [
+        {
+          trayOutput = "eDP-1";
+          position = "bottom";
+          statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs /home/dragon/.config/i3status-rust/config-bottom.toml";
+        }
+      ];
       keybindings = {
         "${modifier}+d" = "exec rofi -show run";
         "${modifier}+f" = "fullscreen toggle";
@@ -113,6 +121,52 @@
       workspace 2 output DP-2
       workspace 10 output DP-0
     '';
+  };
+
+  programs.i3status-rust = {
+    enable = true;
+    bars.bottom = {
+      icons = "none";
+      theme = "gruvbox-dark";
+      blocks = [
+        {
+          block = "disk_space";
+          path = "/";
+          interval = 60;
+        }
+        {
+          block = "memory";
+        }
+        {
+          block = "net";
+          device = "^wlp194s0$";
+          format = "$speed_down $graph_down";
+          format_alt = "$ip $speed_down $graph_down";
+          interval = 5;
+        }
+        {
+          block = "sound";
+          driver = "pulseaudio";
+          click = [
+            {
+              button = "left";
+              cmd = "pavucontrol";
+            }
+          ];
+        }
+        {
+          block = "battery";
+          driver = "upower";
+          device = "DisplayDevice";
+          format = " $icon $percentage";
+          missing_format = "";
+        }
+        {
+          block = "time";
+          interval = 60;
+        }
+      ];
+    };
   };
 
   home.sessionVariables = {

@@ -5,6 +5,7 @@
     variant = "";
   };
 
+  services.upower.enable = true;
   services.openssh.enable = true;
 
   services.xserver = {
