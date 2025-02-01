@@ -88,6 +88,11 @@
         "${modifier}+Shift+k" = "move up";
         "${modifier}+Shift+l" = "move right";
 
+        "${modifier}+Control+h" = "resize shrink width 10 px or 10 ppt";
+        "${modifier}+Control+j" = "resize grow height 10 px or 10 ppt";
+        "${modifier}+Control+k" = "resize shrink height 10 px or 10 ppt";
+        "${modifier}+Control+l" = "resize grow width 10 px or 10 ppt";
+
         "${modifier}+Shift+e" = "exec ${pkgs.smile}/bin/smile";
         "${modifier}+Shift+q" = "kill";
         "${modifier}+Return" = "exec ${terminal}";
