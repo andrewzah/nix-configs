@@ -122,6 +122,9 @@
         "XF86AudioLowerVolume" = "exec --no-startup-id ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ -10%";
         "XF86AudioMute" = "exec --no-startup-id ${pkgs.pulseaudio}/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle";
         "XF86AudioMicMute" = "exec --no-startup-id ${pkgs.pulseaudio}/bin/pactl set-source-mute @DEFAULT_SOURCE@ toggle";
+
+        "Print" = "exec screenshot-tmp-fullscreen.sh";
+        "NoSymbol" = "exec screenshot-tmp.sh";
       };
     };
     extraConfig = ''
