@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-set -eo pipefail
-
-image="${1?-Please specify an image name.}"
-
-set -u
-
-exec nix run ".#${image}.copyToDockerDaemon"

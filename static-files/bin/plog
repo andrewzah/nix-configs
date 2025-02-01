@@ -2,7 +2,7 @@
 
 set -eu
 
-WLOG_FILE="$HOME/sync/thoughts/storage/log-work.md"
+PLOG_FILE="$HOME/sync/thoughts/storage/log-personal.md"
 
 # example: 24-06-21 - Fri - 15:49
 date_format='+%y-%m-%d - %a - %H:%M'
@@ -12,7 +12,7 @@ if [ ! -d "$HOME/sync/thoughts/storage" ]; then
   exit 1
 fi
 
-printf "\n## %s\n\n" "$(date "$date_format")" >> "$WLOG_FILE"
+printf "\n## %s\n\n" "$(date "$date_format")" >> "$PLOG_FILE"
 
 # puts cursor at end of line and inserts
-exec "${EDITOR:-nvim}" "+normal G$" +startinsert "$WLOG_FILE"
+exec "${EDITOR:-nvim}" "+normal G$" +startinsert "$PLOG_FILE"

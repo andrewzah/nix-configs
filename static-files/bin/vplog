@@ -2,11 +2,11 @@
 
 set -eu
 
-WLOG_FILE="$HOME/sync/thoughts/storage/log-work.md"
+PLOG_FILE="$HOME/sync/thoughts/storage/log-personal.md"
 
 if [ ! -d "$HOME/sync/thoughts/storage" ]; then
   echo "dir [~/sync/storage] doesn't exist; please set up Syncthing";
 fi
 
 # puts cursor at end of line
-exec "${EDITOR:-nvim}" "+normal G$" "$WLOG_FILE"
+exec "${EDITOR:-nvim}" "+normal G$" "$PLOG_FILE"
