@@ -12,5 +12,7 @@
     ## testing
     darktable
     rawtherapee
+
+    steam
   ]);
 }

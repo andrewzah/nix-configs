@@ -11,6 +11,7 @@
 
     ./hardware-configuration.nix
     ./services.nix
+    ./unfree.nix
   ];
 
   networking.hostName = "dende";
@@ -19,7 +20,7 @@
 
   programs.zsh.enable = true;
   programs.zsh.shellAliases = {
-    switch = "sudo nixos-rebuild switch --flake /home/dragon/nix#donbyeorak";
+    switch = "sudo nixos-rebuild switch --flake /home/dragon/nix#dende";
   };
 
   boot.initrd.kernelModules = ["amdgpu"];
@@ -46,7 +47,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = [];
   };
-  nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = [pkgs.vim];
 
@@ -59,6 +59,18 @@
     docker.enable = true;
     containerd.enable = true;
   };
+
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+
+    amdgpu.amdvlk = {
+      enable = true;
+      support32Bit.enable = true;
+    };
+};
 
   system.stateVersion = "24.11";
 }
