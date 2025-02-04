@@ -1,5 +1,6 @@
 ## prio: high
 - split out x11 config for donbyeorak & dende
+  - aka figure out *modules*
 
 ```nix
 {
@@ -19,6 +20,7 @@
 ```
 
 ## prio: low
+- send notification upon screenshot key (or failure)
 - reconfigure sshd to use pubkeys for homelab
 - look into https://github.com/NotAShelf/Basix
 - look into hyper key setup for all machines,

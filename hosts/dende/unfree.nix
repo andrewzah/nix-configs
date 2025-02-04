@@ -8,5 +8,8 @@
 
       "discord"
       "obsidian"
+
+      "dwarf-fortress"
+      "tergel-theme"
     ];
 }
