@@ -15,34 +15,34 @@
     in {
       inherit modifier terminal;
       startup = [
+        #{
+        #  command = ''
+        #    ${pkgs.xorg.xrandr}/bin/xrandr \
+        #      --output DP-0 \
+        #        --mode 3440x1440 \
+        #        --pos 1440x0 \
+        #        --rotate normal \
+        #      --output DP-1 --off \
+        #      --output HDMI-0 --off \
+        #      --output DP-2 \
+        #        --mode 2560x1440 \
+        #        --pos 0x199 \
+        #        --rotate right \
+        #      --output DP-3 --off \
+        #      --output DP-4 \
+        #        --primary \
+        #        --mode 2560x1440 \
+        #        --rate 144 \
+        #        --pos 1440x1440 \
+        #        --rotate normal \
+        #      --output DP-5 --off \
+        #    --output USB-C-0 --off
+        #  '';
+        #  always = true;
+        #  notification = true;
+        #}
         {
-          command = ''
-            ${pkgs.xorg.xrandr}/bin/xrandr \
-              --output DP-0 \
-                --mode 3440x1440 \
-                --pos 1440x0 \
-                --rotate normal \
-              --output DP-1 --off \
-              --output HDMI-0 --off \
-              --output DP-2 \
-                --mode 2560x1440 \
-                --pos 0x199 \
-                --rotate right \
-              --output DP-3 --off \
-              --output DP-4 \
-                --primary \
-                --mode 2560x1440 \
-                --rate 144 \
-                --pos 1440x1440 \
-                --rotate normal \
-              --output DP-5 --off \
-            --output USB-C-0 --off
-          '';
-          always = true;
-          notification = true;
-        }
-        {
-          command = "${pkgs.fcitx5}/bin/fcitx5";
+          command = "fcitx5 -d";
           always = true;
           notification = true;
         }
@@ -133,9 +133,36 @@
       };
     };
     extraConfig = ''
-      workspace 1 output DP-4
-      workspace 2 output DP-2
-      workspace 10 output DP-0
+      #workspace 1 output DP-4
+      #workspace 2 output DP-2
+      #workspace 10 output DP-0
+
+      # todo: more proper colorscheme considerations
+      # gruvbox green is meh
+      #set $green #98971a
+      ##set $green #259d2f
+      #set $bg #282828
+      #set $red #cc241d
+      #set $yellow #d79921
+      #set $blue #458588
+      #set $purple #b16286
+      #set $aqua #689d68
+      #set $gray #a89984
+      #set $darkgray #1d2021
+
+      #green gruvbox
+      # class                 border |  backgr |  text |    indic | child_border
+      #client.focused          $green    $green    $darkgray $purple $darkgray
+      #client.focused_inactive $darkgray $darkgray $yellow   $purple $darkgray
+      #client.unfocused        $darkgray $darkgray $white    $purple $darkgray
+      #client.urgent           $red      $red      $white    $red    $red
+
+      # blue gruvbox
+      # class                 border |  backgr |  text |    indic | child_border
+      #client.focused          $blue $blue $white $purple $darkgray
+      #client.focused_inactive $darkgray $darkgray $white $purple $darkgray
+      #client.unfocused        $darkgray $darkgray $white $purple $darkgray
+      #client.urgent           $red $red $white $red $red
     '';
   };
 

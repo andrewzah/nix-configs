@@ -97,6 +97,11 @@
         modules = [
           ./hosts/dende/default.nix
 
+          slippi.nixosModules.default {
+            gamecube-controller-adapter.udev-rules.enable = true;
+            gamecube-controller-adapter.overclocking-kernel-module.enable = true;
+          }
+
           home-manager.nixosModules.home-manager
           {
             home-manager.extraSpecialArgs = {inherit inputs username;};
@@ -107,6 +112,7 @@
                 ./home/x11.nix
 
                 #./modules/x11.nix
+                slippi.homeManagerModules.default
               ];
             };
           }

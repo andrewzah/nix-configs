@@ -1,27 +1,33 @@
 {pkgs, ...}: {
-  i18n.inputMethod.enabled = "fcitx5";
-  i18n.inputMethod.type = "fcitx5";
-  i18n.inputMethod.fcitx5.addons = (with pkgs; [fcitx5-hangul fcitx5-gtk]);
-  i18n.inputMethod.fcitx5.ignoreUserConfig = true;
-  i18n.inputMethod.fcitx5.settings.inputMethod = {
-    "Groups/0" = {
-      "Name" = "Default";
-      "Default Layout" = "us";
-      "DefaultIM" = "hangul";
-    };
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+    fcitx5.addons = (with pkgs; [
+      fcitx5-hangul
+      fcitx5-gtk
+    ]);
+    fcitx5.ignoreUserConfig = true;
 
-    "Groups/0/Items/0" = {
-      "Name" = "keyboard-us";
-      "Layout" = "null";
-    };
+    fcitx5.settings.inputMethod = {
+      "Groups/0" = {
+        "Name" = "Default";
+        "Default Layout" = "us";
+        "DefaultIM" = "hangul";
+      };
 
-    "Groups/0/Items/1" = {
-      "Name" = "hangul";
-      "Layout" = "null";
-    };
+      "Groups/0/Items/0" = {
+        "Name" = "keyboard-us";
+        "Layout" = "null";
+      };
 
-    "GroupOrder" = {
-      "0" = "Default";
+      "Groups/0/Items/1" = {
+        "Name" = "hangul";
+        "Layout" = "null";
+      };
+
+      "GroupOrder" = {
+        "0" = "Default";
+      };
     };
   };
 
@@ -36,10 +42,7 @@
     };
 
     "Hotkey/TriggerKeys" = {
-      # alt seems to have some issue
-      # on the thinkpad - perhaps due to
-      # keyd?
-      "0" = "Control+Alt+Alt_L+space";
+      "0" = "Control+Alt+space";
     };
     "Hotkey/AltTriggerKeys" = {
       "0" = "Shift_L";

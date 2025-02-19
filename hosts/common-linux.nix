@@ -25,6 +25,16 @@
     #  "127.0.0.1 keycloak.arpa"
     #  "127.0.0.1 nginx.arpa"
     #];
+
+    extraHosts = pkgs.lib.concatStringsSep "\n" [
+      "127.0.0.1 amundsen.arpa"
+      "127.0.0.1 metadata.amundsen.arpa"
+      "127.0.0.1 search.amundsen.arpa"
+      "127.0.0.1 elasticsearch"
+      "127.0.0.1 labelstudio.arpa"
+      "127.0.0.1 ui.registry.apicurio.arpa"
+      "127.0.0.1 api.registry.apicurio.arpa"
+    ];
   };
 
   services.pipewire = {

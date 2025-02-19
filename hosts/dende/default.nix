@@ -16,7 +16,7 @@
 
   networking.hostName = "dende";
   networking.networkmanager.enable = true;
-  time.timeZone = "America/New_York";
+  time.timeZone = "Asia/Seoul";
 
   programs.zsh.enable = true;
   programs.zsh.shellAliases = {

@@ -2,9 +2,10 @@
   slippi-launcher = {
     enable = true;
     launchMeleeOnPlay = false;
-    isoPath = "/home/dragon/games/Super Smash Bros. Melee (USA) (En,Ja) (Rev 2).iso";
+    isoPath = "/home/dragon/isos/Super Smash Bros. Melee (USA) (En,Ja) (v1.02).iso";
     useMonthlySubfolders = true;
+    useNetplayBeta = true;
 
-    netplayHash = "sha256-QsvayemrIztHSVcFh0I1/SOCoO6EsSTItrRQgqTWvG4=";
+    rootSlpPath = "/home/dragon/.config/SlippiOnline/Slippi";
   };
 }
