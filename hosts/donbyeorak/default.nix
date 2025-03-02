@@ -43,9 +43,9 @@
   };
 
   virtualisation = {
-    docker.enable = true;
-    #docker.autoPrune.enable = true;
-
+    docker.rootless.enable = true;
+    docker.rootless.setSocketVariable = true;
+    docker.autoPrune.enable = true;
     containerd.enable = true;
   };
 }

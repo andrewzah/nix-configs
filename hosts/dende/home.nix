@@ -12,10 +12,13 @@
     scrot
     wthrr
 
+    fend # arbitrary unit conversions
+
     ## testing
     darktable
     rawtherapee
 
+    cockatrice
     steam
     steam-run
   ]);

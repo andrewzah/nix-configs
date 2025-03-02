@@ -16,6 +16,7 @@
 
   networking.hostName = "dende";
   networking.networkmanager.enable = true;
+  networking.firewall.allowedTCPPorts = [ 4747 4748 ];
   time.timeZone = "Asia/Seoul";
 
   programs.zsh.enable = true;
