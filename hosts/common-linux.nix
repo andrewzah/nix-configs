@@ -16,24 +16,20 @@
     dhcpcd.wait = "background"; # don't wait on interfaces to boot
     dhcpcd.extraConfig = "noarp"; # avoid checking if IP is already taken, boot faster
 
-    #extraHosts = lib.concatStringsSep "\n" [
-    #  "127.0.0.1 airflow.arpa"
-    #  "127.0.0.1 apiman.arpa"
-    #  "127.0.0.1 attic.arpa"
-    #  "127.0.0.1 docker-registry.arpa"
-    #  "127.0.0.1 jupyterhub.arpa"
-    #  "127.0.0.1 keycloak.arpa"
-    #  "127.0.0.1 nginx.arpa"
-    #];
-
     extraHosts = pkgs.lib.concatStringsSep "\n" [
+      "127.0.0.1 airflow.arpa"
       "127.0.0.1 amundsen.arpa"
-      "127.0.0.1 metadata.amundsen.arpa"
-      "127.0.0.1 search.amundsen.arpa"
       "127.0.0.1 elasticsearch"
       "127.0.0.1 labelstudio.arpa"
+
+      "127.0.0.1 metadata.amundsen.arpa"
+      "127.0.0.1 search.amundsen.arpa"
+
       "127.0.0.1 ui.registry.apicurio.arpa"
       "127.0.0.1 api.registry.apicurio.arpa"
+
+      "127.0.0.1 openmetadata.arpa"
+      "127.0.0.1 ingestion.openmetadata.arpa"
     ];
   };
 
