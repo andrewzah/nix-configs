@@ -4,7 +4,7 @@
     ../../home/programs/alacritty.nix
     #../../home/programs/slippi.nix
 
-    ../../home/games/dwarf-fortress-classic.nix
+    #../../home/games/dwarf-fortress-classic.nix
   ];
 
   home.packages = (with pkgs; [
@@ -14,7 +14,12 @@
     scrot
     wthrr
 
-    fend # arbitrary unit conversions
+    numbat # calc + unit conversions
+    hyperfine # cli benchmarking
+    #hexyl # hex viewer
+    #rainfrog # nicer postgres cli
+    rustscan
+    #httpstat
 
     ## testing
     #darktable

@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       font.normal.family = "Iosevka SS03";
-      font.size = 10;
+      font.size = 8;
 
       colors.primary = {
         background = "#1d2021";

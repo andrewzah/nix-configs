@@ -8,6 +8,7 @@
     ../../services/gpg.nix
     ../../services/keyd.nix
     ../../services/bluetooth.nix
+    ../../services/redshift.nix
 
     ./hardware-configuration.nix
     ./services.nix
@@ -17,7 +18,13 @@
   networking.hostName = "dende";
   networking.networkmanager.enable = true;
   networking.firewall.allowedTCPPorts = [ 4747 4748 ];
+
   time.timeZone = "Asia/Seoul";
+  location.provider = "manual";
+
+  # not where I actually live ;)
+  location.latitude = 37.560012;
+  location.longitude = 126.921768;
 
   programs.zsh.enable = true;
   programs.zsh.shellAliases = {

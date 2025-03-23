@@ -21,6 +21,7 @@
       "127.0.0.1 amundsen.arpa"
       "127.0.0.1 elasticsearch"
       "127.0.0.1 labelstudio.arpa"
+      "127.0.0.1 superset.arpa"
 
       "127.0.0.1 metadata.amundsen.arpa"
       "127.0.0.1 search.amundsen.arpa"
