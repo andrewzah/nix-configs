@@ -4,8 +4,8 @@
     enable = true;
 
     temperature = {
-      day = 5500;
-      night = 3700;
+      day = 5700;
+      night = 3500;
     };
   };
 }

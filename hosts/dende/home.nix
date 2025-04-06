@@ -20,6 +20,7 @@
     #rainfrog # nicer postgres cli
     rustscan
     #httpstat
+    lnav
 
     ## testing
     #darktable

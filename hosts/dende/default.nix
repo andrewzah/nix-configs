@@ -3,6 +3,7 @@
   imports = [
     ../common.nix
     ../common-linux.nix
+    ../extraHosts.nix
 
     ../../services/fcitx.nix
     ../../services/gpg.nix
