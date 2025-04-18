@@ -2,6 +2,7 @@
     networking.extraHosts = pkgs.lib.concatStringsSep "\n" [
       "127.0.0.1 airflow.arpa"
       "127.0.0.1 elasticsearch"
+      "127.0.0.1 gitea.arpa"
       "127.0.0.1 keycloak.arpa"
       "127.0.0.1 labelstudio.arpa"
       "127.0.0.1 nginx.arpa"

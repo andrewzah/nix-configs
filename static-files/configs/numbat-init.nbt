@@ -1,0 +1,5 @@
+fn celsius_to_fahrenheit(t_c: Scalar) -> String =
+  "{t_c}°C = {32 + 9 t_c/5}°F"
+
+fn fahrenheit_to_celsius(t_f: Scalar) -> String =
+  "{t_f}°F = {5 × (t_f-32)/9}°C"

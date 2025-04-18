@@ -32,4 +32,7 @@
 
     ollama-rocm
   ]);
+
+  xdg.configFile."numbat/init.nbt".text =
+    builtins.readFile ../../static-files/configs/numbat-init.nbt;
 }
