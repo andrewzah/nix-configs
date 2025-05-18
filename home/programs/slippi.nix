@@ -1,6 +1,6 @@
 {...}: {
   slippi-launcher = {
-    enable = true;
+    enable = false;
     launchMeleeOnPlay = false;
     isoPath = "/home/dragon/isos/Super Smash Bros. Melee (USA) (En,Ja) (v1.02).iso";
     useMonthlySubfolders = true;

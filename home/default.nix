@@ -140,11 +140,11 @@ in {
       tcpdump
       ngrep
       bingrep
+      intentrace
 
       (callPackage ../pkgs/andrew-zah-scripts.nix {})
       (callPackage ../pkgs/rbonsai.nix {})
       (callPackage ../pkgs/cider-wrapper.nix {})
-      (callPackage ../pkgs/intentrace.nix {})
     ])
     ++ [
       neovim-flake

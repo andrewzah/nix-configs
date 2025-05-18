@@ -5,20 +5,20 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "rbonsai";
-  version = "0.1.2";
+  version = "0.1.5";
 
   src = fetchFromGitHub {
     owner = "roberte777";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-W5j3uLNRC+RkNQFXEf27h2cLgyJtfqmwnbeFvcrH/z8=";
+    hash = "sha256-69MArXaMZLchKURM0koLACKWhm3NO+ZVoZsiHt9PkjQ=";
   };
 
-  cargoHash = "sha256-goKiV3Gm8hxkJ9QqO1+A2Z7rvyetxGMEL6BQjiw/qNs=";
+  cargoHash = "sha256-78vOnu5RZgIR71x8fXbWmoeRDzRgaZBQXJ6nugLNij0=";
 
-  prePatch = ''
-    sed -i 's@rust-version = "1.80"@#rust-version = "1.80"@' ./Cargo.toml
-  '';
+  #prePatch = ''
+  #  sed -i 's@rust-version = "1.80"@#rust-version = "1.80"@' ./Cargo.toml
+  #'';
 
   meta = {
     description = "A port of cbonsai (a bonsai tree generator) to Rust.";

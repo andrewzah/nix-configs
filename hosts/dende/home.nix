@@ -9,6 +9,7 @@
 
   home.packages = (with pkgs; [
     mouseless
+    # https://github.com/imsuck/dotfiles/blob/8f449aa1f8e1d60cd5653f33a12a239c1a6a57ad/dot_config/home-manager/mod/services.nix#L25
 
     unrar
     filezilla
@@ -50,4 +51,7 @@
 
   xdg.configFile."numbat/init.nbt".text =
     builtins.readFile ../../static-files/configs/numbat-init.nbt;
+
+  xdg.configFile."mouseless/config.yaml".text =
+    builtins.readFile ../../static-files/configs/mouseless.yaml;
 }
