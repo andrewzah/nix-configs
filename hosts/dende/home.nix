@@ -8,6 +8,11 @@
   ];
 
   home.packages = (with pkgs; [
+    mouseless
+
+    unrar
+    filezilla
+
     btop-rocm
 
     obsidian
@@ -26,11 +31,21 @@
     #darktable
     #rawtherapee
 
-    cockatrice
+    #cockatrice
     steam
     steam-run
 
-    ollama-rocm
+    mgba
+    sameboy
+    snes9x-gtk
+
+    #ollama-rocm
+    sbom-utility
+    sbomnix
+    cyclonedx-cli
+    cyclonedx-gomod
+    cargo-cyclonedx
+    license-scanner
   ]);
 
   xdg.configFile."numbat/init.nbt".text =

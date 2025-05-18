@@ -11,5 +11,8 @@
 
       "dwarf-fortress"
       "tergel-theme"
+
+      "unrar"
+      "snes9x-gtk"
     ];
 }
