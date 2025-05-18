@@ -136,7 +136,7 @@ in {
       ltrace
       strace
       pstree
-      dstat
+      dtool
       tcpdump
       ngrep
       bingrep
