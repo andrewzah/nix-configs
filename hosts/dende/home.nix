@@ -45,12 +45,28 @@
     snes9x-gtk
 
     #ollama-rocm
+
+    bruno
     sbom-utility
     sbomnix
     cyclonedx-cli
     cyclonedx-gomod
     cargo-cyclonedx
     license-scanner
+    dep-scan
+    cdxgen # for dep-scan
+    (bomber-go.overrideAttrs (prev: rec {
+      version = "0.5.1";
+      src = fetchFromGitHub {
+        owner = "devops-kung-fu";
+        repo = "bomber";
+        tag = "v${version}";
+        hash = "sha256-D3xs8lVhrRKVVQYzHN7CQNw5NTC+AxgsWvJxnV0lwGY=";
+      };
+      vendorHash = "sha256-mhGnuNuvMvX4WsqnS7QkWcrPfWEyaQsSKDUOpg9YrO8=";
+
+      doCheck = false;
+    }))
   ]);
 
   xdg.configFile."numbat/init.nbt".text =

@@ -10,6 +10,9 @@
       "127.0.0.1 pulp.arpa"
       "127.0.0.1 superset.arpa"
 
+      "127.0.0.1 dependencytrack.arpa"
+      "127.0.0.1 api.dependencytrack.arpa"
+
       "127.0.0.1 rekor.sigstore.arpa"
       "127.0.0.1 registry.sigstore.arpa"
 

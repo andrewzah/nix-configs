@@ -1,9 +1,6 @@
 {...}: {
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
+  services.xserver.xkb.layout = "us";
+  services.xserver.xkb.variant = "";
 
   services.upower.enable = true;
   services.openssh.enable = true;

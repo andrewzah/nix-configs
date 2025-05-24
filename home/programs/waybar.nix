@@ -7,7 +7,7 @@
       {
         height = 35;
         layer = "top";
-        position = "bottom";
+        position = "top";
         tray = {spacing = 10;};
         modules-left = [
           "clock"

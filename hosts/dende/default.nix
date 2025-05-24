@@ -5,11 +5,12 @@
     ../common-linux.nix
     ../extraHosts.nix
 
+    ../../services/bluetooth.nix
     ../../services/fcitx.nix
     ../../services/gpg.nix
     ../../services/keyd.nix
-    ../../services/bluetooth.nix
     ../../services/redshift.nix
+    ../../services/syncthing.nix
 
     ./hardware-configuration.nix
     ./services.nix
@@ -18,7 +19,13 @@
 
   networking.hostName = "dende";
   networking.networkmanager.enable = true;
-  networking.firewall.allowedTCPPorts = [ 4747 4748 ];
+  networking.firewall.allowedTCPPorts = [
+    4747 4748
+    8384 22000 #syncthing
+  ];
+  networking.firewall.allowedUDPPorts = [
+    22000 21027 # syncthing
+  ];
 
   time.timeZone = "Asia/Seoul";
   location.provider = "manual";
