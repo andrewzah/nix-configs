@@ -8,9 +8,9 @@
 
   environment.variables.EDITOR = "nvim";
   environment.systemPackages = with pkgs; [
-    vim
     git
     fzf
+    nix-index
     zsh
   ];
 }

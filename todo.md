@@ -1,4 +1,8 @@
+## look into
+- https://github.com/echasnovski/mini.nvim
+
 ## prio: high
+
 - https://github.com/crate-ci/typos
 - split out x11 config for donbyeorak & dende
   - aka figure out *modules*
