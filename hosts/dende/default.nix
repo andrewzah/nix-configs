@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   imports = [
     ../common.nix
     ../common-linux.nix
@@ -20,11 +19,14 @@
   networking.hostName = "dende";
   networking.networkmanager.enable = true;
   networking.firewall.allowedTCPPorts = [
-    4747 4748
-    8384 22000 #syncthing
+    4747
+    4748
+    8384
+    22000 #syncthing
   ];
   networking.firewall.allowedUDPPorts = [
-    22000 21027 # syncthing
+    22000
+    21027 # syncthing
   ];
 
   time.timeZone = "Asia/Seoul";
@@ -41,7 +43,7 @@
 
   boot.initrd.kernelModules = ["amdgpu"];
   ## required for the modern amdgpu and qualcomm WCN785x drivers
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_12;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_15;
 
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
@@ -60,7 +62,7 @@
   users.users.dragon = {
     isNormalUser = true;
     description = "dragon";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = [];
   };
 
@@ -86,7 +88,7 @@
       enable = true;
       support32Bit.enable = true;
     };
-};
+  };
 
   system.stateVersion = "24.11";
 }
