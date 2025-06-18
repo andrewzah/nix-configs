@@ -19,7 +19,7 @@
         settings = {
           main = {
             capslock = "layer(control)";
-            leftmeta = "layer(alt)";
+            #leftmeta = "layer(alt)";
             muhenkan = "layer(alt)";
           };
         };
@@ -27,7 +27,7 @@
 
       # AT Translated Set 2 keyboard
       internal = {
-        ids = ["0001:0001" "0fac:0ade"];
+        ids = ["0001:0001"];
         settings = {
           main = {
             capslock = "layer(control)";
