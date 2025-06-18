@@ -1,46 +1,20 @@
 {pkgs, ...}: {
-  home.packages = (with pkgs; [
+  home.packages = with pkgs; [
     discord
     discordchatexporter-cli
     rofi
     xclip
-  ]);
+  ];
 
   xsession.windowManager.i3 = {
     enable = true;
     package = pkgs.i3-gaps;
     config = let
-      modifier = "Mod1"; # alt
+      modifier = "Mod4"; # alt=Mod1, gui=Mod4
       terminal = "alacritty";
     in {
       inherit modifier terminal;
       startup = [
-        #{
-        #  command = ''
-        #    ${pkgs.xorg.xrandr}/bin/xrandr \
-        #      --output DP-0 \
-        #        --mode 3440x1440 \
-        #        --pos 1440x0 \
-        #        --rotate normal \
-        #      --output DP-1 --off \
-        #      --output HDMI-0 --off \
-        #      --output DP-2 \
-        #        --mode 2560x1440 \
-        #        --pos 0x199 \
-        #        --rotate right \
-        #      --output DP-3 --off \
-        #      --output DP-4 \
-        #        --primary \
-        #        --mode 2560x1440 \
-        #        --rate 144 \
-        #        --pos 1440x1440 \
-        #        --rotate normal \
-        #      --output DP-5 --off \
-        #    --output USB-C-0 --off
-        #  '';
-        #  always = true;
-        #  notification = true;
-        #}
         {
           command = "fcitx5 -d";
           always = true;
@@ -58,11 +32,11 @@
         smartBorders = "on";
       };
       bars = [
-        {
-          trayOutput = "eDP-1";
-          position = "bottom";
-          statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs /home/dragon/.config/i3status-rust/config-bottom.toml";
-        }
+        #{
+        #  trayOutput = "eDP-1";
+        #  position = "bottom";
+        #  statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs /home/dragon/.config/i3status-rust/config-bottom.toml";
+        #}
       ];
       keybindings = {
         "${modifier}+d" = "exec rofi -show run";
@@ -223,3 +197,30 @@
     XMODIFIERS = "@im,fcitx";
   };
 }
+#{
+#  command = ''
+#    ${pkgs.xorg.xrandr}/bin/xrandr \
+#      --output DP-0 \
+#        --mode 3440x1440 \
+#        --pos 1440x0 \
+#        --rotate normal \
+#      --output DP-1 --off \
+#      --output HDMI-0 --off \
+#      --output DP-2 \
+#        --mode 2560x1440 \
+#        --pos 0x199 \
+#        --rotate right \
+#      --output DP-3 --off \
+#      --output DP-4 \
+#        --primary \
+#        --mode 2560x1440 \
+#        --rate 144 \
+#        --pos 1440x1440 \
+#        --rotate normal \
+#      --output DP-5 --off \
+#    --output USB-C-0 --off
+#  '';
+#  always = true;
+#  notification = true;
+#}
+

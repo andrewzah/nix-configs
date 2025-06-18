@@ -7,7 +7,7 @@
     #../../home/games/dwarf-fortress-classic.nix
   ];
 
-  home.packages = (with pkgs; [
+  home.packages = with pkgs; [
     mouseless # TODO: set up properly, move to services/module
     # TODO: needs a systemctl service definition + config + keyboard detection + hotkey
     # https://github.com/imsuck/dotfiles/blob/8f449aa1f8e1d60cd5653f33a12a239c1a6a57ad/dot_config/home-manager/mod/services.nix#L25
@@ -68,7 +68,7 @@
 
     #  doCheck = false;
     #}))
-  ]);
+  ];
 
   xdg.configFile."numbat/init.nbt".text =
     builtins.readFile ../../static-files/configs/numbat-init.nbt;
