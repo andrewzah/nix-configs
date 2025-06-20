@@ -15,11 +15,11 @@
 
       # HHKB-Hybrid_1 Keyboard
       hhkb = {
-        ids = ["04FE:0021"];
+        ids = ["04fe:0021"];
         settings = {
           main = {
             capslock = "layer(control)";
-            #leftmeta = "layer(alt)";
+            leftalt = "layer(meta)";
             muhenkan = "layer(alt)";
           };
         };

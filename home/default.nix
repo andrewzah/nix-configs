@@ -144,7 +144,8 @@ in {
 
       (callPackage ../pkgs/andrew-zah-scripts.nix {})
       (callPackage ../pkgs/rbonsai.nix {})
-      (callPackage ../pkgs/cider-wrapper.nix {})
+      #(callPackage ../pkgs/cider-wrapper.nix {})
+      (callPackage ../pkgs/ziti/bin.nix {})
     ])
     ++ [
       neovim-flake

@@ -32,11 +32,11 @@
         smartBorders = "on";
       };
       bars = [
-        #{
-        #  trayOutput = "eDP-1";
-        #  position = "bottom";
-        #  statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs /home/dragon/.config/i3status-rust/config-bottom.toml";
-        #}
+        {
+          trayOutput = "eDP-1";
+          position = "top";
+          statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs /home/dragon/.config/i3status-rust/config-top.toml";
+        }
       ];
       keybindings = {
         "${modifier}+d" = "exec rofi -show run";
@@ -142,7 +142,7 @@
 
   programs.i3status-rust = {
     enable = true;
-    bars.bottom = {
+    bars.top = {
       icons = "none";
       theme = "gruvbox-dark";
       blocks = [
