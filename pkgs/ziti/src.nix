@@ -78,16 +78,16 @@ pkgs.stdenv.mkDerivation rec {
     pkgs.graphviz
   ];
 
-  buildPhase = ''
-    cd ./ziti-tunnel-sdk-c
+  #buildPhase = ''
+  #  #cd ./ziti-tunnel-sdk-c
 
-    echo $TMPDDIR
-    mkdir build
-    cd build
+  #  echo $TMPDDIR
+  #  mkdir build
+  #  cd build
 
-    cmake --preset ci-linux-x64 ..
-    cmake --build .
-  '';
+  #  cmake --preset ci-linux-x64 ..
+  #  cmake --build .
+  #'';
 
   meta.main = "ziti-edge-tunnel";
 }

@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     discord
     discordchatexporter-cli
+    dunst
     rofi
     xclip
   ];
@@ -196,6 +197,8 @@
     SDL_IM_MODULE = "fcitx";
     XMODIFIERS = "@im,fcitx";
   };
+
+  xdg.configFile."dunst/dunstrc".text = builtins.readFile ../static-files/configs/dunstrc;
 }
 #{
 #  command = ''
