@@ -21,11 +21,26 @@ font = IosevkaSS03 10
 alignment = left
 vertical_alignment = center
 
-[discord]
-  appname = Discord
-  summary = *Kevin Gapes*
-  background = "#8f3f71 "
+[discord_yes]
+  appname = discord
+  summary = *조조*
+  background = "#8f3f71"
   foreground = "#ffffff"
-  frcolor = "#b16286 "
+  frame_color = "#b16286"
+
+[discord_kevin]
+  appname = discord
+  summary = *Kevin Gapes*
+  background = "#8f3f71"
+  foreground = "#ffffff"
+  frame_color = "#b16286"
+
+[discord_chad]
+  appname = discord
+  summary = *Chad Cravens*
+  timeout = "4"
+  background = "#9d0006"
+  foreground = "#ffffff"
+  frame_color = "#cc241d"
 
 # vim: set syntax=cfg:
