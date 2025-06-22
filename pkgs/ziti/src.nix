@@ -58,15 +58,19 @@ pkgs.stdenv.mkDerivation rec {
     chmod -R +w .
   '';
 
+  CMAKE_PREFIX_PATH = "${pkgs.llhttp.dev}/lib/cmake";
+
   cmakeFlags = [
-    #"-DDISABLE_SEMVER_VERIFICATION=ON"
-    "-DZITI_SDK_DIR=${ziti_sdk_src}"
+    "-DDISABLE_SEMVER_VERIFICATION=ON"
+    "-DZITI_SDK_DIR=../deps/ziti-sdk-c"
     "-DZITI_SDK_VERSION=1.7.0"
-    "-Dtlsuv_DIR=${tlsuv_src}"
-    "-DFETCHCONTENT_SOURCE_DIR_LWIP=${lwip_src}"
-    "-DFETCHCONTENT_SOURCE_DIR_LWIP-CONTRIB=${lwip_contrib_src}"
-    "-DFETCHCONTENT_SOURCE_DIR_SUBCOMMAND=${subcommand_c_src}"
-    "-DBUILD_DOC=OFF"
+    "-Dtlsuv_DIR=../deps/tlsuv"
+    #"-Dllhttp_DIR=${pkgs.lib.getDev pkgs.llhttp}"
+    #"-Dllhttp_DIR=${pkgs.llhttp}"
+    #"-DFETCHCONTENT_SOURCE_DIR_LLHTTP=${pkgs.llhttp}"
+    "-DFETCHCONTENT_SOURCE_DIR_LWIP=../deps/lwip"
+    "-DFETCHCONTENT_SOURCE_DIR_LWIP-CONTRIB=../deps/lwip-contrib"
+    "-DFETCHCONTENT_SOURCE_DIR_SUBCOMMAND=../deps/subcommand.c"
     "-DDOXYGEN_OUTPUT_DIR=/tmp/doxygen"
     "-DFETCHCONTENT_FULLY_DISCONNECTED=ON"
   ];
@@ -79,13 +83,17 @@ pkgs.stdenv.mkDerivation rec {
     pkgs.pkg-config
     pkgs.libuv
     pkgs.zlib
-    pkgs.llhttp
+    #pkgs.llhttp
+    #(pkgs.lib.getDev pkgs.llhttp)
     pkgs.libsodium
     pkgs.protobufc
     pkgs.json_c
     pkgs.systemd
     pkgs.doxygen
     pkgs.graphviz
+  ];
+  buildInputs = [
+    pkgs.llhttp
   ];
 
   #buildPhase = ''
