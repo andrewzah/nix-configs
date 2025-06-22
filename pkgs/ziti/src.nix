@@ -48,8 +48,18 @@ pkgs.stdenv.mkDerivation rec {
     hash = "sha256-Gz0/b9jcC1I0fmguSMkV0xiqKWq7vzUVT0Bd1F4iqkA=";
   };
 
+  preConfigure = ''
+    cp -r ${ziti_sdk_src} ./deps/ziti-sdk-c
+    cp -r ${tlsuv_src} ./deps/tlsuv
+    cp -r ${lwip_src} ./deps/lwip
+    cp -r ${lwip_contrib_src} ./deps/lwip-contrib
+    cp -r ${subcommand_c_src} ./deps/subcommand.c
+
+    chmod -R +w .
+  '';
+
   cmakeFlags = [
-    "-DDISABLE_SEMVER_VERIFICATION=ON"
+    #"-DDISABLE_SEMVER_VERIFICATION=ON"
     "-DZITI_SDK_DIR=${ziti_sdk_src}"
     "-DZITI_SDK_VERSION=1.7.0"
     "-Dtlsuv_DIR=${tlsuv_src}"
@@ -91,31 +101,3 @@ pkgs.stdenv.mkDerivation rec {
 
   meta.main = "ziti-edge-tunnel";
 }
-#srcs = [
-#  (fetchFromGitHub {
-#    owner = "openziti";
-#    repo = "ziti-tunnel-sdk-c";
-#    tag = "v${version}";
-#    #hash = "sha256-KJQ1kAIsRlQtnq7z6jTfbbcrikJ/5DeFiYRmPAdTLc8=";
-#    hash = "sha256-gDg0amOSW71d1y9ZnGUsB90imndXtKJNsg+nb+g/6sU=";
-#    leaveDotGit = true;
-#  })
-#  (fetchFromGitHub {
-#    owner = "openziti";
-#    repo = "ziti-sdk-c";
-#    rev = "${version}"; # 현재: 1.7.0
-#    hash = "sha256-Gw5Oa0uGFO6TFS1pDkzTq6U354ndnaRcS0yOlx6wm0Q=";
-#  })
-#];
-#unpackPhase = ''
-#  mkdir -p $out
-#  cp -r $src $out/ziti-tunnel-sdk-c
-#  cp -r $ziti_sdk_src $out/ziti-sdk-c
-#  ls -la $out
-#'';
-#preConfigure = ''
-#  mkdir -p ziti-sdk-c-src
-#  cp -r ${ziti_sdk_src}/* ziti-sdk-c-src
-#  chmod -R +w ziti-sdk-c-src
-#'';
-
