@@ -66,7 +66,11 @@
     packages = [];
   };
 
-  environment.systemPackages = [pkgs.vim];
+  environment.systemPackages =
+    [
+      pkgs.vim
+    ];
+    #++ (pkgs.callPackage ../../pkgs/andrew-zah-scripts.nix {});
 
   programs.gnupg.agent = {
     enable = true;

@@ -6,6 +6,7 @@
   ...
 }: let
   neovim-flake = inputs.neovim-flake.packages.${pkgs.system}.default;
+  andrewZahScripts = pkgs.callPackage ../pkgs/andrew-zah-scripts { myNvim = neovim-flake; };
 in {
   home.username = "${username}";
   home.homeDirectory = lib.mkDefault "/home/${username}";
@@ -142,14 +143,13 @@ in {
       bingrep
       intentrace
 
-      (callPackage ../pkgs/andrew-zah-scripts.nix {})
       (callPackage ../pkgs/rbonsai.nix {})
       #(callPackage ../pkgs/cider-wrapper.nix {})
       (callPackage ../pkgs/ziti/bin.nix {})
     ])
     ++ [
       neovim-flake
-    ];
+    ] ++ andrewZahScripts;
 
   home.sessionVariables = {
     EDITOR = "nvim";

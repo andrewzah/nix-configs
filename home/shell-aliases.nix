@@ -1,9 +1,6 @@
 {}: {
   aliases = {
-    j = "just";
     k = "kubectl";
-    ll = "lsd -la --icon never";
-    v = "nvim";
 
     cst = "cd ~/sync/thoughts";
 
