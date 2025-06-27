@@ -68,6 +68,9 @@
 
     #  doCheck = false;
     #}))
+
+    nix-output-monitor
+    nh
   ];
 
   xdg.configFile."numbat/init.nbt".text =

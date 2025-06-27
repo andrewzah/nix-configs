@@ -38,7 +38,7 @@
 
   programs.zsh.enable = true;
   programs.zsh.shellAliases = {
-    switch = "sudo nixos-rebuild switch --flake /home/dragon/nix#dende";
+    switch = "nh os switch /home/dragon/nix#nixosConfigurations.dende";
   };
 
   boot.initrd.kernelModules = ["amdgpu"];
@@ -66,11 +66,10 @@
     packages = [];
   };
 
-  environment.systemPackages =
-    [
-      pkgs.vim
-    ];
-    #++ (pkgs.callPackage ../../pkgs/andrew-zah-scripts.nix {});
+  environment.systemPackages = [
+    pkgs.vim
+  ];
+  #++ (pkgs.callPackage ../../pkgs/andrew-zah-scripts.nix {});
 
   programs.gnupg.agent = {
     enable = true;
