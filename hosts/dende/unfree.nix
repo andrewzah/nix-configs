@@ -14,5 +14,8 @@
 
       "unrar"
       "snes9x-gtk"
+
+      "fmod"
+      "texturepacker"
     ];
 }

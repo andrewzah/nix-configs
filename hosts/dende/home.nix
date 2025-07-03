@@ -13,7 +13,6 @@
     # https://github.com/imsuck/dotfiles/blob/8f449aa1f8e1d60cd5653f33a12a239c1a6a57ad/dot_config/home-manager/mod/services.nix#L25
 
     pcmanfm
-    darktable
 
     unrar
     filezilla
@@ -32,14 +31,14 @@
     #httpstat
     lnav
 
-    ## testing
+    ## image manipulation
     #darktable
     #rawtherapee
+    krita
 
     #cockatrice
     steam
     steam-run
-
     mgba
     sameboy
     snes9x-gtk
@@ -71,6 +70,8 @@
 
     nix-output-monitor
     nh
+
+    go-grip # markdown viewer
   ];
 
   xdg.configFile."numbat/init.nbt".text =

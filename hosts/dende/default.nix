@@ -81,6 +81,9 @@
     containerd.enable = true;
   };
 
+  # for dotnet programs
+  programs.nix-ld.enable = true;
+
   hardware = {
     graphics = {
       enable = true;

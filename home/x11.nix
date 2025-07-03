@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  username,
+  ...
+}: {
   home.packages = with pkgs; [
     discord
     discordchatexporter-cli
@@ -186,6 +190,8 @@
   };
 
   home.sessionVariables = {
+    XDG_DATA_HOME = "/home/${username}/.local/share";
+
     XCURSOR_SIZE = "182";
     XKB_DEFAULT_LAYOUT = "us";
 
