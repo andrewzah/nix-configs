@@ -6,7 +6,7 @@
   ...
 }: let
   neovim-flake = inputs.neovim-flake.packages.${pkgs.system}.default;
-  andrewZahScripts = pkgs.callPackage ../pkgs/andrew-zah-scripts { myNvim = neovim-flake; };
+  andrewZahScripts = pkgs.callPackage ../pkgs/andrew-zah-scripts {myNvim = neovim-flake;};
 in {
   home.username = "${username}";
   home.homeDirectory = lib.mkDefault "/home/${username}";
@@ -94,6 +94,7 @@ in {
 
       bitwarden-desktop
 
+      mediainfo
       vlc
 
       appimage-run
@@ -107,9 +108,6 @@ in {
       # todo: https://github.com/killergerbah/asbplayer
       # needs google-chromium or newer ver?
       ungoogled-chromium
-
-      thunderbird-unwrapped
-      obsidian
 
       killall
       pavucontrol
@@ -149,7 +147,8 @@ in {
     ])
     ++ [
       neovim-flake
-    ] ++ andrewZahScripts;
+    ]
+    ++ andrewZahScripts;
 
   home.sessionVariables = {
     EDITOR = "nvim";

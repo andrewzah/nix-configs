@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 
-# TODO: set up mail app... thunderbird equivalent?
 RUNNING=$(osascript -e 'if application "Mail" is running then return 0')
 COUNT=0
 

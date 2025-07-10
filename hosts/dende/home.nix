@@ -72,6 +72,8 @@
     nh
 
     go-grip # markdown viewer
+
+    binsider
   ];
 
   xdg.configFile."numbat/init.nbt".text =

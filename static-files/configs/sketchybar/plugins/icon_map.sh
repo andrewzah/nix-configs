@@ -25,9 +25,6 @@ case $@ in
 "Emacs")
   icon_result=":emacs:"
   ;;
-"Thunderbird")
-  icon_result=":thunderbird:"
-  ;;
 "Notes")
   icon_result=":notes:"
   ;;
