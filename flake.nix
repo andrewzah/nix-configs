@@ -10,7 +10,7 @@
     ...
   } @ inputs: {
     darwinConfigurations = {
-      "Inspire-Others" = nix-darwin.lib.darwinSystem {
+      inspire = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
           ./hosts/m3/default.nix
@@ -30,7 +30,7 @@
         ];
       };
     };
-    darwinPackages = self.darwinConfigurations."Inspire-Others".pkgs;
+    darwinPackages = self.darwinConfigurations.inspire.pkgs;
 
     nixosConfigurations = let
       home-modules = {
@@ -40,77 +40,79 @@
     in {
       donbyeorak = let
         username = "dragon";
-      in nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs username;};
-        modules = [
-          ./hosts/donbyeorak/default.nix
+      in
+        nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {inherit inputs username;};
+          modules = [
+            ./hosts/donbyeorak/default.nix
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.extraSpecialArgs = {inherit inputs username;};
-            home-manager.users."${username}" = {
-              imports = [
-                ./hosts/donbyeorak/home.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.extraSpecialArgs = {inherit inputs username;};
+              home-manager.users."${username}" = {
+                imports = [
+                  ./hosts/donbyeorak/home.nix
 
-                ./home/default.nix
-                ./home/x11.nix
-
-              ];
-            };
-          }
-          home-modules
-        ];
-      };
+                  ./home/default.nix
+                  ./home/x11.nix
+                ];
+              };
+            }
+            home-modules
+          ];
+        };
 
       ginyu = let
         username = "andrew";
-      in nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs username;};
-        modules = [
-          ./hosts/xps9300/default.nix
+      in
+        nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {inherit inputs username;};
+          modules = [
+            ./hosts/xps9300/default.nix
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.extraSpecialArgs = {inherit inputs username;};
-            home-manager.users."${username}" = {
-              imports = [
-                ./home/default.nix
-                ./home/wayland.nix
-              ];
-            };
-          }
-          home-modules
-          nixos-hardware.nixosModules.dell-xps-13-9360
-        ];
-      };
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.extraSpecialArgs = {inherit inputs username;};
+              home-manager.users."${username}" = {
+                imports = [
+                  ./home/default.nix
+                  ./home/wayland.nix
+                ];
+              };
+            }
+            home-modules
+            nixos-hardware.nixosModules.dell-xps-13-9360
+          ];
+        };
 
       dende = let
         username = "dragon";
-      in nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs username;};
-        modules = [
-          ./hosts/dende/default.nix
+      in
+        nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {inherit inputs username;};
+          modules = [
+            ./hosts/dende/default.nix
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.extraSpecialArgs = {inherit inputs username;};
-            home-manager.users."${username}" = {
-              imports = [
-                ./hosts/dende/home.nix
-                ./home/default.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.extraSpecialArgs = {inherit inputs username;};
+              home-manager.users."${username}" = {
+                imports = [
+                  ./hosts/dende/home.nix
+                  ./home/default.nix
 
-                ./home/x11.nix
-                #./modules/x11.nix
-              ];
-            };
-          }
-          home-modules
-          nixos-hardware.nixosModules.lenovo-thinkpad-t14s
-        ];
-      };
+                  ./home/x11.nix
+                  #./modules/x11.nix
+                ];
+              };
+            }
+            home-modules
+            nixos-hardware.nixosModules.lenovo-thinkpad-t14s
+          ];
+        };
     };
   };
 

@@ -1,0 +1,72 @@
+[
+  {
+    "pname": "Baker76.Imaging",
+    "version": "1.0.25",
+    "hash": "sha256-8O8vmAjYZ8se133LyTIhknV7fw60WPweDdkVSgDTXPo="
+  },
+  {
+    "pname": "Baker76.Pngcs",
+    "version": "1.0.25",
+    "hash": "sha256-do/fPW21KEl5TnMFhCJIN5F3nCfHKDY6HDjTiT4blms="
+  },
+  {
+    "pname": "ExCSS",
+    "version": "4.3.0",
+    "hash": "sha256-7QGbwOlT1EEkgUULKWSJO3H8BzvV4KP/mUZE/9/3r6M="
+  },
+  {
+    "pname": "HarfBuzzSharp",
+    "version": "8.3.0.1",
+    "hash": "sha256-ZQwyxpI6jB804Z3d1JAhLqyHIu42fo6mpmk5GVFbEzk="
+  },
+  {
+    "pname": "HarfBuzzSharp.NativeAssets.macOS",
+    "version": "8.3.0.1",
+    "hash": "sha256-bpow26ydfzv9w6XCtZOcsGqMUVcfmvnIo5qPqtl9NQo="
+  },
+  {
+    "pname": "HarfBuzzSharp.NativeAssets.Win32",
+    "version": "8.3.0.1",
+    "hash": "sha256-2+FA4EfAQ68q1nJlXUuqDcETwIA+6OvD0DB/lMnbKVY="
+  },
+  {
+    "pname": "ShimSkiaSharp",
+    "version": "3.0.0",
+    "hash": "sha256-xqZlCEHvF4CB/oMHBoDcsp2djdOUlEnQTeOxYrn5RXM="
+  },
+  {
+    "pname": "SkiaSharp",
+    "version": "3.119.0",
+    "hash": "sha256-G6T0E4Wl9NW9m/9HW1Rppuxs5icp04uvqkY+Ju/vvzM="
+  },
+  {
+    "pname": "SkiaSharp.HarfBuzz",
+    "version": "3.116.1",
+    "hash": "sha256-GYu9itkxAJUmj7Z4etHGUvPLdtdNr+y0mcUauArRnhE="
+  },
+  {
+    "pname": "SkiaSharp.NativeAssets.macOS",
+    "version": "3.119.0",
+    "hash": "sha256-BPkQ5hSDK4Nal36+31AAApEbDH+FdwZik5W22vYmVDI="
+  },
+  {
+    "pname": "SkiaSharp.NativeAssets.Win32",
+    "version": "3.119.0",
+    "hash": "sha256-YltsBRADV7b3qL3/YrgG2GTwJr8PL1STeaimQagSADo="
+  },
+  {
+    "pname": "Svg.Custom",
+    "version": "3.0.0",
+    "hash": "sha256-DtroIZLNjdDKaMkFDMg4rdTrSxvzNJckgdgvmmRSi3Y="
+  },
+  {
+    "pname": "Svg.Model",
+    "version": "3.0.0",
+    "hash": "sha256-j4WkwIEIXE7QADugSU8bKm5wjOqLOJs9/PMxJqPxijY="
+  },
+  {
+    "pname": "Svg.Skia",
+    "version": "3.0.0",
+    "hash": "sha256-1Dq51JxVyqjhOB1gW6j6gFyd5ngJdbpWIQK51x/YgX4="
+  }
+]

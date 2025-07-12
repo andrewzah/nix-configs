@@ -1,14 +1,19 @@
-{pkgs, fetchFromGitHub, buildGoModule, ...}:
+{
+  pkgs,
+  fetchFromGitHub,
+  buildGoModule,
+  ...
+}:
 buildGoModule rec {
   pname = "legendsbrowser2";
-  version = "2.0.9";
+  version = "2.0.10";
 
   sourceRoot = "source/backend";
   src = fetchFromGitHub {
     owner = "robertjanetzko";
     repo = "LegendsBrowser2";
     rev = "${version}";
-    hash = "sha256-oFxJOOGgPi3hAYGyHfjM/3PG6/vm9LV+tlGpDrdHjik=";
+    hash = "sha256-wttBw3AKHkPCgoxnaxI8IZSPuw2xLoCK/9joAYFWPM8=";
   };
   vendorHash = "sha256-W7hc+U+rJZgXzcYoUHTG29j2xvJ/xTbBgDaiO7CVGnk=";
 
