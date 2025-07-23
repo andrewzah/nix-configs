@@ -67,6 +67,14 @@
     aseprite
   ];
 
+  home.pointerCursor = {
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 20;
+    gtk.enable = true;
+    x11.enable = true;
+  };
+
   xdg.configFile."numbat/init.nbt".text =
     builtins.readFile ../../static-files/configs/numbat-init.nbt;
 
