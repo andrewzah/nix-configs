@@ -192,7 +192,7 @@
   home.sessionVariables = {
     XDG_DATA_HOME = "/home/${username}/.local/share";
 
-    XCURSOR_SIZE = "205";
+    #XCURSOR_SIZE = "205"; may not be necessary
     XKB_DEFAULT_LAYOUT = "us";
 
     GLFW_IM_MODULE = "ibus";
