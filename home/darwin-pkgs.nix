@@ -24,7 +24,7 @@
       switch = "darwin-rebuild switch --flake ~/nix-configs";
     };
 
-    initExtra = ''
+    initContent = ''
       eval "$(/opt/homebrew/bin/brew shellenv)"
     '';
   };

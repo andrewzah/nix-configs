@@ -3,6 +3,7 @@
     k = "kubectl";
 
     cst = "cd ~/sync/thoughts";
+    cz = "cd ~/programming/game/src/ZGame";
 
     dc = "docker compose";
     deit = "docker exec -it";

@@ -6,7 +6,7 @@ in {
     enableCompletion = true;
     inherit shellAliases;
 
-    initExtra = ''
+    initContent = ''
       set -o emacs
 
       if [[ -n "$SSH_CONNECTION" ]]; then

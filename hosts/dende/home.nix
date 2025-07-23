@@ -46,34 +46,25 @@
     #ollama-rocm
 
     bruno
-    sbom-utility
     sbomnix
-    cyclonedx-cli
-    cyclonedx-gomod
-    cargo-cyclonedx
-    license-scanner
-    dep-scan
-    cdxgen # for dep-scan
-    bomber-go
-    #(bomber-go.overrideAttrs (prev: rec {
-    #  version = "0.5.1";
-    #  src = fetchFromGitHub {
-    #    owner = "devops-kung-fu";
-    #    repo = "bomber";
-    #    tag = "v${version}";
-    #    hash = "sha256-D3xs8lVhrRKVVQYzHN7CQNw5NTC+AxgsWvJxnV0lwGY=";
-    #  };
-    #  vendorHash = "sha256-mhGnuNuvMvX4WsqnS7QkWcrPfWEyaQsSKDUOpg9YrO8=";
-
-    #  doCheck = false;
-    #}))
+    #sbom-utility
+    #cyclonedx-cli
+    #cyclonedx-gomod
+    #cargo-cyclonedx
+    #license-scanner
+    #dep-scan
+    #cdxgen # for dep-scan
+    #bomber-go
 
     nix-output-monitor
     nh
 
     go-grip # markdown viewer
-
     binsider
+
+    simplescreenrecorder
+    tiled
+    aseprite
   ];
 
   xdg.configFile."numbat/init.nbt".text =

@@ -17,5 +17,6 @@
 
       "fmod"
       "texturepacker"
+      "aseprite"
     ];
 }
