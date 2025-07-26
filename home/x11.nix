@@ -16,7 +16,8 @@
     package = pkgs.i3-gaps;
     config = let
       modifier = "Mod4"; # alt=Mod1, gui=Mod4
-      terminal = "alacritty";
+      #terminal = "alacritty";
+      terminal = "ghostty";
     in {
       inherit modifier terminal;
       startup = [

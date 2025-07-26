@@ -28,6 +28,8 @@ in {
 
   home.packages =
     (with pkgs; [
+      home-manager
+
       age
       sops
 
