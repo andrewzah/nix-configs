@@ -12,4 +12,8 @@
 
     videoDrivers = ["amd"];
   };
+
+  userExtraServices = {
+    ghostty-daemon.enable = true;
+  };
 }

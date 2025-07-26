@@ -96,6 +96,7 @@
           specialArgs = {inherit inputs username;};
           modules = [
             ./hosts/dende/default.nix
+            ./modules
 
             home-manager.nixosModules.home-manager
             {
@@ -103,7 +104,8 @@
               home-manager.users."${username}" = {
                 imports = [
                   ./hosts/dende/home.nix
-                  ./home/default.nix
+                  ./home
+                  ./modules
 
                   ./home/x11.nix
                   #./modules/x11.nix
