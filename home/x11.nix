@@ -9,6 +9,7 @@
     dunst
     rofi
     xclip
+    xwallpaper
   ];
 
   xsession.windowManager.i3 = {
@@ -28,6 +29,11 @@
         }
         {
           command = "${pkgs.dunst}/bin/dunst";
+          always = true;
+          notification = true;
+        }
+        {
+          command = "${pkgs.xwallpaper}/bin/xwallpaper --stretch /home/dragon/nix/static-files/wallpapers/cat-oil-painting.jpg";
           always = true;
           notification = true;
         }

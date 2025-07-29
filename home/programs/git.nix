@@ -7,7 +7,7 @@
 
     aliases = {
       aliases = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort";
-      cs = "git commit --signoff --gpg-sign";
+      cs = "commit --signoff --gpg-sign";
       churn = "!git log --all -M -C --name-only --format='format:' \"$@\" | sort | grep -v '^$' | uniq -c | sort | awk 'BEGIN {print \"count,file\"} {print $1 \",\" $2}'";
       l = "!f() { git log $* | grep '^commit ' | cut -f 2 -d ' '; }; f";
       please = "push --force-with-lease";
