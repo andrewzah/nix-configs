@@ -15,6 +15,10 @@
       overview = "log --all --oneline --no-merges";
       recap = "log --all --pretty=format:'%h %ad %s' --no-merges --author=<zah@andrewzah.com> --date=short";
       st = "status --short --branch";
+
+      pom = "push origin master";
+      pgm = "push gh master";
+      pod = "push origin dev";
     };
 
     extraConfig = {

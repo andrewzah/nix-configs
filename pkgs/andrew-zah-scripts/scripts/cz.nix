@@ -1,4 +1,4 @@
 {pkgs, ...}:
 pkgs.writeShellScriptBin "cgz" ''
-  cd ~/programming/game/src/ZGame $@
+  cd ~/programming/game/src/ZGame "$@"
 ''

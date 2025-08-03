@@ -66,6 +66,8 @@
     simplescreenrecorder
     tiled
     aseprite
+
+    gnome-calendar
   ];
 
   home.pointerCursor = {

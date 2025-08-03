@@ -1,4 +1,4 @@
 {pkgs, ...}:
 pkgs.writeShellScriptBin "j" ''
-  ${pkgs.lib.meta.getExe pkgs.just} $@
+  ${pkgs.lib.meta.getExe pkgs.just} "$@"
 ''

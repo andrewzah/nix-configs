@@ -21,9 +21,11 @@
     gpom = "git push origin master";
     gpomr = "git pull origin master --rebase";
 
-    nib = "nix-build";
+    nb = "nix build";
+    nob = "nom build";
     ns = "nix-shell";
     nd = "nix develop";
+    nod = "nom develop";
     nf = "nix flake";
     nr = "nix run";
 

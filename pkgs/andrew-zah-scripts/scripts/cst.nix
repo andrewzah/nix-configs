@@ -1,4 +1,4 @@
 {pkgs, ...}:
 pkgs.writeShellScriptBin "cst" ''
-  cd ~/sync/thoughts $@
+  cd ~/sync/thoughts "$@"
 ''
