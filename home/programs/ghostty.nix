@@ -11,6 +11,11 @@
         "ctrl+plus=increase_font_size:1"
         "ctrl+minus=decrease_font_size:1"
         "ctrl+zero=reset_font_size"
+        "ctrl+shift+i=inspector:toggle"
+        "ctrl+shift+a=select_all"
+        "ctrl+shift+c=copy_to_clipboard"
+        "ctrl+shift+v=paste_from_clipboard"
+        "ctrl+comma=open_config"
       ];
 
       font-family = "Iosevka SS03";

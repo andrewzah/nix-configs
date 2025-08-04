@@ -99,11 +99,11 @@
         "nvf": "nvf"
       },
       "locked": {
-        "lastModified": 1754131473,
-        "narHash": "sha256-AmFNmsjxphqs+7c+h1MVKlXTGhCwlFMGkC6i8LpL8mM=",
+        "lastModified": 1754326902,
+        "narHash": "sha256-K1lJiKEr7gbfNjR+JSHXExGF6P4LTDpp4kvnSvIJctI=",
         "owner": "andrewzah",
         "repo": "neovim-flake",
-        "rev": "a7e791709d75b5b39f13e0c8b4e1a4457b196049",
+        "rev": "8f37ed6c18ed7b4bfae6fb963029f3fbb359f8ea",
         "type": "github"
       },
       "original": {
@@ -219,11 +219,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1753878721,
-        "narHash": "sha256-Y+Kr6FTHggnZ31nhaiOhIboIi+dhnLmQ9p0xf0wwnDc=",
+        "lastModified": 1754137146,
+        "narHash": "sha256-V2AE32tLNvtYVBuc8ZRbkGjAZGsJchFbNVd6v5JXvg8=",
         "owner": "notashelf",
         "repo": "nvf",
-        "rev": "e35a74c44a35b28fd09f136dd3c0dbe9f300258f",
+        "rev": "16d396f039ffefabf93b7b3261e2a17e2f84439b",
         "type": "github"
       },
       "original": {
