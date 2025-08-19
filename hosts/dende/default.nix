@@ -8,12 +8,14 @@
     ../../services/fcitx.nix
     ../../services/gpg.nix
     ../../services/keyd.nix
+    ../../services/opensnitch.nix
     ../../services/redshift.nix
     ../../services/syncthing.nix
 
     ./hardware-configuration.nix
     ./services.nix
     ./unfree.nix
+    ./remotebuilds.nix
   ];
 
   networking.hostName = "dende";

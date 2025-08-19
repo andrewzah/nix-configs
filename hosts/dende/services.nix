@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.variant = "";
 
@@ -15,5 +15,16 @@
 
   userExtraServices = {
     ghostty-daemon.enable = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  };
+
+  services.geoclue2 = {
+    enable = true;
+    staticLatitude = 37.560012;
+    staticLongitude = 126.921768;
   };
 }

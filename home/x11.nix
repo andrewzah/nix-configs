@@ -10,6 +10,11 @@
     rofi
     xclip
     xwallpaper
+
+    glib
+    dconf
+    xdg-desktop-portal-gtk
+    adwaita-qt
   ];
 
   xsession.windowManager.i3 = {

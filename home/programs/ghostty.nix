@@ -21,10 +21,10 @@
       font-family = "Iosevka SS03";
       font-feature = "-calt, -liga, -dlig";
       font-size = 13;
-      #theme = "dark:GitHub-Dark-High-Contrast,light:GitHub-Light-High-Contrast";
-      theme = "GitHub-Dark-High-Contrast";
+      theme = "dark:GruvboxDarkHard,light:GruvboxLightHard";
+      gtk-adwaita = true;
 
-      window-decoration = false;
+      window-decoration = "none";
       copy-on-select = true;
 
       ## cursor
@@ -34,3 +34,7 @@
     };
   };
 }
+# ghostty +list-themes
+# dark: banana-blueberry, belafonte-night, carbonfox, citruszest, cyberpunkscarletprotocol, deep, earthsong, github-dark-gray, glacier, grape
+# light: dayfox, farmhouse-light, github-light-high-contrast, gruvbox-light-hard
+

@@ -6,9 +6,13 @@
     #../../home/programs/slippi.nix
 
     #../../home/games/dwarf-fortress-classic.nix
+
+    ../../services/darkman.nix
   ];
 
   home.packages = with pkgs; [
+    opensnitch-ui
+
     mouseless # TODO: set up properly, move to services/module
     # TODO: needs a systemctl service definition + config + keyboard detection + hotkey
     # https://github.com/imsuck/dotfiles/blob/8f449aa1f8e1d60cd5653f33a12a239c1a6a57ad/dot_config/home-manager/mod/services.nix#L25
