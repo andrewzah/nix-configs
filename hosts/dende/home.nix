@@ -11,6 +11,11 @@
   ];
 
   home.packages = with pkgs; [
+    arandr
+
+    runelite
+    prismlauncher
+
     opensnitch-ui
 
     mouseless # TODO: set up properly, move to services/module
