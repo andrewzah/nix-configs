@@ -1,9 +1,17 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  zscreenLayout = pkgs.callPackage ../../static-files/bin/screenlayout.nix {};
+in {
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.variant = "";
 
   services.upower.enable = true;
   services.openssh.enable = true;
+
+  services.udev.extraRules = pkgs.lib.concatStringsSep "\n" [
+    ''
+      ACTION=="change", SUBSYSTEM=="drm", ENV{HOTPLUG}=="1", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/dragon/.Xauthority", RUN+="${pkgs.lib.getExe zscreenLayout}"
+    ''
+  ];
 
   services.xserver = {
     enable = true;
