@@ -101,7 +101,6 @@ in {
 
       appimage-run
       mullvad-vpn
-      tailscale
 
       unar
       poppler # ?
