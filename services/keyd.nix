@@ -38,6 +38,18 @@
         };
       };
 
+      jtk_188 = {
+        ids = ["04e8:7021"];
+        settings = {
+          main = {
+            capslock = "layer(control)";
+            leftmeta = "layer(alt)";
+            leftalt = "layer(meta)";
+            leftcontrol = "capslock";
+          };
+        };
+      };
+
       system76_launch = {
         ids = ["3384:0001"];
         settings = {

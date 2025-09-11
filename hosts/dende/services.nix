@@ -35,4 +35,8 @@ in {
     staticLatitude = 37.560012;
     staticLongitude = 126.921768;
   };
+
+  services.tailscale = {
+    enable = true;
+  };
 }

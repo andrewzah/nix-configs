@@ -2,10 +2,10 @@
   i18n.inputMethod = {
     enable = true;
     type = "fcitx5";
-    fcitx5.addons = (with pkgs; [
+    fcitx5.addons = with pkgs; [
       fcitx5-hangul
       fcitx5-gtk
-    ]);
+    ];
     fcitx5.ignoreUserConfig = true;
 
     fcitx5.settings.inputMethod = {
@@ -43,6 +43,7 @@
 
     "Hotkey/TriggerKeys" = {
       "0" = "Control+Alt+space";
+      "1" = "Hangul";
     };
     "Hotkey/AltTriggerKeys" = {
       "0" = "Shift_L";
