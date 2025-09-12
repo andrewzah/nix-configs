@@ -1,4 +1,14 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: let
+  auto_rom_script = pkgs.writeScriptBin "auto_rom_script" ''
+    curl "https://fightcade.download/fc2json.zip" --output "/home/$USER/.var/app/com.fightcade.Fightcade/data/fc2json.zip"
+    cd "/home/$USER/.var/app/com.fightcade.Fightcade/data"
+    ${lib.getExe pkgs.unzip} "/home/$USER/.var/app/com.fightcade.Fightcade/data/fc2json.zip"
+  '';
+in {
   imports = [
     ../../home/programs/git.nix
     #../../home/programs/alacritty.nix
@@ -10,72 +20,76 @@
     ../../services/darkman.nix
   ];
 
-  home.packages = with pkgs; [
-    arandr
+  home.packages = with pkgs;
+    [
+      arandr
 
-    runelite
-    prismlauncher
+      runelite
+      prismlauncher
 
-    opensnitch-ui
+      opensnitch-ui
 
-    mouseless # TODO: set up properly, move to services/module
-    # TODO: needs a systemctl service definition + config + keyboard detection + hotkey
-    # https://github.com/imsuck/dotfiles/blob/8f449aa1f8e1d60cd5653f33a12a239c1a6a57ad/dot_config/home-manager/mod/services.nix#L25
+      mouseless # TODO: set up properly, move to services/module
+      # TODO: needs a systemctl service definition + config + keyboard detection + hotkey
+      # https://github.com/imsuck/dotfiles/blob/8f449aa1f8e1d60cd5653f33a12a239c1a6a57ad/dot_config/home-manager/mod/services.nix#L25
 
-    pcmanfm
+      pcmanfm
 
-    unrar
-    filezilla
+      unrar
+      filezilla
 
-    btop-rocm
+      btop-rocm
 
-    obsidian
-    scrot
-    wthrr
+      obsidian
+      scrot
+      wthrr
 
-    numbat # calc + unit conversions
-    hyperfine # cli benchmarking
-    #hexyl # hex viewer
-    #rainfrog # nicer postgres cli
-    rustscan
-    #httpstat
-    lnav
+      numbat # calc + unit conversions
+      hyperfine # cli benchmarking
+      #hexyl # hex viewer
+      #rainfrog # nicer postgres cli
+      rustscan
+      #httpstat
+      lnav
 
-    ## image manipulation
-    #darktable
-    #rawtherapee
-    krita
+      ## image manipulation
+      #darktable
+      #rawtherapee
+      krita
 
-    #cockatrice
-    steam
-    steam-run
-    mgba
-    sameboy
-    snes9x-gtk
+      #cockatrice
+      steam
+      steam-run
+      mgba
+      sameboy
+      snes9x-gtk
 
-    #ollama-rocm
+      #ollama-rocm
 
-    bruno
-    sbomnix
-    #sbom-utility
-    #cyclonedx-cli
-    #cyclonedx-gomod
-    #cargo-cyclonedx
-    #license-scanner
-    #dep-scan
-    #cdxgen # for dep-scan
-    #bomber-go
+      bruno
+      sbomnix
+      #sbom-utility
+      #cyclonedx-cli
+      #cyclonedx-gomod
+      #cargo-cyclonedx
+      #license-scanner
+      #dep-scan
+      #cdxgen # for dep-scan
+      #bomber-go
 
-    nix-output-monitor
-    nh
+      nix-output-monitor
+      nh
 
-    go-grip # markdown viewer
-    binsider
+      go-grip # markdown viewer
+      binsider
 
-    simplescreenrecorder
-    tiled
-    aseprite
-  ];
+      simplescreenrecorder
+      tiled
+      aseprite
+    ]
+    ++ [
+      auto_rom_script
+    ];
 
   home.pointerCursor = {
     package = pkgs.bibata-cursors;

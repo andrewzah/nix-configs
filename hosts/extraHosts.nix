@@ -4,6 +4,7 @@
     "127.0.0.1 elasticsearch"
     "127.0.0.1 gitea.arpa"
     "127.0.0.1 grafana.arpa"
+    "127.0.0.1 admin.keycloak.arpa"
     "127.0.0.1 keycloak.arpa"
     "127.0.0.1 labelstudio.arpa"
     "127.0.0.1 nginx.arpa"

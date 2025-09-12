@@ -4,10 +4,10 @@
   outputs = {
     self,
     nixpkgs,
-    #unstableNixpkgs,
     home-manager,
     nixos-hardware,
     nix-darwin,
+    nix-flatpak,
     ...
   } @ inputs: {
     darwinConfigurations = {
@@ -95,6 +95,7 @@
           system = "x86_64-linux";
           specialArgs = {inherit inputs username;};
           modules = [
+            "${nix-flatpak}/modules/nixos.nix"
             ./hosts/dende/default.nix
             ./modules
 
@@ -127,6 +128,7 @@
     nix-hardware.url = "github:NixOS/nixos-hardware/master";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
     neovim-flake.url = "github:andrewzah/neovim-flake";
     #neovim-flake.url = "git+file:///home/dragon/programming/neovim-flake";

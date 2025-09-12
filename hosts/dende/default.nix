@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  nix-flatpak,
+  ...
+}: {
   imports = [
     ../common.nix
     ../common-linux.nix

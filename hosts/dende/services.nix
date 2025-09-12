@@ -39,4 +39,12 @@ in {
   services.tailscale = {
     enable = true;
   };
+
+  services.flatpak = {
+    update.auto.enable = true;
+    enable = true;
+    packages = [
+      "com.fightcade.Fightcade"
+    ];
+  };
 }
