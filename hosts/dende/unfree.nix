@@ -2,6 +2,7 @@
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
       "steam"
+      "unrar"
       "steam-original"
       "steam-run"
       "steam-unwrapped"
