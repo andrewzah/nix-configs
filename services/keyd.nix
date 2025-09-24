@@ -1,4 +1,6 @@
 {...}: {
+  # use `keyd list-keys` to get valid keys
+  # invalid keys will silently remap to sth else, lctrl?
   services.keyd = {
     enable = true;
 
@@ -13,8 +15,8 @@
         };
       };
 
-      # HHKB-Hybrid_1 Keyboard
       hhkb = {
+        # HHKB-Hybrid_1 Keyboard
         ids = ["04fe:0021"];
         settings = {
           main = {
@@ -25,8 +27,8 @@
         };
       };
 
-      # AT Translated Set 2 keyboard
       internal = {
+        # AT Translated Set 2 keyboard
         ids = ["0001:0001"];
         settings = {
           main = {
@@ -34,11 +36,16 @@
             leftmeta = "layer(alt)";
             leftalt = "layer(meta)";
             leftcontrol = "capslock";
+
+            rightalt = "layer(meta)";
+            rightcontrol = "hangeul";
+            "leftmeta+leftshift+f23" = "layer(alt)"; # copilot key
           };
         };
       };
 
       jtk_188 = {
+        # cheap bluetooth alice-style foldable kb from 쿠팡
         ids = ["04e8:7021"];
         settings = {
           main = {
@@ -51,6 +58,7 @@
       };
 
       system76_launch = {
+        # System 76 Launch Lite
         ids = ["3384:0001"];
         settings = {
           main = {
@@ -59,16 +67,20 @@
           };
         };
       };
+
+      ek87 = {
+        # Dareu EK87
+        ids = ["260d:0060"];
+        settings = {
+          main = {
+            capslock = "layer(control)";
+            leftmeta = "layer(alt)";
+            leftalt = "layer(meta)";
+            leftcontrol = "capslock";
+            rightcontrol = "hangeul";
+          };
+        };
+      };
     };
   };
 }
-#KeyRelease event, serial 34, synthetic NO, window 0x6a00001,
-#    root 0x415, subw 0x0, time 185604702, (1392,-20), root:(1394,0),
-#    state 0x8, keycode 64 (keysym 0xffe9, Alt_L), same_screen YES,
-#    XLookupString gives 0 bytes:
-#    XFilterEvent returns: False
-#
-# KeyRelease event, serial 34, synthetic NO, window 0x6a00001,
-#     root 0x415, subw 0x0, time 185559282, (1459,-20), root:(1461,0),
-#     state 0x0, keycode 102 (keysym 0xff22, Muhenkan), same_screen YES,
-

@@ -24,6 +24,7 @@ in {
     [
       unrar
       arandr
+      thunderbird # calendar ...
 
       runelite
       prismlauncher

@@ -179,6 +179,12 @@
           interval = 5;
         }
         {
+          block = "temperature";
+          format = "$max max";
+          interval = 10;
+          chip = "*-isa-*";
+        }
+        {
           block = "sound";
           driver = "pulseaudio";
           click = [
