@@ -107,8 +107,6 @@
                   ./home
                   ./hosts/dende/home.nix
                   ./hm-modules
-
-                  #./home/x11.nix
                 ];
               };
             }

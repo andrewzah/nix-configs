@@ -15,6 +15,7 @@
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
   #boot.kernelPatches = [];
+  boot.kernelParams = ["apm=power_off"];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/654412d7-5fc8-4030-9bb4-87cae653d3b1";
