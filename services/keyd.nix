@@ -81,6 +81,28 @@
           };
         };
       };
+
+      realforceC1H = {
+        # Realforce C1H
+        ids = ["0853:031a"];
+        settings = {
+          main = {
+            capslock = "layer(control)";
+            leftcontrol = "capslock";
+            muhenkan = "layer(meta)";
+            henkan = "layer(meta)";
+            katakanahiragana = "layer(alt)";
+            leftalt = "layer(alt)";
+            yen = "backspace";
+            ro = "layer(shift)";
+
+            # leftmeta = "layer(alt)";
+            # leftalt = "layer(meta)";
+            # leftcontrol = "capslock";
+            # rightcontrol = "hangeul";
+          };
+        };
+      };
     };
   };
 }
