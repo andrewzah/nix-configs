@@ -20,6 +20,7 @@
     ./services.nix
     ./unfree.nix
     ./remotebuilds.nix
+    ./suspend-resume-fix.nix
   ];
 
   networking.hostName = "dende";
