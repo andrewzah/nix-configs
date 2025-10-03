@@ -106,4 +106,6 @@ in {
 
   xdg.configFile."mouseless/config.yaml".text =
     builtins.readFile ../../static-files/configs/mouseless.yaml;
+
+  #zah-hm.graphics.x11.enable = true;
 }
