@@ -2,7 +2,6 @@
   pkgs,
   lib,
   config,
-  username,
   ...
 }: let
   inherit
@@ -17,12 +16,18 @@
   x11Cfg = config.zah-hm.graphics.x11;
 in {
   options.zah-hm.graphics.i3 = with types; {
-    enable = mkEnableOption "Enable X11 and related programs.";
+    enable = mkEnableOption "enable i3";
 
     package = mkOption {
       description = "which i3 package to use";
       type = package;
       default = pkgs.i3-gaps;
+    };
+
+    bars = mkOption {
+      description = "bars for i3";
+      type = listOf attrs;
+      default = [];
     };
 
     i3Config = mkOption {
@@ -56,13 +61,7 @@ in {
           #outer = 2;
           smartBorders = "on";
         };
-        bars = [
-          {
-            trayOutput = "eDP-1";
-            position = "top";
-            statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs /home/dragon/.config/i3status-rust/config-top.toml";
-          }
-        ];
+        bars = cfg.bars;
         keybindings = {
           "${modifier}+d" = "exec rofi -show run";
           "${modifier}+f" = "fullscreen toggle";
@@ -171,14 +170,13 @@ in {
     };
   };
 
-  config =
-    mkIf cfg.enable
-    && x11Cfg.enable {
-      xsession.windowManager.i3 = {
-        enable = true;
-        package = cfg.package;
-        config = cfg.i3Config;
-        extraConfig = cfg.i3ExtraConfig;
-      };
+  config = mkIf (cfg.enable
+    && x11Cfg.enable) {
+    xsession.windowManager.i3 = {
+      enable = true;
+      package = cfg.package;
+      config = cfg.i3Config;
+      extraConfig = cfg.i3ExtraConfig;
     };
+  };
 }
