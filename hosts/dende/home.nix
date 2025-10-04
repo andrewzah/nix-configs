@@ -14,6 +14,7 @@ in {
     #../../home/programs/alacritty.nix
     ../../home/programs/ghostty.nix
     #../../home/programs/slippi.nix
+    ../../home/programs/rofi-wayland.nix
 
     #../../home/games/dwarf-fortress-classic.nix
 
@@ -28,6 +29,8 @@ in {
 
       runelite
       prismlauncher
+
+      discord
 
       opensnitch-ui
 
@@ -108,9 +111,11 @@ in {
     builtins.readFile ../../static-files/configs/mouseless.yaml;
 
   zah-hm.graphics = {
-    x11.enable = true;
-    i3.enable = true;
-    i3status-rust.enable = true;
+    # x11.enable = true;
+    # i3.enable = true;
+    # i3status-rust.enable = true;
+    wayland.enable = true;
+    niri.enable = true;
   };
   zah-hm.programs.dunst.enable = true;
 }

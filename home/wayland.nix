@@ -6,9 +6,7 @@ in {
   imports = [
     ./programs/sway.nix
     ./programs/rofi-wayland.nix
-    #./hyprland.nix
-
-    pkgs.foot
+    #pkgs.foot
   ];
 
   home.packages =
