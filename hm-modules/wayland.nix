@@ -31,6 +31,7 @@ in {
         pkgs.slurp
         pkgs.wev
         pkgs.wl-clipboard
+        pkgs.fuzzel
       ];
     };
 
@@ -60,6 +61,8 @@ in {
   };
 
   config = mkIf cfg.enable {
+    home.packages = cfg.packages;
+    home.sessionVariables = cfg.sessionVariables;
     xdg.configFile."libinput-gestures.conf".text = builtins.readFile ../static-files/configs/libinput-gestures.conf;
   };
 }

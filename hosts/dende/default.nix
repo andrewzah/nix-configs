@@ -82,6 +82,8 @@
     enable = true;
     pinentryPackage = pkgs.pinentry-curses;
   };
+  
+  programs.niri.enable = true;
 
   virtualisation = {
     docker.enable = true;

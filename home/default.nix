@@ -152,6 +152,7 @@ in {
     ++ andrewZahScripts;
 
   home.sessionVariables = {
+    XDG_DATA_HOME = "/home/${username}/.local/share";
     EDITOR = "nvim";
     QT_IM_MODULE = "fcitx";
     XMODIFIERS = "@im,fcitx";

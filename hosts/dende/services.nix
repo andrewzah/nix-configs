@@ -15,11 +15,14 @@ in {
 
   services.xserver = {
     enable = true;
-    autorun = false;
-    windowManager.i3.enable = true;
-
     videoDrivers = ["amd"];
   };
+
+  # services.xserver = {
+  #   enable = true;
+  #   autorun = false;
+  #   windowManager.i3.enable = true;
+  # };
 
   userExtraServices = {
     ghostty-daemon.enable = true;
@@ -36,9 +39,7 @@ in {
     staticLongitude = 126.921768;
   };
 
-  services.tailscale = {
-    enable = true;
-  };
+  #services.tailscale = { enable = false; };
 
   services.flatpak = {
     update.auto.enable = true;

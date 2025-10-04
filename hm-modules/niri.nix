@@ -13,7 +13,6 @@
     ;
 
   cfg = config.zah-hm.graphics.niri;
-  waylandCfg = config.zah-hm.graphics.wayland;
 in {
   options.zah-hm.graphics.niri = with types; {
     enable = mkEnableOption "enable niri";
@@ -34,15 +33,16 @@ in {
 
     packages = mkOption {
       description = "extra packages for Niri to work nicely";
-      type = listOf packages;
+      type = listOf package;
       default = [
         pkgs.xwayland-satellite
       ];
     };
   };
 
-  config = mkIf (cfg.enable
-    && waylandCfg.enable) {
+  config = mkIf cfg.enable {
+    home.packages = cfg.packages;
+    home.sessionVariables = cfg.sessionVariables;
     xdg.configFile."niri/config.kdl".text = cfg.config;
   };
 }

@@ -1,4 +1,4 @@
 { ... }: {
   services.sshd.enable = true;
-  services.tailscale.enable = true;
+  services.tailscale.enable = false;
 }

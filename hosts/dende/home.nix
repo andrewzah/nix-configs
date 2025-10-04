@@ -23,6 +23,7 @@ in {
 
   home.packages = with pkgs;
     [
+    xorg.libXcursor
       unrar
       arandr
       thunderbird # calendar ...
@@ -111,9 +112,9 @@ in {
     builtins.readFile ../../static-files/configs/mouseless.yaml;
 
   zah-hm.graphics = {
-    # x11.enable = true;
-    # i3.enable = true;
-    # i3status-rust.enable = true;
+    x11.enable = false;
+    i3.enable = false;
+    i3status-rust.enable = false;
     wayland.enable = true;
     niri.enable = true;
   };
