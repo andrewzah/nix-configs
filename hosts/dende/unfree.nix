@@ -8,6 +8,7 @@
       "steam-unwrapped"
 
       "discord"
+      "discord-canary"
       "obsidian"
 
       "dwarf-fortress"

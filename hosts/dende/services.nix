@@ -17,6 +17,7 @@ in {
     enable = true;
     videoDrivers = ["amd"];
   };
+  programs.xwayland.enable = true;
 
   # services.xserver = {
   #   enable = true;

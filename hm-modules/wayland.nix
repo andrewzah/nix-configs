@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  username,
   ...
 }: let
   inherit
@@ -42,7 +43,8 @@ in {
       description = "sessionVars for wayland";
       type = attrs;
       default = {
-        NIXOS_OZONE_WL = 1;
+        #NIXOS_OZONE_WL = 1;
+        #ELECTRON_OZONE_PLATFORM_HINT = "auto";
         WLR_NO_HARDWARE_CURSORS = "1";
         XCURSOR_SIZE = "108";
         XKB_DEFAULT_LAYOUT = "us";
@@ -51,9 +53,11 @@ in {
         MOZ_WEBRENDER = "1";
         XDG_SESSION_TYPE = "wayland";
         XDG_CURRENT_DESKTOP = "sway";
+        XDG_CONFIG_HOME = "/home/${username}/.config";
 
+        # https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland
         GLFW_IM_MODULE = "ibus";
-        GTK_IM_MODULE = "fcitx";
+        #GTK_IM_MODULE = "fcitx";
         IMSETTINGS_MODULE = "fcitx";
         INPUT_METHOD = "fcitx";
         QT_IM_MODULE = "fcitx";

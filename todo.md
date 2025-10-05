@@ -1,6 +1,11 @@
 ## look into
 
-- [ ] fix discord not appearing in fuzzel
+- [ ] fix discord IME not working under wayland
+- look into: https://github.com/johannesjo/super-productivity
+- review: https://github.com/jbensmann/mouseless
+- look into:
+  - https://wayland.freedesktop.org/libinput/doc/1.27.1/touchpad-jumping-cursors.html
+
 - https://github.com/echasnovski/mini.nvim
 - gtk settings:
   https://github.com/montchr/dotfield/blob/47c864c0135b51600f616099ff3eddf1576cf214/home/profiles/graphical/__gtk.nix

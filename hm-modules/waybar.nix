@@ -33,13 +33,17 @@ in {
             "clock"
             "niri/window"
           ];
-          modules-center = ["niri/workspaces"];
+          modules-center = [
+            "niri/workspaces"
+            "privacy"
+          ];
           modules-right = [
             "disk"
             "memory"
             "cpu"
             "custom/volume"
             "battery"
+            "tray"
           ];
 
           "niri/window" = {
@@ -84,6 +88,7 @@ in {
               warning = 70;
             };
           };
+
           memory = {
             format = "MEM {}%";
             interval = 3;

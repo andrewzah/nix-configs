@@ -10,7 +10,7 @@
   '';
 
   discordWrapper = pkgs.writeShellScriptBin "discord" ''
-    ${pkgs.discord}/bin/discord --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime --gtk-version=4
+    ${lib.getExe pkgs.discord-canary} --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime --gtk-version=4
   '';
 in {
   imports = [
@@ -126,4 +126,6 @@ in {
     niri.enable = true;
   };
   zah-hm.programs.dunst.enable = true;
+
+  services.blueman-applet.enable = true;
 }

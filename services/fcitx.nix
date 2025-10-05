@@ -7,6 +7,7 @@
       fcitx5-gtk
     ];
     fcitx5.ignoreUserConfig = true;
+    fcitx5.waylandFrontend = true;
 
     fcitx5.settings.inputMethod = {
       "Groups/0" = {
