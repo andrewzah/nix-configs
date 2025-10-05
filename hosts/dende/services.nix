@@ -40,7 +40,7 @@ in {
     staticLongitude = 126.921768;
   };
 
-  #services.tailscale = { enable = false; };
+  services.tailscale.enable = true;
 
   services.flatpak = {
     update.auto.enable = true;
