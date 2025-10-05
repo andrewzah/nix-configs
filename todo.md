@@ -1,5 +1,6 @@
 ## look into
 
+- [ ] fix discord not appearing in fuzzel
 - https://github.com/echasnovski/mini.nvim
 - gtk settings:
   https://github.com/montchr/dotfield/blob/47c864c0135b51600f616099ff3eddf1576cf214/home/profiles/graphical/__gtk.nix

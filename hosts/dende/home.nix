@@ -8,12 +8,17 @@
     cd "/home/$USER/.var/app/com.fightcade.Fightcade/data"
     ${lib.getExe pkgs.unzip} "/home/$USER/.var/app/com.fightcade.Fightcade/data/fc2json.zip"
   '';
+
+  discordWrapper = pkgs.writeShellScriptBin "discord" ''
+    ${pkgs.discord}/bin/discord --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime --gtk-version=4
+  '';
 in {
   imports = [
     ../../home/programs/git.nix
     #../../home/programs/alacritty.nix
     ../../home/programs/ghostty.nix
     #../../home/programs/slippi.nix
+
     ../../home/programs/rofi-wayland.nix
 
     #../../home/games/dwarf-fortress-classic.nix
@@ -23,7 +28,7 @@ in {
 
   home.packages = with pkgs;
     [
-    xorg.libXcursor
+      xorg.libXcursor
       unrar
       arandr
       thunderbird # calendar ...
@@ -31,7 +36,7 @@ in {
       runelite
       prismlauncher
 
-      discord
+      discordWrapper
 
       opensnitch-ui
 
@@ -115,7 +120,9 @@ in {
     x11.enable = false;
     i3.enable = false;
     i3status-rust.enable = false;
+
     wayland.enable = true;
+    waybar.enable = true;
     niri.enable = true;
   };
   zah-hm.programs.dunst.enable = true;

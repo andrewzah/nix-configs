@@ -3,11 +3,7 @@
     ${pkgs.discord}/bin/discord --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime --gtk-version=4
   '';
 in {
-  imports = [
-    ./programs/sway.nix
-    ./programs/rofi-wayland.nix
-    #pkgs.foot
-  ];
+  imports = [];
 
   home.packages =
     (with pkgs; [
@@ -15,6 +11,7 @@ in {
       mako
       swaylock
       wev
+      waypaper
 
       grim
       slurp

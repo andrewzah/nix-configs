@@ -26,12 +26,15 @@ in {
     packages = mkOption {
       description = "extra packages for wayland";
       type = listOf package;
-      default = [
-        pkgs.grim
-        pkgs.slurp
-        pkgs.wev
-        pkgs.wl-clipboard
-        pkgs.fuzzel
+      default = with pkgs; [
+        grim
+        slurp
+
+        fuzzel
+        libinput-gestures
+        waypaper
+        wev
+        wl-clipboard
       ];
     };
 

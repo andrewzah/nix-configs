@@ -7,5 +7,6 @@
 
     ./niri.nix
     ./wayland.nix
+    ./waybar.nix
   ];
 }
