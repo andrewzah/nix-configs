@@ -4,6 +4,7 @@ in {
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.variant = "";
 
+  services.gnome.gnome-keyring.enable = true;
   services.upower.enable = true;
   services.openssh.enable = true;
 

@@ -30,6 +30,10 @@ in {
     (with pkgs; [
       home-manager
 
+      treefmt
+      nixpkgs-review
+      vimPluginsUpdater
+
       age
       sops
 

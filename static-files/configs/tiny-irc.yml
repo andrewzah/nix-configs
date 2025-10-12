@@ -1,7 +1,6 @@
 ---
 # Servers to automatically connect.
 servers:
-
   - addr: irc.libera.chat
     port: 6697
     tls: true
@@ -10,11 +9,24 @@ servers:
     alias: LBRA
     realname: jazz
     join:
+      - "#nixos"
       - "#tfwiki"
       - "#wikipedia-en"
-      - "#nixos"
     nickserv_ident:
-      command: 'pass show irc-libera-jazz'
+      command: "pass show irc-libera-jazz"
+  - addr: irc.oftc.net
+    port: 6697
+    tls: true
+    nicks: [twofiveone]
+    notify: mentions
+    alias: OFTC
+    realname: twofiveone
+    join:
+      - "#asahi"
+      - "asahi-alt"
+      - "#asahi-stream"
+    nickserv_ident:
+      command: "pass show irc-oftc-twofiveone"
 
 # Defaults used when connecting to a server with the `/connect` command.
 defaults:
@@ -24,7 +36,7 @@ defaults:
   realname: jazz
 
 # Location for chat logs.
-log_dir: "/home/${username}/.cache/tiny_logs"
+log_dir: "$HOME/.cache/tiny_logs"
 
 # Limits the maximum number of messages stored in each tab. Default is
 # unlimited.
@@ -131,7 +143,6 @@ colors:
   tab_joinpart:
     fg: 11
     bg: default
-
 # Custom key mappings. Syntax is:
 #
 # [key_name]: [key_action]
@@ -141,50 +152,50 @@ colors:
 # See also: https://github.com/osa1/tiny/wiki/Configuring-key-bindings.
 #
 # key_map:
-  ### Defaults ###
-  # ctrl_c: exit
-  # ctrl_x: run_editor
+### Defaults ###
+# ctrl_c: exit
+# ctrl_x: run_editor
 
-  # alt_1:
-  #     tab_goto: 1
-  # alt_2:
-  #     tab_goto: 2
-  # alt_3:
-  #     tab_goto: 3
-  # alt_4:
-  #     tab_goto: 4
-  # alt_5:
-  #     tab_goto: 5
-  # alt_6:
-  #     tab_goto: 6
-  # alt_7:
-  #     tab_goto: 7
-  # alt_8:
-  #     tab_goto: 8
-  # alt_9:
-  #     tab_goto: 9
-  # alt_0:
-  #     tab_goto: 0
-  # ctrl_n:     tab_next
-  # ctrl_p:     tab_prev
+# alt_1:
+#     tab_goto: 1
+# alt_2:
+#     tab_goto: 2
+# alt_3:
+#     tab_goto: 3
+# alt_4:
+#     tab_goto: 4
+# alt_5:
+#     tab_goto: 5
+# alt_6:
+#     tab_goto: 6
+# alt_7:
+#     tab_goto: 7
+# alt_8:
+#     tab_goto: 8
+# alt_9:
+#     tab_goto: 9
+# alt_0:
+#     tab_goto: 0
+# ctrl_n:     tab_next
+# ctrl_p:     tab_prev
 
-  # shift_up:   messages_scroll_up
-  # shift_down: messages_scroll_down
-  # ctrl_u:     messages_page_up
-  # ctrl_d:     messages_page_down
-  # pgup:       messages_page_up
-  # pgdown:     messages_page_down
-  # home:       messages_scroll_top
-  # end:        messages_scroll_bottom
+# shift_up:   messages_scroll_up
+# shift_down: messages_scroll_down
+# ctrl_u:     messages_page_up
+# ctrl_d:     messages_page_down
+# pgup:       messages_page_up
+# pgdown:     messages_page_down
+# home:       messages_scroll_top
+# end:        messages_scroll_bottom
 
-  # left:       input_move_curs_left
-  # right:      input_move_curs_right
-  # ctrl_a:     input_move_curs_start
-  # ctrl_e:     input_move_curs_end
-  # ctrl_left:  input_move_word_left
-  # ctrl_right: input_move_word_right
-  # ctrl_k:     input_delete_to_end
-  # ctrl_w:     input_delete_prev_word
-  # backspace:  input_delete_prev_char
-  # del:        input_delete_next_char
-  # tab:        input_auto_complete
+# left:       input_move_curs_left
+# right:      input_move_curs_right
+# ctrl_a:     input_move_curs_start
+# ctrl_e:     input_move_curs_end
+# ctrl_left:  input_move_word_left
+# ctrl_right: input_move_word_right
+# ctrl_k:     input_delete_to_end
+# ctrl_w:     input_delete_prev_word
+# backspace:  input_delete_prev_char
+# del:        input_delete_next_char
+# tab:        input_auto_complete

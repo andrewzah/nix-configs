@@ -1,7 +1,9 @@
 {
   pkgs,
+  lib,
   fetchFromGitHub,
   buildGoModule,
+  nix-update-script,
   ...
 }:
 buildGoModule rec {
@@ -17,9 +19,36 @@ buildGoModule rec {
   };
   vendorHash = "sha256-W7hc+U+rJZgXzcYoUHTG29j2xvJ/xTbBgDaiO7CVGnk=";
 
+  buildPhase = ''
+    runHook preBuild
+
+    go build -o legendsbrowser2
+
+    runHook postBuild
+  '';
+
+  installPhase = ''
+    runHook preInstall
+
+    mkdir -p $out/bin
+    install -m 0755 legendsbrowser2 $out/bin/legendsbrowser2
+
+    runHook postInstall
+  '';
+
+  ldflags = [
+    "-s"
+    "-w"
+    "-X main.Version=${version}"
+  ];
+
+  passthru.updateScript = nix-update-script {};
+
   meta = {
     description = "A multi-platform, open source, legends viewer for dwarf fortress 0.47 written in go.";
     homepage = "https://github.com/robertjanetzko/LegendsBrowser2";
-    license = pkgs.lib.licenses.mit;
+    changelog = "https://github.com/robertjanetzko/LegendsBrowser2/releases/tag/${version}";
+    mainProgram = "legendsbrowser2";
+    license = lib.licenses.mit;
   };
 }

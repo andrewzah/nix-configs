@@ -5,11 +5,19 @@
   '';
 
   nix.buildMachines = [
+    # {
+    #   hostName = "eu.nixbuild.net";
+    #   system = "aarch64-linux";
+    #   maxJobs = 100;
+    #   supportedFeatures = ["benchmark" "big-parallel"];
+    # }
     {
-      hostName = "eu.nixbuild.net";
+      sshUser = "nixbuild";
+      sshKey = "/home/dragon/.ssh/nixbld";
+      hostName = "ehonda";
       system = "aarch64-linux";
       maxJobs = 100;
-      supportedFeatures = ["benchmark" "big-parallel"];
+      #supportedFeatures = ["benchmark" "big-parallel"];
     }
   ];
 }

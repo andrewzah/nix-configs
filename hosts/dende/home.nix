@@ -28,6 +28,8 @@ in {
 
   home.packages = with pkgs;
     [
+      minikube
+      element-desktop
       xorg.libXcursor
       unrar
       arandr
