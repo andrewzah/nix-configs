@@ -45,6 +45,7 @@ in {
   };
 
   services.tailscale.enable = true;
+  services.fwupd.enable = true;
 
   services.flatpak = {
     update.auto.enable = true;
