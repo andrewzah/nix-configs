@@ -1,5 +1,16 @@
 ## look into
 
+```nix
+# look into: for getting the camera to autotrack
+extraModulePackages = (with config.boot.kernelPacakges; [
+    v4l2loopback.out
+]);
+extraModprobeConfig = ''
+  options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
+'';
+kernelModules = ["v4l2loopback" "88x2bu"];
+```
+
 - [ ] fix discord IME not working under wayland
 - look into: https://github.com/johannesjo/super-productivity
 - review: https://github.com/jbensmann/mouseless
