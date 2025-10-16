@@ -33,9 +33,11 @@ in {
 
         fuzzel
         libinput-gestures
-        waypaper
         wev
         wl-clipboard
+
+        waypaper
+        swww
       ];
     };
 
