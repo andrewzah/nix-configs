@@ -21,7 +21,10 @@
       font-family = "Iosevka SS03";
       font-feature = "-calt, -liga, -dlig";
       font-size = 13;
-      theme = "dark:GruvboxDarkHard,light:GruvboxLightHard";
+
+      #theme = "dark:GruvboxDarkHard,light:GruvboxLightHard";
+      theme = "dark:tokyonight,light:BlulocoLight";
+
       gtk-adwaita = true;
 
       window-decoration = "none";
@@ -29,7 +32,7 @@
 
       ## cursor
       cursor-style = "block";
-      cursor-style-blink = "false";
+      #cursor-style-blink = "false";
       shell-integration-features = "no-cursor";
     };
   };
