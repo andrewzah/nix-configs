@@ -4,35 +4,13 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-unstable,
     home-manager,
     nixos-hardware,
     #nix-darwin,
     nix-flatpak,
     ...
   } @ inputs: {
-    # darwinConfigurations = {
-    #   inspire = nix-darwin.lib.darwinSystem {
-    #     system = "aarch64-darwin";
-    #     modules = [
-    #       ./hosts/m3/default.nix
-    #
-    #       home-manager.darwinModules.home-manager
-    #       {
-    #         home-manager.useGlobalPkgs = true;
-    #         home-manager.useUserPackages = true;
-    #         home-manager.extraSpecialArgs = {inherit inputs;};
-    #         home-manager.users.andrew = {
-    #           imports = [
-    #             ./home/default.nix
-    #             ./home/darwin-pkgs.nix
-    #           ];
-    #         };
-    #       }
-    #     ];
-    #   };
-    # };
-    #darwinPackages = self.darwinConfigurations.inspire.pkgs;
-
     nixosConfigurations = let
       home-modules = {
         home-manager.useGlobalPkgs = true;
@@ -91,7 +69,7 @@
       dende = let
         username = "dragon";
       in
-        nixpkgs.lib.nixosSystem {
+        nixpkgs.lib.nixosSystem rec {
           system = "x86_64-linux";
           specialArgs = {inherit inputs username;};
           modules = [
@@ -101,7 +79,12 @@
 
             home-manager.nixosModules.home-manager
             {
-              home-manager.extraSpecialArgs = {inherit inputs username;};
+              home-manager.extraSpecialArgs = {
+                inherit inputs username;
+                pkgs-unstable = import nixpkgs-unstable {
+                  inherit system;
+                };
+              };
               home-manager.users."${username}" = {
                 imports = [
                   ./home
@@ -119,7 +102,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    #unstableNixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-hardware.url = "github:NixOS/nixos-hardware/master";
