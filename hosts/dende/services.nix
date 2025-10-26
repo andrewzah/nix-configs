@@ -36,6 +36,9 @@ in {
       pkgs.xdg-desktop-portal-gtk
       pkgs.xdg-desktop-portal-termfilechooser
     ];
+    config.common = {
+      default = ["gtk"];
+    };
   };
 
   services.geoclue2 = {
