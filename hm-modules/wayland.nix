@@ -28,8 +28,9 @@ in {
       description = "extra packages for wayland";
       type = listOf package;
       default = with pkgs; [
-        grim
+        grim # pictures, also see niri
         slurp
+        wf-recorder # recording
 
         fuzzel
         libinput-gestures

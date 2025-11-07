@@ -238,7 +238,7 @@ spawn-at-startup "dunst"
 spawn-at-startup "fcitx5"
 spawn-at-startup "waybar"
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "waypaper --random --fill stretch --folder /home/dragon/nix/static-files/wallpapers"
+spawn-at-startup "waypaper" "--fill" "stretch" "--wallpaper" "/home/dragon/nix/static-files/wallpapers/DF-1.png"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -286,6 +286,12 @@ window-rule {
     // You can get away with just app-id="wezterm" if you want.
     match app-id=r#"arandr"#
     default-column-width {}
+}
+
+window-rule {
+  match app-id="action rpg tutorial"
+  open-floating false
+  default-column-width { proportion 1.0; }
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
@@ -359,8 +365,8 @@ binds {
     // Example brightness key mappings for brightnessctl.
     // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
     // but you need to manually put each argument in separate "" quotes.
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+5%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "5%-"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,

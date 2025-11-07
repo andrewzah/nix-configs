@@ -36,6 +36,7 @@
         defaultBranch = "master";
       };
       log.date = "relative";
+      rerere.enabled = true;
 
       user = {
         email = "zah@andrewzah.com";

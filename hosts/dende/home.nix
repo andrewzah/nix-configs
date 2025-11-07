@@ -15,14 +15,7 @@
 in {
   imports = [
     ../../home/programs/git.nix
-    #../../home/programs/alacritty.nix
     ../../home/programs/ghostty.nix
-    #../../home/programs/slippi.nix
-
-    ../../home/programs/rofi-wayland.nix
-
-    #../../home/games/dwarf-fortress-classic.nix
-
     ../../services/darkman.nix
   ];
 
@@ -35,10 +28,10 @@ in {
       arandr
       thunderbird # calendar ...
 
+      losslesscut-bin # use w/ wf-recorder, simplescreenrecorder
+
       runelite
       prismlauncher
-
-      discordWrapper
 
       opensnitch-ui
 
@@ -72,7 +65,6 @@ in {
 
       #cockatrice
       steam
-      steam-run
       mgba
       sameboy
       snes9x-gtk
@@ -96,12 +88,15 @@ in {
       go-grip # markdown viewer
       binsider
 
-      simplescreenrecorder
+      #simplescreenrecorder doesn't work well on wayland
       tiled
       aseprite
+      blender
+      godot
     ]
     ++ [
       auto_rom_script
+      discordWrapper
     ];
 
   home.pointerCursor = {

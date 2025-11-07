@@ -75,6 +75,7 @@
 
   environment.systemPackages = [
     pkgs.vim
+    pkgs.steam-run
   ];
   #++ (pkgs.callPackage ../../pkgs/andrew-zah-scripts.nix {});
 
@@ -82,7 +83,7 @@
     enable = true;
     pinentryPackage = pkgs.pinentry-curses;
   };
-  
+
   programs.niri.enable = true;
 
   virtualisation = {
