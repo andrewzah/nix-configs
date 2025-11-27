@@ -159,7 +159,7 @@ in {
     XDG_DATA_HOME = "/home/${username}/.local/share";
     EDITOR = "nvim";
     QT_IM_MODULE = "fcitx";
-    XMODIFIERS = "@im,fcitx";
+    #XMODIFIERS = "@im=fcitx";
     SDL_IM_MODULE = "fcitx";
     GLFW_IM_MODULE = "ibus";
     XKB_DEFAULT_LAYOUT = "us";

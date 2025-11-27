@@ -92,7 +92,9 @@ in {
       tiled
       aseprite
       blender
-      godot
+
+      #godot
+      godotPackages_4_5.godot
     ]
     ++ [
       auto_rom_script
