@@ -99,11 +99,6 @@
       enable = true;
       enable32Bit = true;
     };
-
-    amdgpu.amdvlk = {
-      enable = true;
-      support32Bit.enable = true;
-    };
   };
 
   system.stateVersion = "24.11";
