@@ -1,6 +1,13 @@
-{...}: {
+{pkgs, ...}: {
   programs.ghostty = {
     enable = true;
+    package = pkgs.ghostty.overrideAttrs (_: {
+      preBuild = ''
+        shopt -s globstar
+        sed -i 's/^const xev = @import("xev");$/const xev = @import("xev").Epoll;/' **/*.zig
+        shopt -u globstar
+      '';
+    });
     enableZshIntegration = true;
     #themes = { my-theme = { palette = [];}; } # custom themes
 
@@ -22,10 +29,7 @@
       font-feature = "-calt, -liga, -dlig";
       font-size = 13;
 
-      #theme = "dark:GruvboxDarkHard,light:GruvboxLightHard";
-      theme = "dark:tokyonight,light:BlulocoLight";
-
-      gtk-adwaita = true;
+      theme = "dark:Builtin Tango Dark,light:Builtin Tango Light";
 
       window-decoration = "none";
       copy-on-select = true;
@@ -39,5 +43,4 @@
 }
 # ghostty +list-themes
 # dark: banana-blueberry, belafonte-night, carbonfox, citruszest, cyberpunkscarletprotocol, deep, earthsong, github-dark-gray, glacier, grape
-# light: dayfox, farmhouse-light, github-light-high-contrast, gruvbox-light-hard
 

@@ -98,11 +98,11 @@
         "nvf": "nvf"
       },
       "locked": {
-        "lastModified": 1763054066,
-        "narHash": "sha256-WuDxxFjScB8YtJdFLCc7GiJiWx4a3CEuRoK+xHV8i8A=",
+        "lastModified": 1764554370,
+        "narHash": "sha256-wV5p8R6Rac2gCFLsFOmT1T0+l55TjhdpToVoyn98LF8=",
         "owner": "andrewzah",
         "repo": "neovim-flake",
-        "rev": "a9ff9171bd2e3d75b9d6239be1b225d86f5d10d6",
+        "rev": "1bcf11dc86e5a605b1f8119889ba407c9559e4af",
         "type": "github"
       },
       "original": {
@@ -159,16 +159,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1762756533,
-        "narHash": "sha256-HiRDeUOD1VLklHeOmaKDzf+8Hb7vSWPVFcWwaTrpm+U=",
+        "lastModified": 1764494334,
+        "narHash": "sha256-x2xCEXUlU4Ap56+t5HaoReOQ/bV/bIQ5rzTn/m+V3HQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c2448301fb856e351aab33e64c33a3fc8bcf637d",
+        "rev": "d542db745310b6929708d9abea513f3ff19b1341",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-25.05",
+        "ref": "nixos-25.11",
         "repo": "nixpkgs",
         "type": "github"
       }

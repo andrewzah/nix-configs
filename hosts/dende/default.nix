@@ -50,7 +50,7 @@
 
   boot.initrd.kernelModules = ["amdgpu"];
   ## required for the modern amdgpu and qualcomm WCN785x drivers
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_12;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_17;
 
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
