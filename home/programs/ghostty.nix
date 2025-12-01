@@ -1,6 +1,8 @@
 {pkgs, ...}: {
   programs.ghostty = {
     enable = true;
+
+    # issue in 25.11, on boht kernel 6.12.x and 6.17.x
     package = pkgs.ghostty.overrideAttrs (_: {
       preBuild = ''
         shopt -s globstar
@@ -9,7 +11,6 @@
       '';
     });
     enableZshIntegration = true;
-    #themes = { my-theme = { palette = [];}; } # custom themes
 
     settings = {
       keybind = [
@@ -29,18 +30,17 @@
       font-feature = "-calt, -liga, -dlig";
       font-size = 13;
 
-      theme = "dark:Builtin Tango Dark,light:Builtin Tango Light";
+      theme = "dark:Synthwave,light:GitHub Light Default";
 
       window-decoration = "none";
       copy-on-select = true;
 
-      ## cursor
       cursor-style = "block";
-      #cursor-style-blink = "false";
+      cursor-style-blink = "true";
       shell-integration-features = "no-cursor";
     };
   };
 }
 # ghostty +list-themes
-# dark: banana-blueberry, belafonte-night, carbonfox, citruszest, cyberpunkscarletprotocol, deep, earthsong, github-dark-gray, glacier, grape
+# dark: Tomorrow Night Burns, Synthwave, banana-blueberry, belafonte-night, carbonfox, citruszest, cyberpunkscarletprotocol, deep, earthsong, github-dark-gray, glacier, grape
 
