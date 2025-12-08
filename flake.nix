@@ -10,7 +10,9 @@
     #nix-darwin,
     nix-flatpak,
     ...
-  } @ inputs: {
+  } @ inputs: let
+    inherit (nixpkgs.lib) nixosSystem;
+  in {
     nixosConfigurations = let
       home-modules = {
         home-manager.useGlobalPkgs = true;
@@ -20,7 +22,7 @@
       #   donbyeorak = let
       #     username = "dragon";
       #   in
-      #     nixpkgs.lib.nixosSystem {
+      #      nixosSystem {
       #       system = "x86_64-linux";
       #       specialArgs = {inherit inputs username;};
       #       modules = [
@@ -45,7 +47,7 @@
       #   ginyu = let
       #     username = "andrew";
       #   in
-      #     nixpkgs.lib.nixosSystem {
+      #     nixosSystem {
       #       system = "x86_64-linux";
       #       specialArgs = {inherit inputs username;};
       #       modules = [
@@ -69,7 +71,7 @@
       dende = let
         username = "dragon";
       in
-        nixpkgs.lib.nixosSystem rec {
+        nixosSystem rec {
           system = "x86_64-linux";
           specialArgs = {inherit inputs username;};
           modules = [
