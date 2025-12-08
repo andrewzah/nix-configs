@@ -23,10 +23,6 @@ kernelModules = ["v4l2loopback" "88x2bu"];
 
 ## prio: high
 
-- https://github.com/crate-ci/typos
-- split out x11 config for donbyeorak & dende
-  - aka figure out _modules_
-
 ```nix
 {
   services.openssh = {

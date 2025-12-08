@@ -21,6 +21,8 @@ in {
 
   home.packages = with pkgs;
     [
+      super-productivity
+
       minikube
       element-desktop
       xorg.libXcursor
