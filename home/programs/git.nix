@@ -1,6 +1,7 @@
 {...}: {
   programs.git = {
     enable = true;
+    lfs.enable = true;
 
     settings = {
       color.ui = true;
@@ -25,7 +26,7 @@
         signingkey = "D87BD9DCF11BACD6CDB40CB213732FB13E61E0BE";
       };
 
-      aliases = {
+      alias = {
         aliases = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort";
         cs = "commit --signoff --gpg-sign";
         churn = "!git log --all -M -C --name-only --format='format:' \"$@\" | sort | grep -v '^$' | uniq -c | sort | awk 'BEGIN {print \"count,file\"} {print $1 \",\" $2}'";
