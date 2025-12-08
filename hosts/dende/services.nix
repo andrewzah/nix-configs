@@ -14,6 +14,8 @@ in {
     ''
   ];
 
+  services.printing.enable = true;
+
   services.xserver = {
     enable = true;
     videoDrivers = ["amd"];

@@ -38,11 +38,12 @@ in {
             "privacy"
           ];
           modules-right = [
+            "custom/volume"
             "disk"
             "memory"
             "cpu"
-            "custom/volume"
             "battery"
+            "network"
             "tray"
           ];
 
@@ -82,7 +83,7 @@ in {
 
           cpu = {
             format = "CPU {usage:2}%";
-            interval = 3;
+            interval = 10;
             states = {
               critical = 90;
               warning = 70;
@@ -91,7 +92,7 @@ in {
 
           memory = {
             format = "MEM {}%";
-            interval = 3;
+            interval = 10;
             states = {
               critical = 90;
               warning = 70;
@@ -99,7 +100,7 @@ in {
           };
 
           "custom/volume" = {
-            interval = 1;
+            interval = 60;
             exec = "/home/${username}/nix/static-files/bin/pipewire-get-volume.sh";
             max-length = 15;
             return-type = "json";
@@ -112,12 +113,29 @@ in {
           };
 
           "battery" = {
-            format = "BAT {capacity}%";
+            interval = 60;
+            format = "BAT {capacity}% ({time})";
+            format-charging = "BAT+ {capacity}% ({time})";
+            format-discharging = "BAT- {capacity}% ({time}";
+            states = {
+              "warning" = 30;
+              "critical" = 15;
+            };
           };
 
           "clock" = {
             interval = 60;
             format = "{:%a, %b %d | %H:%M | W %V}";
+          };
+
+          "network" = {
+            interval = 3;
+            interface = "wlp194s0";
+            format-wifi = "{essid} - {ipaddr}/{cidr} ({signalStrength}%)";
+            format-ethernet = "{ipaddr}/{cidr}";
+            format-disconnected = "";
+            tooltip-format = "{ifname} via {gwaddr}";
+            tooltip-format-ethernet = "{ifname}";
           };
         }
       ];

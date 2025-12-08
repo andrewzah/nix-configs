@@ -117,16 +117,31 @@ button:hover {
   color: #000000;
 }
 
+#battery.critical {
+  background-color: #d79921;
+  color: #fff;
+}
+
+#battery.warning {
+  background-color: #cc241d;
+  color: #fff;
+}
+
+#battery.discharging {
+  background-color: #d3869b;
+  color: #fff;
+}
+
 #battery.charging,
 #battery.plugged,
 #battery.full {
-  color: #ffffff;
-  background-color: #d3869b;
+  background-color: #98971a;
+  color: #fff;
 }
 
 #custom-volume {
   background-color: #98971a;
-  color: #fbf1c7;
+  color: #fff;
 }
 
 @keyframes blink {

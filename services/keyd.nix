@@ -1,6 +1,10 @@
 {...}: {
   # use `keyd list-keys` to get valid keys
   # invalid keys will silently remap to sth else, lctrl?
+
+  # don't remap system76 devices; use nix's system76-keyboard-configurator
+  # program instead, since it supports more complex layering
+  # System 76 Launch Lite: ids = ["3384:0001"];
   services.keyd = {
     enable = true;
 
@@ -57,13 +61,11 @@
         };
       };
 
+      # left side real order: ctrl alt fn super
       system76_launch = {
-        # System 76 Launch Lite
-        ids = ["3384:0001"];
         settings = {
           main = {
             capslock = "overload(control,esc)";
-            leftalt = "layer(meta)";
           };
         };
       };

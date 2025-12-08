@@ -36,7 +36,8 @@
     21027 # syncthing
   ];
 
-  time.timeZone = "Asia/Seoul";
+  #time.timeZone = "Asia/Seoul";
+  time.timeZone = "America/New_York";
   location.provider = "manual";
 
   # not where I actually live ;)
@@ -50,7 +51,7 @@
 
   boot.initrd.kernelModules = ["amdgpu"];
   ## required for the modern amdgpu and qualcomm WCN785x drivers
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_17;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_12;
 
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
