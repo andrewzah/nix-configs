@@ -21,6 +21,7 @@ in {
 
   home.packages = with pkgs;
     [
+      dasht
       super-productivity
 
       minikube
