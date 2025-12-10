@@ -98,11 +98,11 @@
         "nvf": "nvf"
       },
       "locked": {
-        "lastModified": 1765222222,
-        "narHash": "sha256-jqqrI8OpNaPzRLcrxqr3A7eqsS7VIr7bybC+nhlzOz4=",
+        "lastModified": 1765397348,
+        "narHash": "sha256-7vqYeoEGr5MBAJ87CSFYuGVZ7Zg5ZJ8c3cto1cnywsk=",
         "owner": "andrewzah",
         "repo": "neovim-flake",
-        "rev": "79ee9066bc7ad27d111ff376b824c0c73b48f8d0",
+        "rev": "b58124174beabe53a27c805bd143841a94b8ea33",
         "type": "github"
       },
       "original": {

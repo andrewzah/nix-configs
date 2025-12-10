@@ -1,25 +1,21 @@
 {lib, ...}: {
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
+      "aseprite"
+      "claude-code"
+      "discord"
+      "discord-canary"
+      "dwarf-fortress"
+      "fmod"
+      "obsidian"
+      "snes9x-gtk"
       "steam"
-      "unrar"
       "steam-original"
       "steam-run"
       "steam-unwrapped"
-
-      "discord"
-      "discord-canary"
-      "obsidian"
-
-      "dwarf-fortress"
       "tergel-theme"
-
-      "unrar"
-      "snes9x-gtk"
-
-      "fmod"
       "texturepacker"
-      "aseprite"
       "unity"
+      "unrar"
     ];
 }
