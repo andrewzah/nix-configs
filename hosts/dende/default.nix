@@ -36,8 +36,8 @@
     21027 # syncthing
   ];
 
-  #time.timeZone = "Asia/Seoul";
-  time.timeZone = "America/New_York";
+  time.timeZone = "Asia/Seoul";
+  #time.timeZone = "America/New_York";
   location.provider = "manual";
 
   # not where I actually live ;)
