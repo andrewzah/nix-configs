@@ -66,6 +66,8 @@ in {
         QT_IM_MODULE = "fcitx";
         SDL_IM_MODULE = "fcitx";
         XMODIFIERS = "@im=fcitx";
+
+        GTK_A11Y = "none";
       };
     };
   };

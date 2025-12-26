@@ -1,4 +1,11 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  customFcitx5 = pkgs.qt6Packages.fcitx5-with-addons.override {
+    addons = with pkgs; [
+      fcitx5-gtk
+      fcitx5-hangul
+    ];
+  };
+in {
   i18n.inputMethod = {
     enable = true;
     type = "fcitx5";
@@ -6,7 +13,7 @@
       fcitx5-hangul
       fcitx5-gtk
     ];
-    fcitx5.ignoreUserConfig = true;
+    fcitx5.ignoreUserConfig = false;
     fcitx5.waylandFrontend = true;
 
     fcitx5.settings.inputMethod = {
@@ -88,6 +95,16 @@
       AllowInputMethodForPassword = false;
       ShowPreeditForPassword = false;
       AutoSavePeriod = "30";
+    };
+  };
+
+  # issue with spawning via niri
+  systemd.user.services.fcitx5 = {
+    wantedBy = ["graphical-session.target"];
+    description = "fcitx5 input method";
+    serviceConfig = {
+      ExecStart = "${pkgs.lib.getExe customFcitx5}";
+      Restart = "on-failure";
     };
   };
 }

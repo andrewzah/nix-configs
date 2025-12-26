@@ -74,9 +74,12 @@
     packages = [];
   };
 
-  environment.systemPackages = [
-    pkgs.vim
-    pkgs.steam-run
+  environment.systemPackages = with pkgs; [
+    vim
+    steam-run
+    fcitx5
+    fcitx5-gtk
+    fcitx5-hangul
   ];
   #++ (pkgs.callPackage ../../pkgs/andrew-zah-scripts.nix {});
 

@@ -14,7 +14,7 @@ in {
     systemd.user.services.ghostty-daemon = {
       description = "Ghostty terminal daemon";
 
-      after = ["graphical-session-pre.target"];
+      after = ["graphical-session-pre.target" "niri.service"];
       partOf = ["graphical-session.target"];
       wantedBy = ["graphical-session.target"];
 

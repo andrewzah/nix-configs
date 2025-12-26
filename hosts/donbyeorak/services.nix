@@ -1,4 +1,4 @@
-{ ...}: {
+{...}: {
   services.xserver = {
     enable = true;
     autorun = false;
@@ -6,8 +6,7 @@
 
     videoDrivers = ["nvidia"];
   };
-
-  hardware.opengl.driSupport32Bit = true;
-
-  services.sshd.enable = true;
 }
+#services.sshd.enable = true;
+#}
+

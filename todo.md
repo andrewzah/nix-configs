@@ -1,3 +1,18 @@
+## outstanding bugs
+
+1. discord IME not working under wayland: priority: low
+
+- temp solution: vim buffer open next to discord
+
+2. steam occasionally doesn't launch: priority: low
+
+- temp solution: rebooting seems to fix it
+- may be suspend/resume related
+
+3. IME sometimes doesn't work when launched by niri: priority: med
+
+- temp solution: killall fcitx5 and spawn a new fcitx5 session in tmux
+
 ## look into
 
 ```nix
