@@ -10,7 +10,7 @@
   '';
 
   discordWrapper = pkgs.writeShellScriptBin "discord" ''
-    ${lib.getExe pkgs.discord-canary} --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime --gtk-version=4
+    ${lib.getExe pkgs.discord-canary} --enable-features=UseOzonePlatform --ozone-platform=wayland --socket=wayland --enable-wayland-ime --gtk-version=4
   '';
 in {
   imports = [

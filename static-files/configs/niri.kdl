@@ -235,7 +235,6 @@ layout {
 // See the binds section below for more spawn examples.
 
 spawn-at-startup "dunst"
-spawn-at-startup "waybar"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "waypaper" "--fill" "stretch" "--wallpaper" "/home/dragon/nix/static-files/wallpapers/DF-1.png"
 

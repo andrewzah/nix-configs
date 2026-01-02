@@ -81,6 +81,12 @@
     fcitx5-gtk
     fcitx5-hangul
   ];
+
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    GDK_BACKEND = "wayland,x11";
+    QT_QPA_PLATFORM = "wayland;xcb";
+  };
   #++ (pkgs.callPackage ../../pkgs/andrew-zah-scripts.nix {});
 
   programs.gnupg.agent = {
