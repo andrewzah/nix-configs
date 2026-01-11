@@ -98,8 +98,8 @@ in {
       aseprite
       blender
 
-      #godot
       godotPackages_4_5.godot
+      godotPackages_4_5.godot-mono
     ]
     ++ [
       auto_rom_script
